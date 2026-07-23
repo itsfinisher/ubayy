@@ -87,11 +87,14 @@ section[role=tabpanel].on{display:block}
 .filters{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:18px}
 .filters button{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;padding:7px 11px;border:1px solid var(--ink);background:none;border-radius:2px;cursor:pointer;color:var(--ink)}
 .filters button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.filters button.fbtn-top[aria-pressed="true"]{background:#E4572E;border-color:#E4572E}
+.filters button.fbtn-mid[aria-pressed="true"]{background:#1F4E5F;border-color:#1F4E5F}
+.filters button.fbtn-bot[aria-pressed="true"]{background:#3F6B4E;border-color:#3F6B4E}
 .filters button:focus-visible{outline:2px solid var(--signal);outline-offset:2px}
 .idea{display:flex;gap:12px;padding:13px 0;border-bottom:1px solid var(--line);align-items:flex-start}
 .idot{width:8px;height:8px;border-radius:50%;background:currentColor;margin-top:8px;flex:none}
 .itext{flex:1;font-size:16px}
-.imeta{font-family:'DM Mono',monospace;font-size:9.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+.imeta{font-family:'DM Mono',monospace;font-size:9.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin-top:6px;display:flex;align-items:center;gap:2px;flex-wrap:wrap}
 .count{font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);margin-bottom:14px}
 
 .card{border:1px solid var(--ink);padding:18px;margin-bottom:16px}
@@ -105,6 +108,21 @@ section[role=tabpanel].on{display:block}
 .stat{background:var(--paper);padding:14px}
 .stat small{font-family:'DM Mono',monospace;font-size:9.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);display:block;margin-top:4px}
 .note{font-size:14px;color:var(--muted);font-style:italic;margin-top:6px}
+.fn{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.09em;text-transform:uppercase;padding:3px 7px;border-radius:2px;font-weight:500;white-space:nowrap}
+.fn-top{background:#E4572E;color:#EDE7DC}
+.fn-mid{background:#1F4E5F;color:#EDE7DC}
+.fn-bot{background:#3F6B4E;color:#EDE7DC}
+.fnkey{display:flex;flex-direction:column;gap:14px;margin:0 0 22px}
+.fnrow{display:flex;gap:12px;align-items:flex-start}
+.fnrow .fn{margin-top:3px;flex:none}
+.fnrow p{margin:0;font-size:15px}
+.balance{border:1px solid var(--ink);padding:16px;margin-bottom:16px}
+.brow{display:flex;align-items:center;gap:10px;margin-bottom:10px;font-size:14px}
+.brow:last-child{margin-bottom:0}
+.bname{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;min-width:54px;color:var(--muted)}
+.btrack{flex:1;height:9px;background:var(--paper-2);border-radius:2px;overflow:hidden}
+.bfill{height:100%;border-radius:2px}
+.bnum{font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);min-width:34px;text-align:right}
 .shot{display:flex;gap:16px;padding:18px 0;border-bottom:1px solid var(--line);align-items:flex-start}
 .shot:first-child{border-top:1px solid var(--ink)}
 .shotnum{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:30px;line-height:1;color:var(--signal);min-width:38px;letter-spacing:-.03em}
@@ -143,6 +161,12 @@ footer{padding:34px 0 20px;border-top:2px solid var(--ink);margin-top:30px;color
   </div>
 
   <div class="card">
+    <h3>Reading the week for balance</h3>
+    <p>Side Quest is your only Reach anchor — the one series built to be found by people who've never heard of you. The Agency, Twenties Notes and Starting From Zero build Trust; Grown Up Things builds Loyalty.</p>
+    <p>But every series now has Reach, Trust and Loyalty episodes in the bank, so the day doesn't dictate the job. On a week where growth has stalled, you can pull a Reach episode out of any of the five — Twenties Notes has rankings, Grown Up Things has cost breakdowns, Starting From Zero has beginner lists. Side Quest is still the heaviest Reach series and probably always will be, but it's no longer carrying it alone.</p>
+  </div>
+
+  <div class="card">
     <h3>One event, many episodes</h3>
     <p>A single creator event isn't one video. It's a get-ready, a why-I-almost-didn't-go, the event itself, the one thing you learned, the funny bit that had nothing to do with work, and the recap. Different series, different weeks, one afternoon of filming.</p>
     <p class="note">Film wide, film close, film yourself, film the room, film the thing you weren't supposed to notice.</p>
@@ -153,6 +177,7 @@ footer{padding:34px 0 20px;border-top:2px solid var(--ink);margin-top:30px;color
   <div class="shead"><h2>The Bank</h2><div class="rule"></div></div>
   <p class="lede">Seeded episodes, filterable by series. Effort is a rough guide: <strong>L</strong> is phone-and-go, <strong>M</strong> needs a setup, <strong>H</strong> needs a plan.</p>
   <div class="filters" id="filters"></div>
+  <div class="filters" id="filters2"></div>
   <div class="count" id="ideaCount"></div>
   <div id="ideaList"></div>
 </section>
@@ -194,9 +219,32 @@ footer{padding:34px 0 20px;border-top:2px solid var(--ink);margin-top:30px;color
   </div>
 
   <div class="card">
+    <h3>The three stages, plainly</h3>
+    <p>Every video does one of three jobs. Not better or worse jobs — different ones. The tags on each series and each episode tell you which.</p>
+    <div class="fnkey">
+      <div class="fnrow"><span class="fn fn-top">Reach</span><p><b>Gets found by strangers.</b> Needs no context. Someone who has never heard of you can watch it and get the whole thing: a ranking, a price, a place, a number. This is how new people arrive.</p></div>
+      <div class="fnrow"><span class="fn fn-mid">Trust</span><p><b>Turns a viewer into a follower.</b> They have seen you once and this is the one that makes them tap follow — an opinion, a mistake, something honest. It needs a little context to land, which is why it will not reach cold.</p></div>
+      <div class="fnrow"><span class="fn fn-bot">Loyalty</span><p><b>Keeps the people you already have.</b> Barely travels to strangers and is not meant to. It is for the people already invested — the arc, the recap, the ongoing story. This is what makes a page feel like a show.</p></div>
+    </div>
+    <p>You need all three. A page that is only Reach gets views and no followers. A page that is only Loyalty is what you have now.</p>
+  </div>
+
+  <div class="card">
+    <h3>Where your bank currently sits</h3>
+    <div class="balance" id="balance"></div>
+    <p class="note">Every series now carries all three, so you are never stuck with the wrong job on the wrong day. If the follower count is flat, filter the bank to Reach whatever series is up. If people watch once and never return, filter to Loyalty.</p>
+  </div>
+
+  <div class="card">
+    <h3>What this actually changes on a Monday</h3>
+    <p>Nothing about your five series. You still post one of each a week. The difference is that when you open the bank, you can now ask a better question than "what do I fancy filming."</p>
+    <p>If your last three videos were all Loyalty — a recap, an arc episode, a personal one — the next one should be Reach, or you are only ever talking to the people already there. That is the whole idea. It is a balance check, not a rule.</p>
+  </div>
+
+  <div class="card">
     <h3>The diagnosis</h3>
     <p>Those two numbers together tell a specific story. The people who already follow you watch, like and comment at a rate most creators would take. But 0.24&times; views per follower means the algorithm isn't carrying you past them — your videos are landing with your existing audience and stopping there.</p>
-    <p>That's not an ideas problem. It's a first-three-seconds problem. You're being served to new people and they're leaving before the video starts working.</p>
+    <p>That's not an ideas problem. It's partly a first-three-seconds problem — you're being served to new people and they leave before the video works. But it's also a mix problem: most of what you make is Trust and Loyalty content, which is exactly the content that doesn't travel to strangers by design.</p>
   </div>
 
   <div class="card">
@@ -239,263 +287,331 @@ footer{padding:34px 0 20px;border-top:2px solid var(--ink);margin-top:30px;color
 </nav>
 
 <script>
+const FNAME={top:'Reach',mid:'Trust',bot:'Loyalty'};
+const FLONG={top:'Top of funnel',mid:'Middle of funnel',bot:'Bottom of funnel'};
+
 const SERIES=[
- {id:1,key:"agency",name:"The Agency",colour:"var(--s1)",day:"Mon",tagline:"Running a talent agency at twenty-two, with my mates.",
+ {id:1,key:"agency",name:"The Agency",colour:"var(--s1)",day:"Mon",funnel:"mid",tagline:"Running a talent agency at twenty-two, with my mates.",
   pitch:"A creator agency from the inside, run by someone young enough to still find it absurd. Deals get signed and deals get lost. Creators get told no. Emails get sent at midnight. The office is wherever the four of you have sat down. It works because almost nobody films this — the industry that decides which creators get paid is completely opaque from the outside, and you're holding the door open.",
   why:"Your unfair advantage. Business content is saturated; agency content isn't, because almost nobody who runs one is 22 and filming it. Anything you're building — including the app, when you're ready — lives here as a storyline rather than needing its own slot.",
   persona:"Nineteen, posting consistently, a few thousand followers, has no idea how brand deals actually work and is slightly embarrassed to ask. Watches to learn how the money moves — stays because you're the first person who's shown them.",
   shape:["Open on the problem, not the context — the email, the number, the rejection.","Rayyan and the team on camera as recurring cast, not extras. Recurring faces are what make people return.","Let it be funny. The bit where a deal falls through and you all sit in silence is better content than the deal.","Never end on advice. End on what happened."],
-  hooks:["A brand offered us [£] and I said no","This creator's email got them signed in a day","We nearly lost a deal because of one line","The part of this job nobody films"]},
+  lifestyle:"The money angle is your version of this. You sit on all three sides — what brands pay, what creators charge, what an agency keeps — and soon a salary next to it. Nobody your age can film that properly. These are the episodes here most likely to reach past your existing followers.",hooks:["A brand offered us [£] and I said no","This creator's email got them signed in a day","We nearly lost a deal because of one line","The part of this job nobody films"]},
 
- {id:2,key:"thoughts",name:"Twenties Notes",colour:"var(--s2)",day:"Tue",tagline:"Things I've noticed, not things I'm telling you.",
+ {id:2,key:"thoughts",name:"Twenties Notes",colour:"var(--s2)",day:"Tue",funnel:"mid",tagline:"Things I've noticed, not things I'm telling you.",
   pitch:"Sat down, talking, one idea per episode. Not advice — observation. The distinction matters more than it sounds: at 22 you haven't earned advice yet, and audiences can smell it. But you have absolutely earned the right to notice things out loud, and 'nobody prepares you for this' lands where 'here's how to fix your life' bounces. This is the series that makes people feel like they know you.",
   why:"Cheapest to make, longest shelf life, and the one that converts a viewer into a follower. Batch-film these — they're your buffer for bad weeks.",
   persona:"Anywhere from 17 to 25, watching at midnight, in a stage of life they haven't got words for yet. They follow because you said the thing they'd been half-thinking.",
   shape:["One idea per episode. If you're making two points, that's two episodes.","Start in the middle of the thought. No throat-clearing.","Say the uncertain version. 'I think' is more watchable than 'the truth is'.","Vary the location so a batch shoot doesn't look like a batch shoot."],
   hooks:["Nobody prepares you for being 22","I think we're all addicted to being busy","I was completely wrong about this","Everyone should travel alone once"]},
 
- {id:3,key:"sidequest",name:"Side Quest",colour:"var(--s3)",day:"Wed",tagline:"Everything I do that isn't work.",
+ {id:3,key:"sidequest",name:"Side Quest",colour:"var(--s3)",day:"Wed",funnel:"top",tagline:"Everything I do that isn't work.",
   pitch:"The signature series, and the widest one. Every episode is something you did for the sake of it — a two-hour drive for a specific sandwich, a country, a café you're in every week, a Tuesday that got out of hand, the best thing you ate and the worst. Travel lives here and so does your own postcode, because from the inside there's no real difference: it's all just you going somewhere and finding out whether it was worth it. That's why it survives the weeks you don't leave London.",
   why:"The one to bet on. The through-line in everything you've described isn't travel or business — it's that you keep saying yes to things and going places. This series is that, and nothing else needs to be.",
   persona:"Similar age, similar city, stuck in a routine, watching you do the things they keep meaning to do. Londoners save these and actually go; everyone else watches London the way people watch New York.",
   shape:["Be specific. Named place, actual price, real distance. Vagueness kills saves.","Answer 'was it worth it' honestly, including when it wasn't. The bad reviews build more trust than the good ones.","Repeat locations on purpose — a café that recurs becomes a set, and sets make a page feel like a show.","The friends are the show. Don't cut them for pacing.","Film the journey, not just the arrival."],
-  hooks:["Drove three hours for this","This is [£] and I think about it constantly","Someone invited me to something I didn't understand","I've walked past this a hundred times"]},
+  lifestyle:"This is where the lifestyle treatment does the most work. Film the fit before you leave, the bag, the coffee, the car. Strangers who would scroll past a story about your Wednesday will stop for a well-shot outfit walking out of a door — and once they have stopped, the story gets to happen. Same episode, wider reach.",hooks:["Drove three hours for this","This is [£] and I think about it constantly","Someone invited me to something I didn't understand","I've walked past this a hundred times"]},
 
- {id:4,key:"fitness",name:"Starting From Zero",colour:"var(--s4)",day:"Thu",tagline:"I'm a beginner at the gym. If I can do this, so can you.",
+ {id:4,key:"fitness",name:"Starting From Zero",colour:"var(--s4)",day:"Thu",funnel:"mid",tagline:"I'm a beginner at the gym. If I can do this, so can you.",
   pitch:"The most honest series on the slate. You're not fit, you're not pretending to be, and you're doing it on camera anyway — the first sessions where you don't know what you're doing, the weeks you don't go, learning to cook something that isn't a takeaway, finding food you'll actually eat twice. It's relatable because almost everyone watching has either not started or started and stopped, and almost nobody in this space is willing to be filmed at the beginning.",
   why:"Beginner is the strongest position available to you here, and it's the one nobody else can take once you've claimed it. But it only works if you hold it — the moment this becomes results and physique updates, it turns into every other gym account. The show is about starting and continuing, not about getting good.",
   persona:"Same age, has a gym membership they've used four times, or hasn't got one because walking in feels like the hard part. Watching to see someone equally clueless keep turning up.",
   shape:["Film the awkward bits. Not knowing how a machine works is the whole show.","The weeks you don't go are episodes. Skipping it and saying so is more relatable than a streak.","Keep it about food you'd actually eat, not numbers. No calorie targets or macro breakdowns on camera — it turns a relatable series into a prescriptive one.","Never post a physique update as an episode. That's the trapdoor out of this series.","Say what you got wrong before you say what worked."],
   hooks:["First time in a gym in years and I had no idea what I was doing","Didn't go for two weeks, here's why","Tried to cook something properly and it went badly","Week 6 and I still can't do this"]},
 
- {id:5,key:"grown",name:"Grown Up Things",colour:"var(--s5)",day:"Fri",tagline:"Work, groceries, and fixing things I'd have called my mum about.",
+ {id:5,key:"grown",name:"Grown Up Things",colour:"var(--s5)",day:"Fri",funnel:"bot",tagline:"Work, groceries, and fixing things I'd have called my mum about.",
   pitch:"The transformation series, and broader than the job. Work is part of it — the shifts, the commute, the first payslip, what it's actually like being newly qualified — but so is everything else that arrived with adulthood: the food shop, helping around the house, fixing something instead of leaving it, doing things for your mum, the admin nobody warns you about. People follow this for the arc, not the subject matter. Watching someone become something is the oldest reason to keep watching.",
   why:"Transformation is the most reliable retention mechanic there is. People who start at episode one stay for years. It also doesn't die if you leave pharmacy — the job is chapter one, not the premise.",
   persona:"Final-year students and recent graduates about to make the same jump, plus a chunk of people simply watching someone grow up in public.",
   shape:["Film the mundane. Commute, work bag, the food shop, the walk home. The texture is the point.","Be honest about the hard weeks — the arc needs a dip or nobody believes it.","Money moments are the highest-performing beats. First payslip, first big purchase, first month of proper bills.","Don't let it become pharmacy content. You're documenting a chapter, not switching niche.","The unglamorous stuff outperforms the impressive stuff here. Trust that."]  ,
-  hooks:["First week and I already got something wrong","What I actually earn","Nobody told me adult life was mostly admin","Fixed something myself instead of calling someone"]}
+  lifestyle:"The flat, the desk, the routine, what you carry to work. Home and setup content travels to complete strangers because it needs no context at all, and it is the most brand-monetisable thing on the slate. Layer it into episodes you are already filming rather than making it a separate series.",hooks:["First week and I already got something wrong","What I actually earn","Nobody told me adult life was mostly admin","Fixed something myself instead of calling someone"]}
 ];
 
 const IDEAS=[
- // ---- The Agency (40)
- ["agency","The brand deal we turned down, and the maths behind it","M"],
- ["agency","What actually happens between a brand emailing and a creator getting paid","M"],
- ["agency","Reviewing creator applications with the team, live","M"],
- ["agency","The email that got a creator signed in 24 hours","L"],
- ["agency","Why we said no to a creator we all liked","L"],
- ["agency","Setting rates: what a creator with 10k should actually charge","L"],
- ["agency","I run an agency and I'm about to start a full-time job — how that works","M"],
- ["agency","Working out of a caf&eacute; with the team for a full day","M"],
- ["agency","Pitching a brand we have no business pitching","M"],
- ["agency","Reading the worst pitch email we've ever received","L"],
- ["agency","Reading a campaign brief out loud and reacting to it","L"],
- ["agency","Hosting our first BluStu creator event","H"],
- ["agency","A deal fell through today — the full timeline","L"],
- ["agency","I built our internal system myself. Here's what it does","M"],
- ["agency","Mistakes in the first year that cost us actual money","L"],
- ["agency","What I look for in a media kit in the first ten seconds","L"],
- ["agency","The message I nearly sent during a negotiation","L"],
- ["agency","A day that was just emails, start to finish","M"],
- ["agency","Telling a creator their rates are too low","L"],
- ["agency","Asking my team what they'd change about how I run things","M"],
- ["agency","How we got our first client","L"],
- ["agency","The creator we lost and why","L"],
- ["agency","Running the agency from my phone on a full work day","M"],
- ["agency","Every tool the agency runs on and what it costs a month","M"],
- ["agency","Interviewing someone to join the team","M"],
- ["agency","The invoice nobody paid for two months","L"],
- ["agency","What a brand asks for that never makes it into the brief","M"],
- ["agency","We got ghosted by a brand — every email in order","L"],
- ["agency","Registering a company at 21: everything nobody tells you","L"],
- ["agency","One campaign, start to finish, in three minutes","H"],
- ["agency","Writing a rejection I didn't want to send","L"],
- ["agency","The best thing a creator has ever said to us","L"],
- ["agency","Hiring my friends was either the best or worst decision","M"],
- ["agency","What I'd do differently if I started the agency today","L"],
- ["agency","The deal I'm most proud of and nobody knows about","L"],
- ["agency","Rating our own campaigns from worst to best","M"],
- ["agency","A brand asked for something we said no to","L"],
- ["agency","What the agency looked like on day one vs now","M"],
- ["agency","Explaining what I actually do to someone who doesn't get it","L"],
- ["agency","The thing about this industry that annoys me most","L"],
-
- // ---- Twenties Notes (40)
- ["thoughts","Nobody prepares you for being 22","L"],
- ["thoughts","Why everyone should travel alone at least once","L"],
- ["thoughts","I think we're all addicted to being busy","L"],
- ["thoughts","The thing I was completely wrong about last year","L"],
- ["thoughts","Success looks nothing like I thought it would","L"],
- ["thoughts","Why I stopped making advice content","L"],
- ["thoughts","Friendships change in your twenties and nobody warns you","L"],
- ["thoughts","The problem with doing everything at once","L"],
- ["thoughts","I don't think you need to find your passion","L"],
- ["thoughts","What running a business taught me that uni didn't","L"],
- ["thoughts","Why I nearly quit, twice","L"],
- ["thoughts","Being ambitious is exhausting and nobody says it","L"],
- ["thoughts","The most useful thing anyone's ever said to me","L"],
- ["thoughts","I think comparison is the actual job hazard","L"],
- ["thoughts","On doing two things properly instead of one","L"],
- ["thoughts","What I'd tell myself at 18, without the clich&eacute;s","L"],
- ["thoughts","Money changed less than I expected","L"],
- ["thoughts","Why I don't think you should move to London for the vibes","L"],
- ["thoughts","The bit of growing up nobody films","L"],
- ["thoughts","I'm not sure I'd do a degree again","L"],
- ["thoughts","Working with your friends — the honest version","L"],
- ["thoughts","Nobody talks about how boring discipline is","L"],
- ["thoughts","I think most people quit one month too early","L"],
- ["thoughts","Why I don't romanticise the grind anymore","L"],
- ["thoughts","The advice I got that turned out to be wrong","L"],
- ["thoughts","On being the youngest person in the room","L"],
- ["thoughts","Everyone's waiting to feel ready","L"],
- ["thoughts","What I think about when a video flops","L"],
- ["thoughts","The version of my life I thought I'd have by now","L"],
- ["thoughts","Why I still live where I live","L"],
- ["thoughts","I think you can be behind and fine at the same time","L"],
- ["thoughts","The thing I'd protect if I lost everything else","L"],
- ["thoughts","On saying no to things you'd enjoy","L"],
- ["thoughts","Being liked vs being respected","L"],
- ["thoughts","What two years of posting actually taught me","L"],
- ["thoughts","Doing a degree and not using it the obvious way","L"],
- ["thoughts","I think everyone should have something that isn't their job","L"],
- ["thoughts","Why I don't tell people at work about the other thing","L"],
- ["thoughts","On being early to something and having to wait","L"],
- ["thoughts","The thing I'd go back and undo","L"],
-
- // ---- Side Quest (50)
- ["sidequest","Someone invited me to something and I didn't ask what it was","M"],
- ["sidequest","Drove [X] hours for one specific thing","H"],
- ["sidequest","24 hours in a city I've never been to","H"],
- ["sidequest","Spent all day finding London's best [thing]","M"],
- ["sidequest","Said yes to everything for 24 hours","M"],
- ["sidequest","&pound;50 in London, as much as I could physically do","M"],
- ["sidequest","&pound;0 in London, as much as I could physically do","M"],
- ["sidequest","The most expensive thing I've eaten, rated honestly","M"],
- ["sidequest","Took the team somewhere with no plan","H"],
- ["sidequest","Airport at 4am — the trip nobody knew about","H"],
- ["sidequest","Rating every caf&eacute; I worked from this week","M"],
- ["sidequest","A perfect Saturday, start to finish","M"],
- ["sidequest","Let the team plan my entire day","M"],
- ["sidequest","The place everyone recommends — is it actually worth it?","M"],
- ["sidequest","Travelling with the people I work with","H"],
- ["sidequest","Went somewhere purely for one photo","M"],
- ["sidequest","Did the thing I've been putting off for a year","M"],
- ["sidequest","Two cities in one day","H"],
- ["sidequest","The trip that went completely wrong","H"],
- ["sidequest","Ordinary Tuesday that turned into something","L"],
- ["sidequest","Booked a flight the same day I flew","H"],
- ["sidequest","Whoever answers first picks where we go","M"],
- ["sidequest","Doing the most touristy thing in my own city","M"],
- ["sidequest","The cheapest trip I could physically book","H"],
- ["sidequest","Went back somewhere I loved and it wasn't the same","M"],
- ["sidequest","A whole day with no phone","M"],
- ["sidequest","The event I nearly didn't go to","M"],
- ["sidequest","Everything I said yes to this month","M"],
- ["sidequest","Followed a stranger's recommendation exactly","M"],
- ["sidequest","The last-minute plan that beat the planned one","M"],
- ["sidequest","Somewhere four hours away everyone swears is worth it","H"],
- ["sidequest","A full day out for under a tenner","M"],
- ["sidequest","What I said no to this month, and whether I regret it","L"],
- ["sidequest","The caf&eacute; I've worked from every week for a year","L"],
- ["sidequest","Best thing I ate this week, and the worst","L"],
- ["sidequest","This costs [&pound;] and I think about it constantly","L"],
- ["sidequest","Rating every takeaway on one road","M"],
- ["sidequest","The place near me that everyone walks straight past","L"],
- ["sidequest","Cheapest genuinely good meal in London","M"],
- ["sidequest","Overrated vs underrated within ten minutes of me","M"],
- ["sidequest","Somewhere that was worth the queue","M"],
- ["sidequest","Somewhere that absolutely was not worth the queue","M"],
- ["sidequest","One day in London for someone visiting","L"],
- ["sidequest","Worked from three different caf&eacute;s in one day","M"],
- ["sidequest","Late night food, ranked","M"],
- ["sidequest","The spot I take literally everyone to","L"],
- ["sidequest","London at 6am","M"],
- ["sidequest","One street, every single place on it","H"],
- ["sidequest","Asked the staff what they'd actually order","M"],
- ["sidequest","The place I stopped going to and why","L"],
-
- // ---- Starting From Zero (40)
- ["fitness","First session in years and I had no idea what I was doing","M"],
- ["fitness","Week one, filmed honestly, no highlight reel","M"],
- ["fitness","I've been going a month and still avoid the free weights","M"],
- ["fitness","Didn't go for two weeks — what actually happened","L"],
- ["fitness","I've been doing this exercise wrong since I started","M"],
- ["fitness","Gym after a full shift vs gym on my day off","M"],
- ["fitness","Tried to cook something properly and it went badly","M"],
- ["fitness","The one meal I've learned to make and now eat constantly","L"],
- ["fitness","Six weeks in — what's changed and what hasn't","M"],
- ["fitness","The exercise I still can't do","L"],
- ["fitness","What's in my gym bag, embarrassingly","L"],
- ["fitness","Went at 6am every day for a week to see if it's better","H"],
- ["fitness","My whole routine, which is much simpler than you'd think","M"],
- ["fitness","Tried a class on my own with nobody to hide behind","M"],
- ["fitness","Did a proper food shop for the first time in my life","M"],
- ["fitness","Meal prepped for the week and it was grim","M"],
- ["fitness","The gym at 7am vs 7pm — completely different places","M"],
- ["fitness","Everything I ate on a good day and on a bad day","M"],
- ["fitness","What I thought the gym would be like vs what it is","L"],
- ["fitness","Went with someone who actually knows what they're doing","M"],
- ["fitness","Work destroyed my routine this week","M"],
- ["fitness","30 days of turning up — the honest version","H"],
- ["fitness","Why I quit the gym last time I tried this","L"],
- ["fitness","Cooked the same thing three times until it was good","M"],
- ["fitness","Walking in was the hardest part and here's what helped","L"],
- ["fitness","Trying to find food I'll actually eat twice","M"],
- ["fitness","Bought gym stuff I absolutely did not need","L"],
- ["fitness","Walked everywhere instead of the tube for a week","M"],
- ["fitness","The thing that finally made it stick","L"],
- ["fitness","My sleep is the worst part of all of this","L"],
- ["fitness","Doing this alongside a job and a business","M"],
- ["fitness","Found the quietest hour at my gym and it changed everything","M"],
- ["fitness","Three months of turning up — what it looks like","M"],
- ["fitness","The advice I ignored and shouldn't have","L"],
- ["fitness","Still a beginner six months in, and that's fine","L"],
- ["fitness","Got a form check and it was humbling","M"],
- ["fitness","Everything I got wrong in my first month","L"],
- ["fitness","Tried the gym my friend goes to and hated it","M"],
- ["fitness","One week of eating like I mean it","M"],
- ["fitness","The bit nobody films: turning up when you don't want to","L"],
-
- // ---- Grown Up Things (40)
- ["grown","First week and I already got something wrong","M"],
- ["grown","What's in my work bag","L"],
- ["grown","My commute, honestly","L"],
- ["grown","First payslip and where all of it went","M"],
- ["grown","A full week of a job and a business, hour by hour","H"],
- ["grown","Things nobody tells you about working properly","L"],
- ["grown","What I actually do all day","M"],
- ["grown","My lunch break","L"],
- ["grown","First thing I bought that I'd never have bought before","M"],
- ["grown","A full weekday, 6am to midnight","H"],
- ["grown","Why I'm not quitting the job for content","L"],
- ["grown","Adult admin nobody warns you about","L"],
- ["grown","The week I took on too much","M"],
- ["grown","Sunday before a full week","M"],
- ["grown","Explaining my second job to someone at work","L"],
- ["grown","Six months in — what's different","M"],
- ["grown","The part of the job I didn't expect to like","L"],
- ["grown","What I'd tell myself in final year","L"],
- ["grown","Everything I spent this month","M"],
- ["grown","The first time work followed me home","L"],
- ["grown","My week before the job vs my week now","M"],
- ["grown","Saving for something specific","L"],
- ["grown","First holiday I've paid for entirely myself","H"],
- ["grown","Got something wrong at work and had to own it","L"],
- ["grown","How much free time I actually have, counted","M"],
- ["grown","A day where nothing went right","M"],
- ["grown","Being qualified vs feeling qualified","L"],
- ["grown","The food shop, and how much it's gone up","M"],
- ["grown","Fixed something myself instead of calling someone","M"],
- ["grown","Jobs around the house nobody asked me to do","M"],
- ["grown","A day of errands for my mum","M"],
- ["grown","Sorted something boring I'd avoided for months","L"],
- ["grown","Working out what all my bills actually are","L"],
- ["grown","Cleaned the whole place properly for once","M"],
- ["grown","One year of working — the honest recap","H"],
- ["grown","Cooking for the family for once","M"],
- ["grown","The Sunday that's just admin and washing","L"],
- ["grown","Doing something my parents always did for me","M"],
- ["grown","What I thought adult life would cost vs what it costs","M"],
- ["grown","The most boring day I've filmed and why I'm posting it","L"]
+ // ---- The Agency (54)
+ ["agency","The email that got a creator signed in 24 hours","L","top"],
+ ["agency","Setting rates: what a creator with 10k should actually charge","L","top"],
+ ["agency","Reading the worst pitch email we've ever received","L","top"],
+ ["agency","What I look for in a media kit in the first ten seconds","L","top"],
+ ["agency","Telling a creator their rates are too low","L","top"],
+ ["agency","Every tool the agency runs on and what it costs a month","M","top"],
+ ["agency","What a brand asks for that never makes it into the brief","M","top"],
+ ["agency","The best thing a creator has ever said to us","L","top"],
+ ["agency","Hiring my friends was either the best or worst decision","M","top"],
+ ["agency","Rating our own campaigns from worst to best","M","top"],
+ ["agency","Explaining what I actually do to someone who doesn't get it","L","top"],
+ ["agency","What a creator with 10k, 100k and 1m actually gets paid","L","top"],
+ ["agency","Every brand deal we did this year, ranked by how much it paid","M","top"],
+ ["agency","The going rate for a TikTok post in 2026","L","top"],
+ ["agency","How much of a brand deal the creator actually keeps","L","top"],
+ ["agency","Ranking the brands we've worked with, worst to best","M","top"],
+ ["agency","Five things in a media kit that get you rejected instantly","L","top"],
+ ["agency","What it costs to run an agency for a month","M","top"],
+ ["agency","The brand deal we turned down, and the maths behind it","M","mid"],
+ ["agency","What actually happens between a brand emailing and a creator getting paid","M","mid"],
+ ["agency","Reviewing creator applications with the team, live","M","mid"],
+ ["agency","Why we said no to a creator we all liked","L","mid"],
+ ["agency","I run an agency and I'm about to start a full-time job — how that works","M","mid"],
+ ["agency","Working out of a caf&eacute; with the team for a full day","M","mid"],
+ ["agency","Pitching a brand we have no business pitching","M","mid"],
+ ["agency","Reading a campaign brief out loud and reacting to it","L","mid"],
+ ["agency","Hosting our first BluStu creator event","H","mid"],
+ ["agency","A deal fell through today — the full timeline","L","mid"],
+ ["agency","I built our internal system myself. Here's what it does","M","mid"],
+ ["agency","Mistakes in the first year that cost us actual money","L","mid"],
+ ["agency","The message I nearly sent during a negotiation","L","mid"],
+ ["agency","A day that was just emails, start to finish","M","mid"],
+ ["agency","Asking my team what they'd change about how I run things","M","mid"],
+ ["agency","How we got our first client","L","mid"],
+ ["agency","The creator we lost and why","L","mid"],
+ ["agency","Running the agency from my phone on a full work day","M","mid"],
+ ["agency","Interviewing someone to join the team","M","mid"],
+ ["agency","The invoice nobody paid for two months","L","mid"],
+ ["agency","We got ghosted by a brand — every email in order","L","mid"],
+ ["agency","Registering a company at 21: everything nobody tells you","L","mid"],
+ ["agency","One campaign, start to finish, in three minutes","H","mid"],
+ ["agency","Writing a rejection I didn't want to send","L","mid"],
+ ["agency","What I'd do differently if I started the agency today","L","mid"],
+ ["agency","A brand asked for something we said no to","L","mid"],
+ ["agency","The thing about this industry that annoys me most","L","mid"],
+ ["agency","The deal I'm most proud of and nobody knows about","L","bot"],
+ ["agency","What the agency looked like on day one vs now","M","bot"],
+ ["agency","A year of the agency, honestly","H","bot"],
+ ["agency","The email I got that made all of it worth it","L","bot"],
+ ["agency","Where I want the agency to be in three years","L","bot"],
+ ["agency","The deal that nearly broke us","M","bot"],
+ ["agency","What I was doing this time last year","M","bot"],
+ ["agency","Reading back my first ever pitch email","L","bot"],
+ ["agency","The one decision I'd undo","L","bot"],
+ // ---- Twenties Notes (53)
+ ["thoughts","Five things I'd tell anyone starting a business at 21","L","top"],
+ ["thoughts","Three habits that actually changed my year","L","top"],
+ ["thoughts","The four books that did something for me","L","top"],
+ ["thoughts","Everything I got wrong about money at 20","L","top"],
+ ["thoughts","Five things nobody tells you about your first year out of uni","L","top"],
+ ["thoughts","The best advice I've been given, ranked","L","top"],
+ ["thoughts","Three things I'd do differently if I started posting today","L","top"],
+ ["thoughts","What I'd spend my first £1000 on now vs at 18","L","top"],
+ ["thoughts","Five signs you're doing better than you think","L","top"],
+ ["thoughts","The three questions I ask myself when I'm stuck","L","top"],
+ ["thoughts","Nobody prepares you for being 22","L","mid"],
+ ["thoughts","Why everyone should travel alone at least once","L","mid"],
+ ["thoughts","I think we're all addicted to being busy","L","mid"],
+ ["thoughts","Success looks nothing like I thought it would","L","mid"],
+ ["thoughts","Why I stopped making advice content","L","mid"],
+ ["thoughts","Friendships change in your twenties and nobody warns you","L","mid"],
+ ["thoughts","The problem with doing everything at once","L","mid"],
+ ["thoughts","I don't think you need to find your passion","L","mid"],
+ ["thoughts","What running a business taught me that uni didn't","L","mid"],
+ ["thoughts","Being ambitious is exhausting and nobody says it","L","mid"],
+ ["thoughts","The most useful thing anyone's ever said to me","L","mid"],
+ ["thoughts","I think comparison is the actual job hazard","L","mid"],
+ ["thoughts","On doing two things properly instead of one","L","mid"],
+ ["thoughts","What I'd tell myself at 18, without the clich&eacute;s","L","mid"],
+ ["thoughts","Money changed less than I expected","L","mid"],
+ ["thoughts","Why I don't think you should move to London for the vibes","L","mid"],
+ ["thoughts","The bit of growing up nobody films","L","mid"],
+ ["thoughts","I'm not sure I'd do a degree again","L","mid"],
+ ["thoughts","Working with your friends — the honest version","L","mid"],
+ ["thoughts","Nobody talks about how boring discipline is","L","mid"],
+ ["thoughts","I think most people quit one month too early","L","mid"],
+ ["thoughts","Why I don't romanticise the grind anymore","L","mid"],
+ ["thoughts","The advice I got that turned out to be wrong","L","mid"],
+ ["thoughts","On being the youngest person in the room","L","mid"],
+ ["thoughts","Everyone's waiting to feel ready","L","mid"],
+ ["thoughts","I think you can be behind and fine at the same time","L","mid"],
+ ["thoughts","On saying no to things you'd enjoy","L","mid"],
+ ["thoughts","Being liked vs being respected","L","mid"],
+ ["thoughts","What two years of posting actually taught me","L","mid"],
+ ["thoughts","Doing a degree and not using it the obvious way","L","mid"],
+ ["thoughts","I think everyone should have something that isn't their job","L","mid"],
+ ["thoughts","Why I don't tell people at work about the other thing","L","mid"],
+ ["thoughts","On being early to something and having to wait","L","mid"],
+ ["thoughts","The thing I was completely wrong about last year","L","bot"],
+ ["thoughts","Why I nearly quit, twice","L","bot"],
+ ["thoughts","What I think about when a video flops","L","bot"],
+ ["thoughts","The version of my life I thought I'd have by now","L","bot"],
+ ["thoughts","Why I still live where I live","L","bot"],
+ ["thoughts","The thing I'd protect if I lost everything else","L","bot"],
+ ["thoughts","The thing I'd go back and undo","L","bot"],
+ ["thoughts","Answering the thing loads of you keep asking me","L","bot"],
+ ["thoughts","Where my head's at right now","L","bot"],
+ ["thoughts","Reading your comments and being honest about them","M","bot"],
+ // ---- Side Quest (63)
+ ["sidequest","Someone invited me to something and I didn't ask what it was","M","top"],
+ ["sidequest","Drove [X] hours for one specific thing","H","top"],
+ ["sidequest","24 hours in a city I've never been to","H","top"],
+ ["sidequest","Spent all day finding London's best [thing]","M","top"],
+ ["sidequest","Said yes to everything for 24 hours","M","top"],
+ ["sidequest","&pound;50 in London, as much as I could physically do","M","top"],
+ ["sidequest","&pound;0 in London, as much as I could physically do","M","top"],
+ ["sidequest","The most expensive thing I've eaten, rated honestly","M","top"],
+ ["sidequest","Took the team somewhere with no plan","H","top"],
+ ["sidequest","Airport at 4am — the trip nobody knew about","H","top"],
+ ["sidequest","Rating every caf&eacute; I worked from this week","M","top"],
+ ["sidequest","A perfect Saturday, start to finish","M","top"],
+ ["sidequest","Let the team plan my entire day","M","top"],
+ ["sidequest","The place everyone recommends — is it actually worth it?","M","top"],
+ ["sidequest","Travelling with the people I work with","H","top"],
+ ["sidequest","Went somewhere purely for one photo","M","top"],
+ ["sidequest","Two cities in one day","H","top"],
+ ["sidequest","The trip that went completely wrong","H","top"],
+ ["sidequest","Ordinary Tuesday that turned into something","L","top"],
+ ["sidequest","Booked a flight the same day I flew","H","top"],
+ ["sidequest","Whoever answers first picks where we go","M","top"],
+ ["sidequest","Doing the most touristy thing in my own city","M","top"],
+ ["sidequest","The cheapest trip I could physically book","H","top"],
+ ["sidequest","Went back somewhere I loved and it wasn't the same","M","top"],
+ ["sidequest","A whole day with no phone","M","top"],
+ ["sidequest","The event I nearly didn't go to","M","top"],
+ ["sidequest","Everything I said yes to this month","M","top"],
+ ["sidequest","Followed a stranger's recommendation exactly","M","top"],
+ ["sidequest","The last-minute plan that beat the planned one","M","top"],
+ ["sidequest","Somewhere four hours away everyone swears is worth it","H","top"],
+ ["sidequest","A full day out for under a tenner","M","top"],
+ ["sidequest","What I said no to this month, and whether I regret it","L","top"],
+ ["sidequest","The caf&eacute; I've worked from every week for a year","L","top"],
+ ["sidequest","Best thing I ate this week, and the worst","L","top"],
+ ["sidequest","This costs [&pound;] and I think about it constantly","L","top"],
+ ["sidequest","Rating every takeaway on one road","M","top"],
+ ["sidequest","The place near me that everyone walks straight past","L","top"],
+ ["sidequest","Cheapest genuinely good meal in London","M","top"],
+ ["sidequest","Overrated vs underrated within ten minutes of me","M","top"],
+ ["sidequest","Somewhere that was worth the queue","M","top"],
+ ["sidequest","Somewhere that absolutely was not worth the queue","M","top"],
+ ["sidequest","One day in London for someone visiting","L","top"],
+ ["sidequest","Worked from three different caf&eacute;s in one day","M","top"],
+ ["sidequest","Late night food, ranked","M","top"],
+ ["sidequest","The spot I take literally everyone to","L","top"],
+ ["sidequest","London at 6am","M","top"],
+ ["sidequest","One street, every single place on it","H","top"],
+ ["sidequest","Asked the staff what they'd actually order","M","top"],
+ ["sidequest","The place I stopped going to and why","L","top"],
+ ["sidequest","Why I keep going back to the same place","L","mid"],
+ ["sidequest","I planned this trip badly and here's what I learned","M","mid"],
+ ["sidequest","The trip that made me realise something","M","mid"],
+ ["sidequest","Travelling with people you work with is complicated","L","mid"],
+ ["sidequest","What I got wrong about travelling in my twenties","L","mid"],
+ ["sidequest","Why I stopped trying to see everything","L","mid"],
+ ["sidequest","The place I built up in my head that let me down","M","mid"],
+ ["sidequest","I don't actually enjoy this as much as I pretend to","L","mid"],
+ ["sidequest","What a year of saying yes actually cost me","M","mid"],
+ ["sidequest","Doing things alone vs doing them with everyone","L","mid"],
+ ["sidequest","Did the thing I've been putting off for a year","M","bot"],
+ ["sidequest","Every place I went this year","H","bot"],
+ ["sidequest","The trip you all voted for","H","bot"],
+ ["sidequest","Going back to the first place I filmed","M","bot"],
+ // ---- Starting From Zero (53)
+ ["fitness","My sleep is the worst part of all of this","L","top"],
+ ["fitness","Five things I wish I'd known before my first gym session","L","top"],
+ ["fitness","Everything a beginner actually needs, and what to skip","L","top"],
+ ["fitness","What a month of the gym costs me","L","top"],
+ ["fitness","Three meals I've learned to make that don't take long","M","top"],
+ ["fitness","Ranking every protein thing I've tried","M","top"],
+ ["fitness","The four exercises I actually do","M","top"],
+ ["fitness","What I eat in a week on a normal budget","M","top"],
+ ["fitness","Five beginner mistakes I made in month one","L","top"],
+ ["fitness","Cheapest decent gym near me, compared","M","top"],
+ ["fitness","First session in years and I had no idea what I was doing","M","mid"],
+ ["fitness","Week one, filmed honestly, no highlight reel","M","mid"],
+ ["fitness","I've been going a month and still avoid the free weights","M","mid"],
+ ["fitness","Didn't go for two weeks — what actually happened","L","mid"],
+ ["fitness","I've been doing this exercise wrong since I started","M","mid"],
+ ["fitness","Gym after a full shift vs gym on my day off","M","mid"],
+ ["fitness","Tried to cook something properly and it went badly","M","mid"],
+ ["fitness","The one meal I've learned to make and now eat constantly","L","mid"],
+ ["fitness","Six weeks in — what's changed and what hasn't","M","mid"],
+ ["fitness","The exercise I still can't do","L","mid"],
+ ["fitness","What's in my gym bag, embarrassingly","L","mid"],
+ ["fitness","Went at 6am every day for a week to see if it's better","H","mid"],
+ ["fitness","My whole routine, which is much simpler than you'd think","M","mid"],
+ ["fitness","Tried a class on my own with nobody to hide behind","M","mid"],
+ ["fitness","Did a proper food shop for the first time in my life","M","mid"],
+ ["fitness","Meal prepped for the week and it was grim","M","mid"],
+ ["fitness","The gym at 7am vs 7pm — completely different places","M","mid"],
+ ["fitness","Everything I ate on a good day and on a bad day","M","mid"],
+ ["fitness","What I thought the gym would be like vs what it is","L","mid"],
+ ["fitness","Went with someone who actually knows what they're doing","M","mid"],
+ ["fitness","Work destroyed my routine this week","M","mid"],
+ ["fitness","30 days of turning up — the honest version","H","mid"],
+ ["fitness","Why I quit the gym last time I tried this","L","mid"],
+ ["fitness","Cooked the same thing three times until it was good","M","mid"],
+ ["fitness","Walking in was the hardest part and here's what helped","L","mid"],
+ ["fitness","Trying to find food I'll actually eat twice","M","mid"],
+ ["fitness","Bought gym stuff I absolutely did not need","L","mid"],
+ ["fitness","Walked everywhere instead of the tube for a week","M","mid"],
+ ["fitness","The thing that finally made it stick","L","mid"],
+ ["fitness","Doing this alongside a job and a business","M","mid"],
+ ["fitness","Found the quietest hour at my gym and it changed everything","M","mid"],
+ ["fitness","The advice I ignored and shouldn't have","L","mid"],
+ ["fitness","Got a form check and it was humbling","M","mid"],
+ ["fitness","Everything I got wrong in my first month","L","mid"],
+ ["fitness","Tried the gym my friend goes to and hated it","M","mid"],
+ ["fitness","One week of eating like I mean it","M","mid"],
+ ["fitness","The bit nobody films: turning up when you don't want to","L","mid"],
+ ["fitness","Three months of turning up — what it looks like","M","bot"],
+ ["fitness","Still a beginner six months in, and that's fine","L","bot"],
+ ["fitness","Six months of this, the honest version","M","bot"],
+ ["fitness","Watching my week one video back","M","bot"],
+ ["fitness","The promise I made at the start and whether I kept it","L","bot"],
+ ["fitness","A year from zero","H","bot"],
+ // ---- Grown Up Things (56)
+ ["grown","What I actually do all day","M","top"],
+ ["grown","How much free time I actually have, counted","M","top"],
+ ["grown","The food shop, and how much it's gone up","M","top"],
+ ["grown","What I thought adult life would cost vs what it costs","M","top"],
+ ["grown","Everything my first month of adult life cost","M","top"],
+ ["grown","Five bits of admin nobody teaches you","L","top"],
+ ["grown","What a full-time job actually pays after everything","M","top"],
+ ["grown","Five things I bought that were genuinely worth it","M","top"],
+ ["grown","My whole week, hour by hour, in numbers","H","top"],
+ ["grown","What a food shop costs now vs a year ago","M","top"],
+ ["grown","The thing about working full time nobody warned me about","L","mid"],
+ ["grown","I'm not sure I'm doing this right","L","mid"],
+ ["grown","Why I still live at home and I'm fine with it","L","mid"],
+ ["grown","The bit of adult life I'm worst at","L","mid"],
+ ["grown","Getting something wrong at work and what it taught me","L","mid"],
+ ["grown","I thought I'd feel different by now","L","mid"],
+ ["grown","Balancing two things and doing neither perfectly","L","mid"],
+ ["grown","What I actually worry about","L","mid"],
+ ["grown","Money is stranger than I expected","L","mid"],
+ ["grown","Why I'm not in a rush anymore","L","mid"],
+ ["grown","First week and I already got something wrong","M","bot"],
+ ["grown","What's in my work bag","L","bot"],
+ ["grown","My commute, honestly","L","bot"],
+ ["grown","First payslip and where all of it went","M","bot"],
+ ["grown","A full week of a job and a business, hour by hour","H","bot"],
+ ["grown","Things nobody tells you about working properly","L","bot"],
+ ["grown","My lunch break","L","bot"],
+ ["grown","First thing I bought that I'd never have bought before","M","bot"],
+ ["grown","A full weekday, 6am to midnight","H","bot"],
+ ["grown","Why I'm not quitting the job for content","L","bot"],
+ ["grown","Adult admin nobody warns you about","L","bot"],
+ ["grown","The week I took on too much","M","bot"],
+ ["grown","Sunday before a full week","M","bot"],
+ ["grown","Explaining my second job to someone at work","L","bot"],
+ ["grown","Six months in — what's different","M","bot"],
+ ["grown","The part of the job I didn't expect to like","L","bot"],
+ ["grown","What I'd tell myself in final year","L","bot"],
+ ["grown","Everything I spent this month","M","bot"],
+ ["grown","The first time work followed me home","L","bot"],
+ ["grown","My week before the job vs my week now","M","bot"],
+ ["grown","Saving for something specific","L","bot"],
+ ["grown","First holiday I've paid for entirely myself","H","bot"],
+ ["grown","Got something wrong at work and had to own it","L","bot"],
+ ["grown","A day where nothing went right","M","bot"],
+ ["grown","Being qualified vs feeling qualified","L","bot"],
+ ["grown","Fixed something myself instead of calling someone","M","bot"],
+ ["grown","Jobs around the house nobody asked me to do","M","bot"],
+ ["grown","A day of errands for my mum","M","bot"],
+ ["grown","Sorted something boring I'd avoided for months","L","bot"],
+ ["grown","Working out what all my bills actually are","L","bot"],
+ ["grown","Cleaned the whole place properly for once","M","bot"],
+ ["grown","One year of working — the honest recap","H","bot"],
+ ["grown","Cooking for the family for once","M","bot"],
+ ["grown","The Sunday that's just admin and washing","L","bot"],
+ ["grown","Doing something my parents always did for me","M","bot"],
+ ["grown","The most boring day I've filmed and why I'm posting it","L","bot"]
 ];
 
 const SHOTS=[
@@ -525,14 +641,14 @@ SERIES.forEach(s=>{
     <div class="sbody">
       <h3 style="color:var(--ink)">${s.name}</h3>
       <p class="tagline">${s.tagline}</p>
-      <div class="chips"><span class="chip day">${s.day}</span><span class="chip">Weekly</span><span class="chip">Episode numbered</span></div>
+      <div class="chips"><span class="chip day">${s.day}</span><span class="fn fn-${s.funnel}">${FNAME[s.funnel]}</span><span class="chip">Weekly</span></div>
     </div><div class="caret">&rsaquo;</div></div>
     <div class="detail">
       <h4>The show</h4><p>${s.pitch}</p>
       <h4>Why it's on the slate</h4><p>${s.why}</p>
       <h4>Who's watching</h4><div class="persona"><p>${s.persona}</p></div>
       <h4>How an episode is built</h4><ul>${s.shape.map(x=>`<li>${x}</li>`).join('')}</ul>
-      <h4>Opening lines that work</h4><ul>${s.hooks.map(x=>`<li>${x}</li>`).join('')}</ul>
+      ${s.lifestyle?`<h4>Lifestyle layer</h4><p>${s.lifestyle}</p>`:''}<h4>Opening lines that work</h4><ul>${s.hooks.map(x=>`<li>${x}</li>`).join('')}</ul>
     </div>`;
   const t=()=>{const o=d.classList.toggle('open');d.setAttribute('aria-expanded',o)};
   d.addEventListener('click',e=>{if(!e.target.closest('.detail'))t()});
@@ -555,23 +671,41 @@ WEEK.forEach(([day,title,note,key])=>{
   wl.appendChild(el);
 });
 
-let active='all';
+let active='all';let activeF='all';
 const fw=document.getElementById('filters'),il=document.getElementById('ideaList'),ic=document.getElementById('ideaCount');
 [['all','Everything'],...SERIES.map(s=>[s.key,s.name])].forEach(([k,label])=>{
   const b=document.createElement('button');b.textContent=label;b.setAttribute('aria-pressed',k===active);
   b.onclick=()=>{active=k;[...fw.children].forEach(x=>x.setAttribute('aria-pressed','false'));b.setAttribute('aria-pressed','true');render()};
   fw.appendChild(b);
 });
+const fw2=document.getElementById('filters2');
+[['all','All stages'],['top','Reach'],['mid','Trust'],['bot','Loyalty']].forEach(([k,label])=>{
+  const b=document.createElement('button');b.textContent=label;b.setAttribute('aria-pressed',k===activeF);
+  if(k!=='all'){b.classList.add('fbtn-'+k)}
+  b.onclick=()=>{activeF=k;[...fw2.children].forEach(x=>x.setAttribute('aria-pressed','false'));b.setAttribute('aria-pressed','true');render()};
+  fw2.appendChild(b);
+});
 const EFF={L:'Low effort',M:'Medium effort',H:'High effort'};
 function render(){
-  const list=IDEAS.filter(i=>active==='all'||i[0]===active);
+  const list=IDEAS.filter(i=>(active==='all'||i[0]===active)&&(activeF==='all'||i[3]===activeF));
   ic.textContent=`${list.length} episode${list.length===1?'':'s'} ready to film`;
-  il.innerHTML=list.map(([k,text,e])=>{
+  il.innerHTML=list.map(([k,text,e,f])=>{
     const s=SERIES.find(x=>x.key===k);
-    return `<div class="idea" style="color:${s.colour}"><div class="idot"></div><div class="itext" style="color:var(--ink)">${text}<div class="imeta">${s.name} &middot; ${EFF[e]}</div></div></div>`;
+    return `<div class="idea" style="color:${s.colour}"><div class="idot"></div><div class="itext" style="color:var(--ink)">${text}<div class="imeta"><span class="fn fn-${f}">${FNAME[f]}</span> &nbsp;${s.name} &middot; ${EFF[e]}</div></div></div>`;
   }).join('');
 }
 render();
+
+// balance meter
+const bal=document.getElementById('balance');
+if(bal){
+  const tot=IDEAS.length;
+  ['top','mid','bot'].forEach(f=>{
+    const n=IDEAS.filter(i=>i[3]===f).length,pc=Math.round(n/tot*100);
+    const col=f==='top'?'#E4572E':f==='mid'?'#1F4E5F':'#3F6B4E';
+    bal.innerHTML+=`<div class="brow"><span class="bname">${FNAME[f]}</span><span class="btrack"><span class="bfill" style="width:${pc}%;background:${col}"></span></span><span class="bnum">${pc}%</span></div>`;
+  });
+}
 
 const tl=['5 series running','1 episode each per week','Sunday is a batch day','Episode number in the caption','Open mid-scene','The friends are the show','Named place, named price','Five shots, every day','Film first, judge later'];
 document.getElementById('tick').innerHTML=[...tl,...tl].map(t=>`<span class="mono"><b>&#9679;</b> ${t}</span>`).join('');
