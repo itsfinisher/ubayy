@@ -157,8 +157,8 @@ footer{padding:34px 0 20px;border-top:2px solid var(--ink);margin-top:30px;color
 
   <div class="card">
     <h3>Built around your actual hours</h3>
-    <p>Your week isn't even, so the plan isn't either. Tuesday you're home by half two — that's the day the filming that needs effort happens. Wednesday and Thursday you work till seven, so those are post-and-go days with a bit of free morning for the gym. Monday and Friday you're home by early evening to cut and post.</p>
-    <p class="note">The rule holds: one episode of each series a week. What changes is that filming clusters into Tuesday afternoon and the two free mornings, not spread evenly across days that don't exist.</p>
+    <p>Everything films in three windows: <strong>Tuesday afternoon</strong>, <strong>Friday as-it-happens</strong>, and <strong>the weekend</strong>. Wednesday and Thursday you're out till seven, so nothing gets filmed then — they're post-and-go. Monday's a cut-and-post evening.</p>
+    <p class="note">You post five series a week but you only really film on three days, none of them before work. That's the whole trick to making this survive a full-time job: capture in blocks, post from the backlog.</p>
   </div>
 
 
@@ -632,13 +632,13 @@ const SHOTS=[
 ];
 
 const WEEK=[
- ["Mon","The Agency","Post","9–5 today. Home by 5, evening free — cut and post the agency episode you filmed with the team.","agency"],
- ["Tue","Twenties Notes","Post + big shoot","Off at 2. This is your best window all week: post Notes, then film the heavy stuff — Side Quest, team footage, anything that needs leaving the house.","thoughts"],
- ["Wed","Starting From Zero","Post","11–7, but the morning's yours. Gym before work films this episode itself. Home late — don't plan to film tonight.","fitness"],
- ["Thu","Side Quest","Post","11–7 again. Post the Side Quest you shot Tuesday. Free morning is a good slot for a quick Notes if you're ahead.","sidequest"],
- ["Fri","Grown Up Things","Post","10–6. Film the workday as it happens — commute, the job, the walk home — then cut it tonight.","grown"],
- ["Sat","Flex","Overflow","Whatever the weekend turns into, plus a second Reach video if you can. This is the slot that grows the account.",null],
- ["Sun","Batch day","Film only","Stockpile 3–4 Notes episodes and shoot next week's team footage. Post nothing.",null]
+ ["Mon","The Agency","Post","9–5. Home by 5, evening free — cut and post the agency episode you shot at the weekend.","agency"],
+ ["Tue","Twenties Notes","Post + main shoot","Off at 2. The one real filming window in your week: post Notes, then shoot Side Quest, team footage, and anything that means leaving the house.","thoughts"],
+ ["Wed","Starting From Zero","Post only","11–7. Long day, no filming. Post the gym/food episode you shot at the weekend or Tuesday.","fitness"],
+ ["Thu","Side Quest","Post only","11–7. Long day, no filming. Post the Side Quest from Tuesday's shoot.","sidequest"],
+ ["Fri","Grown Up Things","Post + film the day","10–6. The one weekday you film in real time — the commute, the job, the walk home — because it films itself. Cut it tonight.","grown"],
+ ["Sat","Flex","Film","Weekend is your other shoot block. Whatever you're doing is Side Quest or Grown Up Things. Grab a second Reach video if you can.",null],
+ ["Sun","Batch day","Film only","The workhorse. Stockpile 3–4 Notes, shoot the week's agency footage with the team, film a gym or food episode. Post nothing.",null]
 ];
 
 const sl=document.getElementById('seriesList');
