@@ -81,7 +81,8 @@ section[role=tabpanel].on{display:block}
 .dlabel{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;min-width:44px;padding-top:3px;color:var(--muted)}
 .dbody{flex:1}
 .dbody strong{font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:16.5px;display:block}
-.dbody span{font-size:14.5px;color:var(--muted)}
+.dbody>span{font-size:14.5px;color:var(--muted)}
+.dtag{font-family:'DM Mono',monospace;font-size:9.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--signal);display:block;margin:1px 0 4px}
 .bar{width:4px;align-self:stretch;border-radius:2px;background:currentColor;min-height:38px}
 
 .filters{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:18px}
@@ -153,6 +154,14 @@ footer{padding:34px 0 20px;border-top:2px solid var(--ink);margin-top:30px;color
   <div class="shead"><h2>The Week</h2><div class="rule"></div></div>
   <p class="lede">One episode of each series per week, slotted against your actual job. Five anchors, two flex days.</p>
   <div class="week" id="weekList"></div>
+
+  <div class="card">
+    <h3>Built around your actual hours</h3>
+    <p>Your week isn't even, so the plan isn't either. Tuesday you're home by half two — that's the day the filming that needs effort happens. Wednesday and Thursday you work till seven, so those are post-and-go days with a bit of free morning for the gym. Monday and Friday you're home by early evening to cut and post.</p>
+    <p class="note">The rule holds: one episode of each series a week. What changes is that filming clusters into Tuesday afternoon and the two free mornings, not spread evenly across days that don't exist.</p>
+  </div>
+
+
 
   <div class="card" style="margin-top:24px">
     <h3>The rule that makes it survivable</h3>
@@ -623,13 +632,13 @@ const SHOTS=[
 ];
 
 const WEEK=[
- ["Mon","The Agency","Post the week's agency episode. Film Tuesday's Notes if you're home early.","agency"],
- ["Tue","Twenties Notes","From the Sunday batch. Zero filming pressure on a work day.","thoughts"],
- ["Wed","Side Quest","Your weekday off — this is the main shoot day. Film Wednesday and Saturday's material at once.","sidequest"],
- ["Thu","Starting From Zero","Filmed at the gym after work, or cooking that evening. Films itself while you're doing it anyway.","fitness"],
- ["Fri","Grown Up Things","The work week you just lived, plus whatever needed doing at home. Film as it happens, cut it Friday.","grown"],
- ["Sat","Flex","Overflow from Wednesday, or whatever the weekend actually turns into.",null],
- ["Sun","Batch day","Film 3–4 Notes episodes. Shoot next week's agency material with the team. Post nothing.",null]
+ ["Mon","The Agency","Post","9–5 today. Home by 5, evening free — cut and post the agency episode you filmed with the team.","agency"],
+ ["Tue","Twenties Notes","Post + big shoot","Off at 2. This is your best window all week: post Notes, then film the heavy stuff — Side Quest, team footage, anything that needs leaving the house.","thoughts"],
+ ["Wed","Starting From Zero","Post","11–7, but the morning's yours. Gym before work films this episode itself. Home late — don't plan to film tonight.","fitness"],
+ ["Thu","Side Quest","Post","11–7 again. Post the Side Quest you shot Tuesday. Free morning is a good slot for a quick Notes if you're ahead.","sidequest"],
+ ["Fri","Grown Up Things","Post","10–6. Film the workday as it happens — commute, the job, the walk home — then cut it tonight.","grown"],
+ ["Sat","Flex","Overflow","Whatever the weekend turns into, plus a second Reach video if you can. This is the slot that grows the account.",null],
+ ["Sun","Batch day","Film only","Stockpile 3–4 Notes episodes and shoot next week's team footage. Post nothing.",null]
 ];
 
 const sl=document.getElementById('seriesList');
@@ -664,10 +673,10 @@ SHOTS.forEach(([t,sub,body],i)=>{
 });
 
 const wl=document.getElementById('weekList');
-WEEK.forEach(([day,title,note,key])=>{
+WEEK.forEach(([day,title,tag,note,key])=>{
   const c=key?SERIES.find(s=>s.key===key).colour:'var(--muted)';
   const el=document.createElement('div');el.className='day';el.style.color=c;
-  el.innerHTML=`<div class="bar"></div><div class="dlabel">${day}</div><div class="dbody"><strong style="color:var(--ink)">${title}</strong><span>${note}</span></div>`;
+  el.innerHTML=`<div class="bar"></div><div class="dlabel">${day}</div><div class="dbody"><strong style="color:var(--ink)">${title}</strong><span class="dtag">${tag}</span><span>${note}</span></div>`;
   wl.appendChild(el);
 });
 
