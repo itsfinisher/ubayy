@@ -124,6 +124,25 @@ section[role=tabpanel].on{display:block}
 .btrack{flex:1;height:9px;background:var(--paper-2);border-radius:2px;overflow:hidden}
 .bfill{height:100%;border-radius:2px}
 .bnum{font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);min-width:34px;text-align:right}
+.phase{border-left:3px solid var(--signal);background:var(--paper-2);padding:14px 16px;margin-bottom:20px}
+.phase strong{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;display:block;font-size:16px;margin-bottom:3px}
+.phase p{margin:0;font-size:14.5px;color:var(--muted)}
+.month{border-top:1px solid var(--ink);padding:16px 0}
+.month:last-of-type{border-bottom:1px solid var(--ink)}
+.mhead{display:flex;align-items:baseline;gap:10px;cursor:pointer}
+.mname{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:20px;letter-spacing:-.02em}
+.mnow{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;background:var(--signal);color:var(--paper);padding:2px 7px;border-radius:2px}
+.mfocus{flex:1;text-align:right;font-size:13.5px;color:var(--muted);font-style:italic}
+.mbody{display:none;padding:14px 0 4px}
+.month.open .mbody{display:block}
+.mbody p{margin:0 0 9px;font-size:15px}
+.mbody p:last-child{margin-bottom:0}
+.mcaret{font-family:'DM Mono',monospace;color:var(--muted);transition:transform .25s}
+.month.open .mcaret{transform:rotate(90deg)}
+.floatbox{border:1px dashed var(--muted);border-radius:3px;padding:15px;margin-bottom:14px}
+.floatbox h4{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:16px;margin:0 0 4px}
+.floatbox .tag{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.09em;text-transform:uppercase;color:var(--signal);display:block;margin-bottom:8px}
+.floatbox p{margin:0;font-size:14.5px;color:var(--muted)}
 .shot{display:flex;gap:16px;padding:18px 0;border-bottom:1px solid var(--line);align-items:flex-start}
 .shot:first-child{border-top:1px solid var(--ink)}
 .shotnum{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:30px;line-height:1;color:var(--signal);min-width:38px;letter-spacing:-.03em}
@@ -180,6 +199,28 @@ footer{padding:34px 0 20px;border-top:2px solid var(--ink);margin-top:30px;color
     <p>A single creator event isn't one video. It's a get-ready, a why-I-almost-didn't-go, the event itself, the one thing you learned, the funny bit that had nothing to do with work, and the recap. Different series, different weeks, one afternoon of filming.</p>
     <p class="note">Film wide, film close, film yourself, film the room, film the thing you weren't supposed to notice.</p>
   </div>
+</section>
+
+<section role="tabpanel" id="p-year">
+  <div class="shead"><h2>The Year</h2><div class="rule"></div></div>
+  <p class="lede">From today to the end of 2026. Not a rigid grid twenty weeks out — a phase you're in now, the one pinch point that matters, and a focus per month.</p>
+
+  <div class="phase">
+    <strong>Where you are — week of 10 Aug</strong>
+    <p>Week two of the job. Still posting travel content, roughly one week of it left. You've filmed Side Quest and nothing else yet.</p>
+  </div>
+
+  <div class="card" style="border-color:var(--signal)">
+    <h3>The one deadline that's real</h3>
+    <p>Your travel buffer runs out around <strong>17 Aug</strong>. Whatever you film this week — 10 to 16 Aug — is what goes up the week after. This is the only hard handover in the whole year: after it, you're posting from footage you shot the same week, not from the holiday backlog.</p>
+    <p class="note">Miss this week's filming and there's a gap the week of the 18th with nothing to fill it. This is the week the system either starts or stalls.</p>
+  </div>
+
+  <div id="monthList"></div>
+
+  <div class="shead" style="margin-top:34px"><h2>Waiting in the wings</h2><div class="rule"></div></div>
+  <p class="lede">Not scheduled — they drop into the calendar when they happen. When one lands, it becomes a run of episodes, not a single video.</p>
+  <div id="floatList"></div>
 </section>
 
 <section role="tabpanel" id="p-ideas">
@@ -298,6 +339,7 @@ footer{padding:34px 0 20px;border-top:2px solid var(--ink);margin-top:30px;color
 <nav role="tablist">
   <button role="tab" aria-selected="true" data-p="p-series">Slate</button>
   <button role="tab" aria-selected="false" data-p="p-week">Week</button>
+  <button role="tab" aria-selected="false" data-p="p-year">Year</button>
   <button role="tab" aria-selected="false" data-p="p-ideas">Bank</button>
   <button role="tab" aria-selected="false" data-p="p-shots">Shots</button>
   <button role="tab" aria-selected="false" data-p="p-system">Read</button>
@@ -631,6 +673,30 @@ const IDEAS=[
  ["grown","The most boring day I've filmed and why I'm posting it","L","bot"]
 ];
 
+const MONTHS=[
+ ["Aug","2026",true,"Launch all five",
+  "The transition month. Travel content ends mid-month; the five series take over. Expect it to feel rough — you're learning the job and the filming rhythm at the same time. Don't judge the numbers this month, just get all five series posting at least once.",
+  "First real episode of each series live by end of month. Side Quest keeps carrying reach while the others find their feet."],
+ ["Sep","2026",false,"Find the rhythm",
+  "First full month of the real system. This is where you learn whether Tuesday-shoot / weekend-batch actually holds against the job. Adjust the week here if it doesn't — better to fix it now than fight it for three months.",
+  "Five a week, consistently. Start weighting Trust episodes — the follower conversion is the current gap."],
+ ["Oct","2026",false,"Push reach + convert",
+  "By now you've got a month of data on what travels. Lean into whatever series is pulling strangers and make sure those videos end on a reason to follow. First short trips likely start landing around here.",
+  "A signature episode format emerging — the one people start to recognise. Follower line moving faster than views for once."],
+ ["Nov","2026",false,"Double down",
+  "Steady month, no excuses in the schedule. Whatever's working from Oct, do more of it. Agency tends to pick up toward end of year with brands spending Q4 budgets — that's strong reach content.",
+  "Best-performing series identified and getting extra episodes. Backlog deep enough that a bad week doesn't hurt."],
+ ["Dec","2026",false,"Recap + reset",
+  "Year-end is a gift for content: everyone's reflecting, and your bank is full of Loyalty and recap episodes made for exactly this. Also the month to look back at what the slate actually did since August.",
+  "A year-in-review across all five series. Enter 2026 with a proven format and a real backlog."]
+];
+
+const FLOATS=[
+ ["Short trips & the Wowcher £99 mystery holiday","Side Quest","Whenever they land. The mystery holiday with a mate is a perfect Side Quest arc — the not-knowing where you're going IS the hook. Film the reveal, the booking, the airport, the place. One trip is five episodes, not one."],
+ ["Car hunt","New mini-series","Distant, not dated. When you're actually viewing cars, this becomes its own short series — the search, the test drives, the decision, the money. High-reach: prices and 'should I buy this' are exactly what strangers stop for. Starts when it starts."],
+ ["The car itself — mods & ownership","New mini-series","After the hunt ends. Light touch, not a car channel — the first drive, small mods, what it's actually like to own. Folds into Grown Up Things as much as its own thing. Keep it occasional so it stays a thread, not the whole page."]
+];
+
 const SHOTS=[
  ["You","Yourself, talking or just existing.","One clip where you're on camera. Doesn't need to be a piece to camera — walking, sat down, mid-sentence, reacting. Without this the day has no narrator."],
  ["Where","The place you're in.","Establish it. The street, the room, the shop front, the office, the gym floor. This is what makes a cut feel like somewhere rather than nowhere."],
@@ -672,6 +738,21 @@ SERIES.forEach(s=>{
   d.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();t()}});
   sl.appendChild(d);
 });
+
+const ml=document.getElementById('monthList');
+if(ml){MONTHS.forEach(([m,y,now,focus,body,goal])=>{
+  const el=document.createElement('div');el.className='month'+(now?' open':'');
+  el.innerHTML=`<div class="mhead"><span class="mname">${m}</span>${now?'<span class="mnow">You are here</span>':''}<span class="mfocus">${focus}</span><span class="mcaret">&rsaquo;</span></div>`+
+    `<div class="mbody"><p>${body}</p><p><strong>Target:</strong> ${goal}</p></div>`;
+  el.querySelector('.mhead').addEventListener('click',()=>el.classList.toggle('open'));
+  ml.appendChild(el);
+});}
+const fl=document.getElementById('floatList');
+if(fl){FLOATS.forEach(([name,tag,body])=>{
+  const el=document.createElement('div');el.className='floatbox';
+  el.innerHTML=`<span class="tag">${tag}</span><h4>${name}</h4><p>${body}</p>`;
+  fl.appendChild(el);
+});}
 
 const shl=document.getElementById('shotList');
 SHOTS.forEach(([t,sub,body],i)=>{
