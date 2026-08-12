@@ -4,33 +4,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ink:#12100E;
-  --paper:#EDE7DC;
-  --paper-2:#E2DACB;
-  --signal:#E4572E;
-  --muted:#7A7266;
-  --line:rgba(18,16,14,.14);
+  --ink:#12100E; --paper:#EDE7DC; --paper-2:#E2DACB;
+  --signal:#E4572E; --muted:#7A7266; --line:rgba(18,16,14,.14);
   --s1:#E4572E; --s2:#1F4E5F; --s3:#C9A227; --s4:#8C4A63; --s5:#3F6B4E;
 }
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html,body{margin:0;padding:0}
-body{
-  background:var(--paper);
-  color:var(--ink);
-  font-family:'Newsreader',Georgia,serif;
-  font-size:17px;line-height:1.55;
-  padding-bottom:88px;
-  overflow-x:hidden;
-}
+body{background:var(--paper);color:var(--ink);font-family:'Newsreader',Georgia,serif;font-size:17px;line-height:1.55;padding-bottom:88px;overflow-x:hidden}
 .wrap{max-width:760px;margin:0 auto;padding:0 20px}
-h1,h2,h3,.disp{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;letter-spacing:-.02em;line-height:1.03;margin:0}
+h1,h2,h3{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;letter-spacing:-.02em;line-height:1.03;margin:0}
 .mono{font-family:'DM Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase}
-
-header.mast{padding:34px 0 20px;border-bottom:2px solid var(--ink)}
-.mast .eyebrow{color:var(--signal);margin-bottom:12px}
-.mast h1{font-size:clamp(42px,13vw,74px);text-transform:uppercase}
-.mast h1 em{font-family:'Newsreader',serif;font-style:italic;font-weight:400;text-transform:none;letter-spacing:-.01em}
-.mast p{margin:14px 0 0;max-width:46ch;color:var(--muted);font-size:16px}
 
 .ticker{border-bottom:1px solid var(--line);background:var(--ink);color:var(--paper);overflow:hidden;white-space:nowrap}
 .ticker-inner{display:inline-block;padding:9px 0;animation:slide 38s linear infinite}
@@ -39,115 +22,98 @@ header.mast{padding:34px 0 20px;border-bottom:2px solid var(--ink)}
 .ticker b{color:var(--signal);font-weight:500}
 @media (prefers-reduced-motion:reduce){.ticker-inner{animation:none}}
 
+header.mast{padding:34px 0 20px;border-bottom:2px solid var(--ink)}
+.mast .eyebrow{color:var(--signal);margin-bottom:12px}
+.mast h1{font-size:clamp(40px,12vw,70px);text-transform:uppercase}
+.mast h1 em{font-family:'Newsreader',serif;font-style:italic;font-weight:400;text-transform:none;letter-spacing:-.01em}
+.mast p{margin:14px 0 0;max-width:48ch;color:var(--muted);font-size:16px}
+
 nav{position:fixed;bottom:0;left:0;right:0;background:var(--ink);display:flex;z-index:50;padding-bottom:env(safe-area-inset-bottom)}
-nav button{flex:1;background:none;border:0;color:rgba(237,231,220,.5);padding:14px 4px 15px;cursor:pointer;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;border-top:3px solid transparent;transition:color .2s}
+nav button{flex:1;background:none;border:0;color:rgba(237,231,220,.5);padding:14px 4px 15px;cursor:pointer;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;border-top:3px solid transparent;transition:color .2s}
 nav button[aria-selected="true"]{color:var(--paper);border-top-color:var(--signal)}
 nav button:focus-visible{outline:2px solid var(--signal);outline-offset:-4px}
 
 section[role=tabpanel]{display:none;padding-top:26px}
 section[role=tabpanel].on{display:block}
-
 .shead{display:flex;align-items:baseline;gap:12px;margin:0 0 6px}
 .shead h2{font-size:26px}
 .shead .rule{flex:1;height:1px;background:var(--line)}
-.lede{color:var(--muted);font-size:15px;margin:0 0 22px;max-width:52ch}
-
-.series{border-top:1px solid var(--ink);padding:20px 0 22px;cursor:pointer}
-.series:last-of-type{border-bottom:1px solid var(--ink)}
-.srow{display:flex;align-items:flex-start;gap:14px}
-.snum{font-family:'DM Mono',monospace;font-size:12px;color:var(--muted);padding-top:6px;min-width:26px}
-.sbody{flex:1;min-width:0}
-.series h3{font-size:clamp(23px,6.6vw,30px);text-transform:uppercase}
-.tagline{font-style:italic;color:var(--muted);margin:5px 0 0;font-size:15.5px}
-.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:11px}
-.chip{font-family:'DM Mono',monospace;font-size:9.5px;letter-spacing:.09em;text-transform:uppercase;padding:4px 8px;border:1px solid var(--line);border-radius:2px;color:var(--muted)}
-.chip.day{border-color:currentColor;font-weight:500}
-.caret{font-family:'DM Mono',monospace;color:var(--muted);padding-top:6px;transition:transform .25s}
-.series.open .caret{transform:rotate(90deg)}
-.detail{display:none;padding:18px 0 2px 40px}
-.series.open .detail{display:block}
-.detail h4{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--signal);margin:20px 0 7px;font-weight:500}
-.detail h4:first-child{margin-top:0}
-.detail p{margin:0 0 10px;font-size:16px}
-.persona{background:var(--paper-2);border-left:3px solid currentColor;padding:13px 15px;margin:2px 0 4px}
-.persona p{font-size:15px;margin:0}
-.detail ul{margin:0;padding-left:18px}
-.detail li{margin-bottom:7px;font-size:15.5px}
-.detail li::marker{color:var(--muted)}
-@media(max-width:520px){.detail{padding-left:0}}
-
-.week{border-top:1px solid var(--ink)}
-.day{display:flex;gap:14px;align-items:flex-start;padding:15px 0;border-bottom:1px solid var(--line)}
-.dlabel{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;min-width:44px;padding-top:3px;color:var(--muted)}
-.dbody{flex:1}
-.dbody strong{font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:16.5px;display:block}
-.dbody>span{font-size:14.5px;color:var(--muted)}
-.dtag{font-family:'DM Mono',monospace;font-size:9.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--signal);display:block;margin:1px 0 4px}
-.bar{width:4px;align-self:stretch;border-radius:2px;background:currentColor;min-height:38px}
-
-.filters{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:18px}
-.filters button{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;padding:7px 11px;border:1px solid var(--ink);background:none;border-radius:2px;cursor:pointer;color:var(--ink)}
-.filters button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
-.filters button.fbtn-top[aria-pressed="true"]{background:#E4572E;border-color:#E4572E}
-.filters button.fbtn-mid[aria-pressed="true"]{background:#1F4E5F;border-color:#1F4E5F}
-.filters button.fbtn-bot[aria-pressed="true"]{background:#3F6B4E;border-color:#3F6B4E}
-.filters button:focus-visible{outline:2px solid var(--signal);outline-offset:2px}
-.idea{display:flex;gap:12px;padding:13px 0;border-bottom:1px solid var(--line);align-items:flex-start}
-.idot{width:8px;height:8px;border-radius:50%;background:currentColor;margin-top:8px;flex:none}
-.itext{flex:1;font-size:16px}
-.imeta{font-family:'DM Mono',monospace;font-size:9.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin-top:6px;display:flex;align-items:center;gap:2px;flex-wrap:wrap}
-.count{font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);margin-bottom:14px}
+.lede{color:var(--muted);font-size:15px;margin:0 0 22px;max-width:54ch}
 
 .card{border:1px solid var(--ink);padding:18px;margin-bottom:16px}
 .card h3{font-size:19px;margin-bottom:8px}
 .card p{margin:0 0 10px;font-size:15.5px}
 .card p:last-child{margin-bottom:0}
 .card ul{margin:0;padding-left:18px;font-size:15.5px}
-.card li{margin-bottom:6px}
-.big{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:34px;letter-spacing:-.02em;display:block;line-height:1}
-.statgrid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin-bottom:20px}
-.stat{background:var(--paper);padding:14px}
-.stat small{font-family:'DM Mono',monospace;font-size:9.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);display:block;margin-top:4px}
+.card li{margin-bottom:7px}
 .note{font-size:14px;color:var(--muted);font-style:italic;margin-top:6px}
-.fn{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.09em;text-transform:uppercase;padding:3px 7px;border-radius:2px;font-weight:500;white-space:nowrap}
-.fn-top{background:#E4572E;color:#EDE7DC}
-.fn-mid{background:#1F4E5F;color:#EDE7DC}
-.fn-bot{background:#3F6B4E;color:#EDE7DC}
-.fnkey{display:flex;flex-direction:column;gap:14px;margin:0 0 22px}
-.fnrow{display:flex;gap:12px;align-items:flex-start}
-.fnrow .fn{margin-top:3px;flex:none}
-.fnrow p{margin:0;font-size:15px}
-.balance{border:1px solid var(--ink);padding:16px;margin-bottom:16px}
-.brow{display:flex;align-items:center;gap:10px;margin-bottom:10px;font-size:14px}
-.brow:last-child{margin-bottom:0}
-.bname{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;min-width:54px;color:var(--muted)}
-.btrack{flex:1;height:9px;background:var(--paper-2);border-radius:2px;overflow:hidden}
-.bfill{height:100%;border-radius:2px}
-.bnum{font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);min-width:34px;text-align:right}
-.phase{border-left:3px solid var(--signal);background:var(--paper-2);padding:14px 16px;margin-bottom:20px}
-.phase strong{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;display:block;font-size:16px;margin-bottom:3px}
-.phase p{margin:0;font-size:14.5px;color:var(--muted)}
-.month{border-top:1px solid var(--ink);padding:16px 0}
-.month:last-of-type{border-bottom:1px solid var(--ink)}
-.mhead{display:flex;align-items:baseline;gap:10px;cursor:pointer}
-.mname{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:20px;letter-spacing:-.02em}
-.mnow{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;background:var(--signal);color:var(--paper);padding:2px 7px;border-radius:2px}
-.mfocus{flex:1;text-align:right;font-size:13.5px;color:var(--muted);font-style:italic}
-.mbody{display:none;padding:14px 0 4px}
-.month.open .mbody{display:block}
-.mbody p{margin:0 0 9px;font-size:15px}
-.mbody p:last-child{margin-bottom:0}
-.mcaret{font-family:'DM Mono',monospace;color:var(--muted);transition:transform .25s}
-.month.open .mcaret{transform:rotate(90deg)}
-.floatbox{border:1px dashed var(--muted);border-radius:3px;padding:15px;margin-bottom:14px}
-.floatbox h4{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:16px;margin:0 0 4px}
-.floatbox .tag{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.09em;text-transform:uppercase;color:var(--signal);display:block;margin-bottom:8px}
-.floatbox p{margin:0;font-size:14.5px;color:var(--muted)}
+
+/* identity block */
+.identity{border:2px solid var(--ink);padding:22px;margin-bottom:22px;background:var(--paper-2)}
+.identity .k{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--signal);margin-bottom:10px}
+.identity p{margin:0;font-size:18px;line-height:1.4}
+.identity b{font-family:'Bricolage Grotesque',sans-serif;font-weight:700}
+
+/* anchor hero */
+.anchor{border:2px solid var(--signal);padding:0;margin-bottom:22px;overflow:hidden}
+.anchor .top{background:var(--signal);color:var(--paper);padding:16px 20px}
+.anchor .top .tag{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;opacity:.85;margin-bottom:6px}
+.anchor .top h3{font-size:clamp(26px,7vw,34px);text-transform:uppercase;color:var(--paper)}
+.anchor .top .goal{font-style:italic;font-family:'Newsreader',serif;font-size:16px;margin-top:6px;opacity:.95}
+.anchor .body{padding:20px}
+.anchor h4{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--signal);margin:18px 0 8px;font-weight:500}
+.anchor h4:first-child{margin-top:0}
+.anchor p{margin:0 0 10px;font-size:15.5px}
+.beat{display:flex;gap:12px;padding:11px 0;border-bottom:1px solid var(--line)}
+.beat:last-child{border-bottom:0}
+.beatnum{font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);min-width:20px;padding-top:2px}
+.beat b{font-family:'Bricolage Grotesque',sans-serif;font-weight:600;display:block;font-size:16px}
+.beat span{font-size:14.5px;color:var(--muted)}
+.recipe{background:var(--paper-2);border-left:3px solid var(--signal);padding:13px 15px;margin:10px 0}
+.recipe p{margin:0;font-size:15px}
+
+/* pool */
+.pool{border-top:1px solid var(--ink);padding:16px 0;cursor:pointer}
+.pool:last-of-type{border-bottom:1px solid var(--ink)}
+.poolhead{display:flex;align-items:center;gap:12px}
+.pooldot{width:12px;height:12px;border-radius:50%;flex:none}
+.pool h3{font-size:19px;flex:1}
+.poolcount{font-family:'DM Mono',monospace;font-size:11px;color:var(--muted)}
+.poolcaret{font-family:'DM Mono',monospace;color:var(--muted);transition:transform .25s}
+.pool.open .poolcaret{transform:rotate(90deg)}
+.poolbody{display:none;padding:12px 0 4px 24px}
+.pool.open .poolbody{display:block}
+.pooldesc{font-size:15px;color:var(--muted);margin:0 0 10px}
+
+/* filters + ideas */
+.filters{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:12px}
+.filters button{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;padding:7px 11px;border:1px solid var(--ink);background:none;border-radius:2px;cursor:pointer;color:var(--ink)}
+.filters button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.filters button.fbtn-top[aria-pressed="true"]{background:#E4572E;border-color:#E4572E}
+.filters button.fbtn-mid[aria-pressed="true"]{background:#1F4E5F;border-color:#1F4E5F}
+.filters button.fbtn-bot[aria-pressed="true"]{background:#3F6B4E;border-color:#3F6B4E}
+.filters button:focus-visible{outline:2px solid var(--signal);outline-offset:2px}
+.count{font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);margin-bottom:14px}
+.idea{display:flex;gap:12px;padding:13px 0;border-bottom:1px solid var(--line);align-items:flex-start}
+.idot{width:8px;height:8px;border-radius:50%;background:currentColor;margin-top:8px;flex:none}
+.itext{flex:1;font-size:16px}
+.imeta{font-family:'DM Mono',monospace;font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-top:6px;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.fn{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.08em;text-transform:uppercase;padding:3px 7px;border-radius:2px;font-weight:500;color:#EDE7DC}
+.fn-top{background:#E4572E}.fn-mid{background:#1F4E5F}.fn-bot{background:#3F6B4E}
+
+/* shots */
 .shot{display:flex;gap:16px;padding:18px 0;border-bottom:1px solid var(--line);align-items:flex-start}
 .shot:first-child{border-top:1px solid var(--ink)}
-.shotnum{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:30px;line-height:1;color:var(--signal);min-width:38px;letter-spacing:-.03em}
+.shotnum{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:30px;line-height:1;color:var(--signal);min-width:38px}
 .shotbody strong{font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:17px;display:block;margin-bottom:3px}
 .shotbody p{margin:0;font-size:15px;color:var(--muted)}
+
+/* stats */
+.statgrid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin-bottom:20px}
+.stat{background:var(--paper);padding:14px}
+.stat .big{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:32px;letter-spacing:-.02em;display:block;line-height:1}
+.stat small{font-family:'DM Mono',monospace;font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);display:block;margin-top:5px}
+
 footer{padding:34px 0 20px;border-top:2px solid var(--ink);margin-top:30px;color:var(--muted);font-size:14px}
 </style>
 
@@ -155,237 +121,137 @@ footer{padding:34px 0 20px;border-top:2px solid var(--ink);margin-top:30px;color
 
 <div class="wrap">
 <header class="mast">
-  <div class="mono eyebrow">Five storylines &middot; one person &middot; running continuously</div>
+  <div class="mono eyebrow">Lifestyle creator &middot; one anchor &middot; everything else is yours to grab</div>
   <h1>The Ubayy<br><em>Slate</em></h1>
-  <p>Not a content calendar. A slate of five shows, each with its own audience, all starring the same person — so people can find you through any of them and stay for you.</p>
+  <p>One series worth committing to, a deep pool of ideas with no obligation attached, and you at the centre of all of it. Built to survive a full-time job and a packed week &mdash; not to trap you into posting things you'll resent.</p>
 </header>
 </div>
 
 <div class="wrap">
 
-<section role="tabpanel" id="p-series" class="on">
-  <div class="shead"><h2>The Slate</h2><div class="rule"></div></div>
-  <p class="lede">Tap a series to open its bible — what it is, who it's for, and how an episode is built.</p>
-  <div id="seriesList"></div>
-</section>
+<!-- ANCHOR -->
+<section role="tabpanel" id="p-anchor" class="on">
+  <div class="identity">
+    <div class="k">The one line</div>
+    <p>You're a <b>lifestyle creator</b>. People come back for <b>you</b> and for one series they're invested in &mdash; then they stay for whatever else you post. Some won't care about the series at all and just want the random stuff. That's allowed. The series is the hook, not the cage.</p>
+  </div>
 
-<section role="tabpanel" id="p-week">
-  <div class="shead"><h2>The Week</h2><div class="rule"></div></div>
-  <p class="lede">One episode of each series per week, slotted against your actual job. Five anchors, two flex days.</p>
-  <div class="week" id="weekList"></div>
+  <div class="anchor">
+    <div class="top">
+      <div class="tag">The anchor series &middot; working name</div>
+      <h3>LARPing a CEO</h3>
+      <div class="goal">Running an agency from my bedroom until it's real &mdash; watching the 5-to-9 catch the 9-to-5.</div>
+    </div>
+    <div class="body">
+      <h4>What it is</h4>
+      <p>The one series worth committing to, because it's the only thing on your whole slate nobody else can make. You're building agency income while starting a pharmacy career &mdash; two income streams, one safe, one a bet, pulling against each other. The series follows the side hustle trying to overtake the salary. It films at home, at your desk, on your phone, at any hour you get in &mdash; which is exactly why it survives your schedule when a location-dependent series wouldn't.</p>
+
+      <h4>The goal in the background</h4>
+      <p>The 5-to-9 overtakes the 9-to-5. Revenue is how you keep score; the day-job-versus-side-hustle tension is the story. It barely shows in most videos &mdash; it's the occasional check-in that makes the whole thing feel like it's climbing somewhere, so people follow instead of just watching.</p>
+
+      <h4>The tone (this is the whole trick)</h4>
+      <p>Never corporate. Open cold on whatever you're actually feeling in that moment &mdash; the real hook &mdash; then drop the silly self-aware bump: "&hellip;anyway, welcome back to LARPing a CEO." Then the genuinely useful content. Unserious wrapper, serious substance. The daftness is what makes the money and business talk go down easy; it signals you're not a finance guy performing success, you're a 22-year-old larping a company into existence until it's true.</p>
+
+      <h4>The formats you rotate (so filming is never a blank page)</h4>
+      <div class="beat"><div class="beatnum">01</div><div><b>The deal breakdown</b><span>One real deal. What happened, what you decided, rough numbers (ballpark if NDA). A choice in every one.</span></div></div>
+      <div class="beat"><div class="beatnum">02</div><div><b>The two-income face-off</b><span>Pharmacy vs agency. Salary week vs a good agency week. The comparison is the content &mdash; needs no exact figures.</span></div></div>
+      <div class="beat"><div class="beatnum">03</div><div><b>Week in the life of an agency owner with a full-time job</b><span>The logistics themselves are the novelty. Nobody films running a company around a 9-to-5.</span></div></div>
+      <div class="beat"><div class="beatnum">04</div><div><b>The call I had to make</b><span>A decision, a rejection, a risk taken or dodged. Choices, not figures &mdash; this is the one that builds trust.</span></div></div>
+
+      <h4>The shape of one episode</h4>
+      <div class="recipe"><p><b>Feeling cold-open</b> (2s, real, unedited) &rarr; <b>silly series bump</b> ("welcome back to&hellip;") &rarr; <b>the actual thing</b> (a format above, fast cuts, b-roll) &rarr; <b>a reason to come back</b> (the goal moved, or it didn't &mdash; either way, next episode exists).</p></div>
+
+      <h4>Name</h4>
+      <p>"LARPing a CEO" is a working title &mdash; the joke gets more earned as the numbers get real, and flips from a bit to a fact the day the agency actually replaces your salary. Swap it the moment something feels more like you.</p>
+    </div>
+  </div>
 
   <div class="card">
-    <h3>Built around your actual hours</h3>
-    <p>Everything films in three windows: <strong>Tuesday afternoon</strong>, <strong>Friday as-it-happens</strong>, and <strong>the weekend</strong>. Wednesday and Thursday you're out till seven, so nothing gets filmed then — they're post-and-go. Monday's a cut-and-post evening.</p>
-    <p class="note">You post five series a week but you only really film on three days, none of them before work. That's the whole trick to making this survive a full-time job: capture in blocks, post from the backlog.</p>
-  </div>
-
-
-
-  <div class="card" style="margin-top:24px">
-    <h3>The rule that makes it survivable</h3>
-    <p>Anchors are non-negotiable; everything else is optional. If a week collapses, you post five things and nothing goes dark. If a week is good, the flex days catch the overflow.</p>
-    <p><strong>Sunday is a shoot day, not a posting day.</strong> Batch three to four Notes episodes in one sitting — same jumper, different angles, so they don't read as one session. That's your buffer for the weeks when work eats everything.</p>
+    <h3>Why only one anchor, not five</h3>
+    <p>Five series you're obligated to feed is five ways to feel behind. A series you resent is a series you quit, and quitting one publicly is worse than never starting it. One anchor you actually care about, fed by a bottomless pool of no-pressure ideas, is the version that's still running in six months.</p>
+    <p class="note">This is exactly how the creators you sent work. rai.tryna and armaant have no rigid weekly series &mdash; they have a strong personal brand and a pile of individually-hooked videos. The consistency is the person and the format, not a storyline they're chained to.</p>
   </div>
 
   <div class="card">
-    <h3>Reading the week for balance</h3>
-    <p>Side Quest is your only Reach anchor — the one series built to be found by people who've never heard of you. The Agency, Twenties Notes and Starting From Zero build Trust; Grown Up Things builds Loyalty.</p>
-    <p>But every series now has Reach, Trust and Loyalty episodes in the bank, so the day doesn't dictate the job. On a week where growth has stalled, you can pull a Reach episode out of any of the five — Twenties Notes has rankings, Grown Up Things has cost breakdowns, Starting From Zero has beginner lists. Side Quest is still the heaviest Reach series and probably always will be, but it's no longer carrying it alone.</p>
-  </div>
-
-  <div class="card">
-    <h3>One event, many episodes</h3>
-    <p>A single creator event isn't one video. It's a get-ready, a why-I-almost-didn't-go, the event itself, the one thing you learned, the funny bit that had nothing to do with work, and the recap. Different series, different weeks, one afternoon of filming.</p>
-    <p class="note">Film wide, film close, film yourself, film the room, film the thing you weren't supposed to notice.</p>
+    <h3>The finance/tech lane, broadened</h3>
+    <p>You want into finance and tech without becoming a how-to channel. Good instinct &mdash; the way to do it is exactly what armaant and rai.tryna do: money and tech shown <em>through your life</em>, not taught. The office setup, the income months, "how I actually use AI for the agency," what you spend and what you refuse to. It rides inside the anchor and the lifestyle pool rather than being its own thing.</p>
+    <p class="note">You have a real version of this they don't: a genuine two-income story mid-climb. Not arrived, not performing it &mdash; actually doing it. That's the more watchable version.</p>
   </div>
 </section>
 
-<section role="tabpanel" id="p-year">
-  <div class="shead"><h2>The Year</h2><div class="rule"></div></div>
-  <p class="lede">From today to the end of 2026. Not a rigid grid twenty weeks out — a phase you're in now, the one pinch point that matters, and a focus per month.</p>
+<!-- POOL -->
+<section role="tabpanel" id="p-pool">
+  <div class="shead"><h2>The Idea Pool</h2><div class="rule"></div></div>
+  <p class="lede">No obligations here. These are the old five series, demoted to what they always should have been: sources of video ideas you grab from freely. Post one, post none, post six &mdash; whatever the week gives you. Filter by mood or by funnel stage.</p>
 
-  <div class="phase">
-    <strong>Where you are — week of 10 Aug</strong>
-    <p>Week two of the job. Still posting travel content, roughly one week of it left. You've filmed Side Quest and nothing else yet.</p>
-  </div>
+  <div id="poolList"></div>
 
-  <div class="card" style="border-color:var(--signal)">
-    <h3>The one deadline that's real</h3>
-    <p>Your travel buffer runs out around <strong>17 Aug</strong>. Whatever you film this week — 10 to 16 Aug — is what goes up the week after. This is the only hard handover in the whole year: after it, you're posting from footage you shot the same week, not from the holiday backlog.</p>
-    <p class="note">Miss this week's filming and there's a gap the week of the 18th with nothing to fill it. This is the week the system either starts or stalls.</p>
-  </div>
-
-  <div id="monthList"></div>
-
-  <div class="shead" style="margin-top:34px"><h2>Waiting in the wings</h2><div class="rule"></div></div>
-  <p class="lede">Not scheduled — they drop into the calendar when they happen. When one lands, it becomes a run of episodes, not a single video.</p>
-  <div id="floatList"></div>
-</section>
-
-<section role="tabpanel" id="p-ideas">
-  <div class="shead"><h2>The Bank</h2><div class="rule"></div></div>
-  <p class="lede">Seeded episodes, filterable by series. Effort is a rough guide: <strong>L</strong> is phone-and-go, <strong>M</strong> needs a setup, <strong>H</strong> needs a plan.</p>
+  <div class="shead" style="margin-top:30px"><h2>Every idea</h2><div class="rule"></div></div>
   <div class="filters" id="filters"></div>
   <div class="filters" id="filters2"></div>
   <div class="count" id="ideaCount"></div>
   <div id="ideaList"></div>
 </section>
 
+<!-- SHOTS -->
 <section role="tabpanel" id="p-shots">
   <div class="shead"><h2>The Five Shots</h2><div class="rule"></div></div>
-  <p class="lede">Capture these every day, whatever the day is. You're not filming an episode — you're filming raw material. The episode gets decided later.</p>
-
-  <div class="shotlist" id="shotList"></div>
-
+  <p class="lede">Capture these every day, whatever the day is. You're not filming an episode &mdash; you're filming raw material. The edit gets decided later.</p>
+  <div id="shotList"></div>
   <div class="card" style="margin-top:24px">
     <h3>Why this is the actual system</h3>
-    <p>The reason creators run dry isn't a shortage of ideas — it's that the good day already happened and nobody filmed it. You can't decide something is content after the fact.</p>
-    <p>Five shots takes about ninety seconds spread across a day. Do it for a fortnight and you'll have more usable footage than you can cut. The point isn't that every clip gets used — it's that the interesting day is never the one you missed.</p>
-  </div>
-
-  <div class="card">
-    <h3>The rule inside the rule</h3>
-    <p><strong>Film first, judge later.</strong> The clip you think is pointless while you're filming it is very often the one that carries the video. You are the worst possible judge of your own footage in the moment you're standing in it.</p>
-    <p class="note">Corollary: never delete on the day.</p>
-  </div>
-
-  <div class="card">
-    <h3>Where the shots go</h3>
-    <p>Everything you capture lands in one of the five series — you're rarely filming for a specific episode. A meeting that went badly is Agency b-roll and a Notes idea. A café you liked is Side Quest. The walk home after a long shift is Grown Up Things. Same afternoon, three series.</p>
-    <p>That's the whole trick to posting five times a week on a full-time job: you're not producing five things, you're capturing continuously and cutting five things out of it.</p>
+    <p>The reason creators run dry isn't a shortage of ideas &mdash; it's that the good day already happened and nobody filmed it. Five shots takes ninety seconds across a day. Do it for a fortnight and you'll have more footage than you can cut.</p>
+    <p class="note">Film first, judge later. The clip you think is pointless is often the one that carries the video. Never delete on the day.</p>
   </div>
 </section>
 
-<section role="tabpanel" id="p-system">
+<!-- READ -->
+<section role="tabpanel" id="p-read">
   <div class="shead"><h2>The Read</h2><div class="rule"></div></div>
   <p class="lede">Where your numbers stand as of 9 Aug, what moved, and where the gap is now.</p>
 
   <div class="statgrid">
-    <div class="stat"><span class="big">0.62&times;</span><small>Views per follower — was 0.24&times;</small></div>
-    <div class="stat"><span class="big">5.1K</span><small>Average views — was 2k</small></div>
-    <div class="stat"><span class="big">6.78%</span><small>Engagement — was 7.75%</small></div>
+    <div class="stat"><span class="big">0.62&times;</span><small>Views/follower &mdash; was 0.24&times;</small></div>
+    <div class="stat"><span class="big">5.1K</span><small>Avg views &mdash; was 2k</small></div>
+    <div class="stat"><span class="big">6.78%</span><small>Engagement &mdash; was 7.75%</small></div>
     <div class="stat"><span class="big">+84</span><small>Followers in 4 weeks</small></div>
   </div>
 
   <div class="card">
-    <h3>Where things stand — 9 Aug</h3>
-    <p>Four weeks of data, and the number the whole plan was built to move has moved. <strong>Views per follower went from 0.24&times; to 0.62&times;</strong> — up more than two and a half times. Average views went 2k to 5.1K, and your best recent video hit 16.6K against 5.2K before. The reach problem is easing.</p>
-    <p>The engagement drop to 6.78% looks like bad news and isn't. When videos reach past your existing followers, the new viewers like and comment at a lower rate than your loyal core, so the percentage falls even as the real number of people engaging climbs. A falling engagement rate alongside rising views is what breaking out of the follower bubble looks like. If it had stayed flat while views climbed, that would have been the strange result.</p>
-    <p class="note">Caveat worth holding: this window mostly predates the new series running properly. It's your June travel and vlog content finding reach as much as the slate. Encouraging, not conclusive — the slate's real test is the next month.</p>
+    <h3>Where things stand</h3>
+    <p>The number the whole plan was built to move has moved: <b>views per follower went 0.24&times; to 0.62&times;</b>, up more than two and a half times. Best recent video hit 16.6K against 5.2K before. Reach is no longer the problem.</p>
+    <p>The engagement drop to 6.78% isn't bad news &mdash; when videos reach past your followers, new viewers engage at a lower rate, so the percentage falls even as the real number climbs. That's what breaking out of the bubble looks like.</p>
+    <p class="note">Caveat: this window mostly predates the new plan. It's your travel content finding reach as much as anything. Encouraging, not conclusive.</p>
   </div>
 
   <div class="card">
-    <h3>The three stages, plainly</h3>
-    <p>Every video does one of three jobs. Not better or worse jobs — different ones. The tags on each series and each episode tell you which.</p>
-    <div class="fnkey">
-      <div class="fnrow"><span class="fn fn-top">Reach</span><p><b>Gets found by strangers.</b> Needs no context. Someone who has never heard of you can watch it and get the whole thing: a ranking, a price, a place, a number. This is how new people arrive.</p></div>
-      <div class="fnrow"><span class="fn fn-mid">Trust</span><p><b>Turns a viewer into a follower.</b> They have seen you once and this is the one that makes them tap follow — an opinion, a mistake, something honest. It needs a little context to land, which is why it will not reach cold.</p></div>
-      <div class="fnrow"><span class="fn fn-bot">Loyalty</span><p><b>Keeps the people you already have.</b> Barely travels to strangers and is not meant to. It is for the people already invested — the arc, the recap, the ongoing story. This is what makes a page feel like a show.</p></div>
-    </div>
-    <p>You need all three. A page that is only Reach gets views and no followers — which, right now, is closer to your actual problem than the other way round.</p>
+    <h3>The gap now: they watch, they don't follow</h3>
+    <p><b>84 net followers while views went up 2.5&times;.</b> Lots of people seeing you, few following. Reach is working; the tap-follow moment isn't landing enough. That's what the anchor series is for &mdash; a reason to follow rather than just watch &mdash; and why your reach videos should end on something that makes a stranger want the next one.</p>
+    <p class="note">Watch net followers per week, not engagement rate. The rate keeps drifting down as you grow; that's normal.</p>
   </div>
 
   <div class="card">
-    <h3>Where your bank currently sits</h3>
-    <div class="balance" id="balance"></div>
-    <p class="note">Every series now carries all three, so you are never stuck with the wrong job on the wrong day. If the follower count is flat, filter the bank to Reach whatever series is up. If people watch once and never return, filter to Loyalty.</p>
+    <h3>The pharmacist hook is proven</h3>
+    <p>"UK Pharmacist Goes to CVS" beat most of your grid. Talking to camera, a clear hook, your actual life. When the finance/tech and agency content rolls, remember the audience already told you the pharmacist angle travels &mdash; use it.</p>
   </div>
 
   <div class="card">
-    <h3>What this actually changes on a Monday</h3>
-    <p>Nothing about your five series. You still post one of each a week. The difference is that when you open the bank, you can now ask a better question than "what do I fancy filming."</p>
-    <p>If your last three videos were all Loyalty — a recap, an arc episode, a personal one — the next one should be Reach, or you are only ever talking to the people already there. That is the whole idea. It is a balance check, not a rule.</p>
-  </div>
-
-  <div class="card">
-    <h3>The diagnosis — the gap has moved</h3>
-    <p>It used to be reach: your videos landed with existing followers and stopped. That's largely fixed. The new gap is the one hiding inside the follower line — <strong>84 net followers in four weeks while average views went up two and a half times.</strong></p>
-    <p>That gap is the whole game now. A lot of people are seeing you; very few are following. In the language of the three stages, your Reach is working and your Trust conversion isn't keeping pace. The views are arriving — the tap-follow moment isn't landing often enough.</p>
-    <p>So the weighting has flipped. You don't need more Reach right now, you're getting the views. You need the videos that turn a first-time viewer into a follower: the Trust-tagged ones — the honest take, the mistake, the opinion — and Reach videos that end on something that makes a stranger want the next episode.</p>
-  </div>
-
-  <div class="card">
-    <h3>What to fix first — converting the views you now get</h3>
-    <ul>
-      <li><strong>End on a reason to follow.</strong> Your Reach videos are landing with strangers. The last three seconds should tell them there's a next episode — the deal isn't finished, the trip continues, the story's ongoing. That's the follow.</li>
-      <li><strong>Weight Trust for a few weeks.</strong> Filter the bank to Trust and lean into it — the honest, the mistake, the opinion. Those are the videos that convert a viewer who already saw a Reach hit.</li>
-      <li><strong>Still open mid-scene.</strong> No "hey guys." Start on the interesting bit and explain backwards. This got you the reach; keep doing it.</li>
-      <li><strong>Watch the follower line, not the engagement rate.</strong> Engagement % will keep drifting down as you grow, and that's fine. Net followers per week is the number that tells you the conversion is working.</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <h3>On being the niche</h3>
-    <p>You said you want people to like you, not the content. That's the right target and the wrong order. Nobody attaches to a personality in the abstract — they attach to someone doing something, and the personality is why they stay.</p>
-    <p>So the five series are the vehicle. The bit where you and Rayyan are arguing about somewhere to eat on the way to a meeting is not the offcut between the real content. It's the reason anyone comes back. Keep it in.</p>
-  </div>
-
-  <div class="card">
-    <h3>Why these five last</h3>
-    <p>None of them are tied to a job or a city. Leave pharmacy and <strong>Grown Up Things</strong> still works — it was never about pharmacy. Move abroad and <strong>Side Quest</strong> just gets a new map. Hire staff and <strong>The Agency</strong> gets better. Get fit and <strong>Starting From Zero</strong> becomes the story of how you did it, told by someone who remembers being unable to.</p>
-    <p class="note">The one to bet on is Side Quest. The through-line in everything you've described isn't travel or business — it's that you keep saying yes to things.</p>
-  </div>
-
-  <div class="card">
-    <h3>The app, when you're ready</h3>
-    <p>It's off the slate for now. When you want it, it doesn't need its own series — the build lives inside <strong>The Agency</strong> as a storyline, and the launch becomes a run of episodes rather than a permanent slot. That way you're not committed to weekly app content before you've decided to be public about it.</p>
+    <h3>The three jobs a video does</h3>
+    <p>Each idea in the pool is tagged. <span class="fn fn-top">Reach</span> gets found by strangers (a number, a place, a ranking). <span class="fn fn-mid">Trust</span> turns a viewer into a follower (an opinion, a mistake, honesty). <span class="fn fn-bot">Loyalty</span> keeps the people you have (the arc, the recap). You're currently strong on Reach and short on the follow &mdash; so weight Trust for a few weeks. Filter the pool to it.</p>
   </div>
 </section>
 
-<footer>Built July 2026 &middot; Revisit the slate every quarter. When your life changes, the series don't — the episodes do.</footer>
+<footer>Built Aug 2026 &middot; One anchor, no cages. Revisit when the 5-to-9 catches the 9-to-5 &mdash; then set a bigger goal.</footer>
 </div>
 
 <nav role="tablist">
-  <button role="tab" aria-selected="true" data-p="p-series">Slate</button>
-  <button role="tab" aria-selected="false" data-p="p-week">Week</button>
-  <button role="tab" aria-selected="false" data-p="p-year">Year</button>
-  <button role="tab" aria-selected="false" data-p="p-ideas">Bank</button>
+  <button role="tab" aria-selected="true" data-p="p-anchor">Anchor</button>
+  <button role="tab" aria-selected="false" data-p="p-pool">Pool</button>
   <button role="tab" aria-selected="false" data-p="p-shots">Shots</button>
-  <button role="tab" aria-selected="false" data-p="p-system">Read</button>
+  <button role="tab" aria-selected="false" data-p="p-read">Read</button>
 </nav>
 
 <script>
-const FNAME={top:'Reach',mid:'Trust',bot:'Loyalty'};
-const FLONG={top:'Top of funnel',mid:'Middle of funnel',bot:'Bottom of funnel'};
-
-const SERIES=[
- {id:1,key:"agency",name:"The Agency",colour:"var(--s1)",day:"Mon",funnel:"mid",tagline:"Running a talent agency at twenty-two, with my mates.",
-  pitch:"A creator agency from the inside, run by someone young enough to still find it absurd. Deals get signed and deals get lost. Creators get told no. Emails get sent at midnight. The office is wherever the four of you have sat down. It works because almost nobody films this — the industry that decides which creators get paid is completely opaque from the outside, and you're holding the door open.",
-  why:"Your unfair advantage. Business content is saturated; agency content isn't, because almost nobody who runs one is 22 and filming it. Anything you're building — including the app, when you're ready — lives here as a storyline rather than needing its own slot.",
-  persona:"Nineteen, posting consistently, a few thousand followers, has no idea how brand deals actually work and is slightly embarrassed to ask. Watches to learn how the money moves — stays because you're the first person who's shown them.",
-  shape:["Open on the problem, not the context — the email, the number, the rejection.","Rayyan and the team on camera as recurring cast, not extras. Recurring faces are what make people return.","Let it be funny. The bit where a deal falls through and you all sit in silence is better content than the deal.","Never end on advice. End on what happened."],
-  lifestyle:"The money angle is your version of this. You sit on all three sides — what brands pay, what creators charge, what an agency keeps — and soon a salary next to it. Nobody your age can film that properly. These are the episodes here most likely to reach past your existing followers.",hooks:["A brand offered us [£] and I said no","This creator's email got them signed in a day","We nearly lost a deal because of one line","The part of this job nobody films"]},
-
- {id:2,key:"thoughts",name:"Twenties Notes",colour:"var(--s2)",day:"Tue",funnel:"mid",tagline:"Things I've noticed, not things I'm telling you.",
-  pitch:"Sat down, talking, one idea per episode. Not advice — observation. The distinction matters more than it sounds: at 22 you haven't earned advice yet, and audiences can smell it. But you have absolutely earned the right to notice things out loud, and 'nobody prepares you for this' lands where 'here's how to fix your life' bounces. This is the series that makes people feel like they know you.",
-  why:"Cheapest to make, longest shelf life, and the one that converts a viewer into a follower. Batch-film these — they're your buffer for bad weeks.",
-  persona:"Anywhere from 17 to 25, watching at midnight, in a stage of life they haven't got words for yet. They follow because you said the thing they'd been half-thinking.",
-  shape:["One idea per episode. If you're making two points, that's two episodes.","Start in the middle of the thought. No throat-clearing.","Say the uncertain version. 'I think' is more watchable than 'the truth is'.","Vary the location so a batch shoot doesn't look like a batch shoot."],
-  hooks:["Nobody prepares you for being 22","I think we're all addicted to being busy","I was completely wrong about this","Everyone should travel alone once"]},
-
- {id:3,key:"sidequest",name:"Side Quest",colour:"var(--s3)",day:"Wed",funnel:"top",tagline:"Everything I do that isn't work.",
-  pitch:"The signature series, and the widest one. Every episode is something you did for the sake of it — a two-hour drive for a specific sandwich, a country, a café you're in every week, a Tuesday that got out of hand, the best thing you ate and the worst. Travel lives here and so does your own postcode, because from the inside there's no real difference: it's all just you going somewhere and finding out whether it was worth it. That's why it survives the weeks you don't leave London.",
-  why:"The one to bet on. The through-line in everything you've described isn't travel or business — it's that you keep saying yes to things and going places. This series is that, and nothing else needs to be.",
-  persona:"Similar age, similar city, stuck in a routine, watching you do the things they keep meaning to do. Londoners save these and actually go; everyone else watches London the way people watch New York.",
-  shape:["Be specific. Named place, actual price, real distance. Vagueness kills saves.","Answer 'was it worth it' honestly, including when it wasn't. The bad reviews build more trust than the good ones.","Repeat locations on purpose — a café that recurs becomes a set, and sets make a page feel like a show.","The friends are the show. Don't cut them for pacing.","Film the journey, not just the arrival."],
-  lifestyle:"This is where the lifestyle treatment does the most work. Film the fit before you leave, the bag, the coffee, the car. Strangers who would scroll past a story about your Wednesday will stop for a well-shot outfit walking out of a door — and once they have stopped, the story gets to happen. Same episode, wider reach.",hooks:["Drove three hours for this","This is [£] and I think about it constantly","Someone invited me to something I didn't understand","I've walked past this a hundred times"]},
-
- {id:4,key:"fitness",name:"Starting From Zero",colour:"var(--s4)",day:"Thu",funnel:"mid",tagline:"I'm a beginner at the gym. If I can do this, so can you.",
-  pitch:"The most honest series on the slate. You're not fit, you're not pretending to be, and you're doing it on camera anyway — the first sessions where you don't know what you're doing, the weeks you don't go, learning to cook something that isn't a takeaway, finding food you'll actually eat twice. It's relatable because almost everyone watching has either not started or started and stopped, and almost nobody in this space is willing to be filmed at the beginning.",
-  why:"Beginner is the strongest position available to you here, and it's the one nobody else can take once you've claimed it. But it only works if you hold it — the moment this becomes results and physique updates, it turns into every other gym account. The show is about starting and continuing, not about getting good.",
-  persona:"Same age, has a gym membership they've used four times, or hasn't got one because walking in feels like the hard part. Watching to see someone equally clueless keep turning up.",
-  shape:["Film the awkward bits. Not knowing how a machine works is the whole show.","The weeks you don't go are episodes. Skipping it and saying so is more relatable than a streak.","Keep it about food you'd actually eat, not numbers. No calorie targets or macro breakdowns on camera — it turns a relatable series into a prescriptive one.","Never post a physique update as an episode. That's the trapdoor out of this series.","Say what you got wrong before you say what worked."],
-  hooks:["First time in a gym in years and I had no idea what I was doing","Didn't go for two weeks, here's why","Tried to cook something properly and it went badly","Week 6 and I still can't do this"]},
-
- {id:5,key:"grown",name:"Grown Up Things",colour:"var(--s5)",day:"Fri",funnel:"bot",tagline:"Work, groceries, and fixing things I'd have called my mum about.",
-  pitch:"The transformation series, and broader than the job. Work is part of it — the shifts, the commute, the first payslip, what it's actually like being newly qualified — but so is everything else that arrived with adulthood: the food shop, helping around the house, fixing something instead of leaving it, doing things for your mum, the admin nobody warns you about. People follow this for the arc, not the subject matter. Watching someone become something is the oldest reason to keep watching.",
-  why:"Transformation is the most reliable retention mechanic there is. People who start at episode one stay for years. It also doesn't die if you leave pharmacy — the job is chapter one, not the premise.",
-  persona:"Final-year students and recent graduates about to make the same jump, plus a chunk of people simply watching someone grow up in public.",
-  shape:["Film the mundane. Commute, work bag, the food shop, the walk home. The texture is the point.","Be honest about the hard weeks — the arc needs a dip or nobody believes it.","Money moments are the highest-performing beats. First payslip, first big purchase, first month of proper bills.","Don't let it become pharmacy content. You're documenting a chapter, not switching niche.","The unglamorous stuff outperforms the impressive stuff here. Trust that."]  ,
-  lifestyle:"The flat, the desk, the routine, what you carry to work. Home and setup content travels to complete strangers because it needs no context at all, and it is the most brand-monetisable thing on the slate. Layer it into episodes you are already filming rather than making it a separate series.",hooks:["First week and I already got something wrong","What I actually earn","Nobody told me adult life was mostly admin","Fixed something myself instead of calling someone"]}
-];
-
 const IDEAS=[
  // ---- The Agency (54)
  ["agency","The email that got a creator signed in 24 hours","L","top"],
@@ -697,117 +563,76 @@ const FLOATS=[
  ["The car itself — mods & ownership","New mini-series","After the hunt ends. Light touch, not a car channel — the first drive, small mods, what it's actually like to own. Folds into Grown Up Things as much as its own thing. Keep it occasional so it stays a thread, not the whole page."]
 ];
 
+const POOLS={
+ agency:{name:"Building & Money",colour:"var(--s1)",desc:"Agency, deals, income, the business. Most of this feeds the anchor \u2014 but as loose ideas, grab what fits."},
+ thoughts:{name:"Twenties Notes",colour:"var(--s2)",desc:"Talking to camera, observations, being 22. Films against any wall, any time \u2014 your bad-schedule insurance."},
+ sidequest:{name:"Side Quest",colour:"var(--s3)",desc:"Everything you do for fun \u2014 trips, food, London, saying yes. Closest to your current content. Post these freely."},
+ fitness:{name:"Gym & Food",colour:"var(--s4)",desc:"Beginner gym, learning to cook. A thread, not a commitment \u2014 pull one in when you actually go, ignore when you don't."},
+ grown:{name:"Adult Life",colour:"var(--s5)",desc:"Work, money, the food shop, helping around the house. Grab the relatable ones; skip the rest."}
+};
+const FNAME={top:'Reach',mid:'Trust',bot:'Loyalty'};
+
 const SHOTS=[
- ["You","Yourself, talking or just existing.","One clip where you're on camera. Doesn't need to be a piece to camera — walking, sat down, mid-sentence, reacting. Without this the day has no narrator."],
- ["Where","The place you're in.","Establish it. The street, the room, the shop front, the office, the gym floor. This is what makes a cut feel like somewhere rather than nowhere."],
- ["Close","One detail, tight.","Hands, the coffee, the screen, the label, the receipt, the thing you're holding. Close-ups are what stop a video looking like a phone recording."],
- ["Wide","The whole scene, from back.","Step away and film it from distance. Wides are the shot people forget and the one that makes an edit breathe."],
- ["Moment","The bit you'd tell someone about later.","Unplanned. Someone says something stupid, something goes wrong, something's funnier than it should be. This is the shot that actually carries videos."]
+ ["You","Yourself, talking or just existing.","One clip where you're on camera \u2014 walking, sat down, mid-sentence, reacting. Without this the day has no narrator."],
+ ["Where","The place you're in.","Establish it. The street, the room, the desk, wherever you are. Makes a cut feel like somewhere."],
+ ["Close","One detail, tight.","Hands, the coffee, the screen, the thing you're holding. Close-ups stop a video looking like a phone recording."],
+ ["Wide","The whole scene, from back.","Step away and film from distance. The shot people forget, and the one that makes an edit breathe."],
+ ["Moment","The bit you'd tell someone about later.","Unplanned. Something said, something gone wrong, something funnier than it should be. This carries videos."]
 ];
 
-const WEEK=[
- ["Mon","The Agency","Post","9–5. Home by 5, evening free — cut and post the agency episode you shot at the weekend.","agency"],
- ["Tue","Twenties Notes","Post + main shoot","Off at 2. The one real filming window in your week: post Notes, then shoot Side Quest, team footage, and anything that means leaving the house.","thoughts"],
- ["Wed","Starting From Zero","Post only","11–7. Long day, no filming. Post the gym/food episode you shot at the weekend or Tuesday.","fitness"],
- ["Thu","Side Quest","Post only","11–7. Long day, no filming. Post the Side Quest from Tuesday's shoot.","sidequest"],
- ["Fri","Grown Up Things","Post + film the day","10–6. The one weekday you film in real time — the commute, the job, the walk home — because it films itself. Cut it tonight.","grown"],
- ["Sat","Flex","Film","Weekend is your other shoot block. Whatever you're doing is Side Quest or Grown Up Things. Grab a second Reach video if you can.",null],
- ["Sun","Batch day","Film only","The workhorse. Stockpile 3–4 Notes, shoot the week's agency footage with the team, film a gym or food episode. Post nothing.",null]
-];
-
-const sl=document.getElementById('seriesList');
-SERIES.forEach(s=>{
-  const d=document.createElement('div');
-  d.className='series';d.style.color=s.colour;d.tabIndex=0;d.setAttribute('role','button');d.setAttribute('aria-expanded','false');
-  d.innerHTML=`<div class="srow">
-    <div class="snum">${String(s.id).padStart(2,'0')}</div>
-    <div class="sbody">
-      <h3 style="color:var(--ink)">${s.name}</h3>
-      <p class="tagline">${s.tagline}</p>
-      <div class="chips"><span class="chip day">${s.day}</span><span class="fn fn-${s.funnel}">${FNAME[s.funnel]}</span><span class="chip">Weekly</span></div>
-    </div><div class="caret">&rsaquo;</div></div>
-    <div class="detail">
-      <h4>The show</h4><p>${s.pitch}</p>
-      <h4>Why it's on the slate</h4><p>${s.why}</p>
-      <h4>Who's watching</h4><div class="persona"><p>${s.persona}</p></div>
-      <h4>How an episode is built</h4><ul>${s.shape.map(x=>`<li>${x}</li>`).join('')}</ul>
-      ${s.lifestyle?`<h4>Lifestyle layer</h4><p>${s.lifestyle}</p>`:''}<h4>Opening lines that work</h4><ul>${s.hooks.map(x=>`<li>${x}</li>`).join('')}</ul>
-    </div>`;
-  const t=()=>{const o=d.classList.toggle('open');d.setAttribute('aria-expanded',o)};
-  d.addEventListener('click',e=>{if(!e.target.closest('.detail'))t()});
-  d.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();t()}});
-  sl.appendChild(d);
+// pools
+const pl=document.getElementById('poolList');
+Object.entries(POOLS).forEach(([k,p])=>{
+  const n=IDEAS.filter(i=>i[0]===k).length;
+  const d=document.createElement('div');d.className='pool';
+  d.innerHTML=`<div class="poolhead"><span class="pooldot" style="background:${p.colour}"></span><h3>${p.name}</h3><span class="poolcount">${n} ideas</span><span class="poolcaret">&rsaquo;</span></div>`+
+    `<div class="poolbody"><p class="pooldesc">${p.desc}</p><button class="jump" data-k="${k}" style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;padding:7px 12px;border:1px solid var(--ink);background:none;border-radius:2px;cursor:pointer">Filter the list to these &rarr;</button></div>`;
+  d.querySelector('.poolhead').addEventListener('click',()=>d.classList.toggle('open'));
+  d.querySelector('.jump').addEventListener('click',(e)=>{e.stopPropagation();active=k;syncFilters();render();document.getElementById('ideaList').scrollIntoView({behavior:'smooth'});});
+  pl.appendChild(d);
 });
 
-const ml=document.getElementById('monthList');
-if(ml){MONTHS.forEach(([m,y,now,focus,body,goal])=>{
-  const el=document.createElement('div');el.className='month'+(now?' open':'');
-  el.innerHTML=`<div class="mhead"><span class="mname">${m}</span>${now?'<span class="mnow">You are here</span>':''}<span class="mfocus">${focus}</span><span class="mcaret">&rsaquo;</span></div>`+
-    `<div class="mbody"><p>${body}</p><p><strong>Target:</strong> ${goal}</p></div>`;
-  el.querySelector('.mhead').addEventListener('click',()=>el.classList.toggle('open'));
-  ml.appendChild(el);
-});}
-const fl=document.getElementById('floatList');
-if(fl){FLOATS.forEach(([name,tag,body])=>{
-  const el=document.createElement('div');el.className='floatbox';
-  el.innerHTML=`<span class="tag">${tag}</span><h4>${name}</h4><p>${body}</p>`;
-  fl.appendChild(el);
-});}
-
-const shl=document.getElementById('shotList');
-SHOTS.forEach(([t,sub,body],i)=>{
-  const el=document.createElement('div');el.className='shot';
-  el.innerHTML=`<div class="shotnum">${i+1}</div><div class="shotbody"><strong>${t} — ${sub}</strong><p>${body}</p></div>`;
-  shl.appendChild(el);
+// filters
+let active='all',activeF='all';
+const fw=document.getElementById('filters'),fw2=document.getElementById('filters2'),il=document.getElementById('ideaList'),ic=document.getElementById('ideaCount');
+const seriesBtns=[['all','Everything'],...Object.entries(POOLS).map(([k,p])=>[k,p.name])];
+seriesBtns.forEach(([k,label])=>{
+  const b=document.createElement('button');b.textContent=label;b.dataset.k=k;b.setAttribute('aria-pressed',k===active);
+  b.onclick=()=>{active=k;syncFilters();render()};fw.appendChild(b);
 });
-
-const wl=document.getElementById('weekList');
-WEEK.forEach(([day,title,tag,note,key])=>{
-  const c=key?SERIES.find(s=>s.key===key).colour:'var(--muted)';
-  const el=document.createElement('div');el.className='day';el.style.color=c;
-  el.innerHTML=`<div class="bar"></div><div class="dlabel">${day}</div><div class="dbody"><strong style="color:var(--ink)">${title}</strong><span class="dtag">${tag}</span><span>${note}</span></div>`;
-  wl.appendChild(el);
-});
-
-let active='all';let activeF='all';
-const fw=document.getElementById('filters'),il=document.getElementById('ideaList'),ic=document.getElementById('ideaCount');
-[['all','Everything'],...SERIES.map(s=>[s.key,s.name])].forEach(([k,label])=>{
-  const b=document.createElement('button');b.textContent=label;b.setAttribute('aria-pressed',k===active);
-  b.onclick=()=>{active=k;[...fw.children].forEach(x=>x.setAttribute('aria-pressed','false'));b.setAttribute('aria-pressed','true');render()};
-  fw.appendChild(b);
-});
-const fw2=document.getElementById('filters2');
 [['all','All stages'],['top','Reach'],['mid','Trust'],['bot','Loyalty']].forEach(([k,label])=>{
-  const b=document.createElement('button');b.textContent=label;b.setAttribute('aria-pressed',k===activeF);
-  if(k!=='all'){b.classList.add('fbtn-'+k)}
-  b.onclick=()=>{activeF=k;[...fw2.children].forEach(x=>x.setAttribute('aria-pressed','false'));b.setAttribute('aria-pressed','true');render()};
-  fw2.appendChild(b);
+  const b=document.createElement('button');b.textContent=label;b.dataset.f=k;b.setAttribute('aria-pressed',k===activeF);
+  if(k!=='all')b.classList.add('fbtn-'+k);
+  b.onclick=()=>{activeF=k;syncFilters();render()};fw2.appendChild(b);
 });
+function syncFilters(){
+  [...fw.children].forEach(x=>x.setAttribute('aria-pressed',x.dataset.k===active));
+  [...fw2.children].forEach(x=>x.setAttribute('aria-pressed',x.dataset.f===activeF));
+}
 const EFF={L:'Low effort',M:'Medium effort',H:'High effort'};
 function render(){
   const list=IDEAS.filter(i=>(active==='all'||i[0]===active)&&(activeF==='all'||i[3]===activeF));
-  ic.textContent=`${list.length} episode${list.length===1?'':'s'} ready to film`;
+  ic.textContent=`${list.length} idea${list.length===1?'':'s'} \u2014 grab any, owe nothing`;
   il.innerHTML=list.map(([k,text,e,f])=>{
-    const s=SERIES.find(x=>x.key===k);
-    return `<div class="idea" style="color:${s.colour}"><div class="idot"></div><div class="itext" style="color:var(--ink)">${text}<div class="imeta"><span class="fn fn-${f}">${FNAME[f]}</span> &nbsp;${s.name} &middot; ${EFF[e]}</div></div></div>`;
+    const p=POOLS[k];
+    return `<div class="idea" style="color:${p.colour}"><div class="idot"></div><div class="itext" style="color:var(--ink)">${text}<div class="imeta"><span class="fn fn-${f}">${FNAME[f]}</span>${p.name} &middot; ${EFF[e]}</div></div></div>`;
   }).join('');
 }
 render();
 
-// balance meter
-const bal=document.getElementById('balance');
-if(bal){
-  const tot=IDEAS.length;
-  ['top','mid','bot'].forEach(f=>{
-    const n=IDEAS.filter(i=>i[3]===f).length,pc=Math.round(n/tot*100);
-    const col=f==='top'?'#E4572E':f==='mid'?'#1F4E5F':'#3F6B4E';
-    bal.innerHTML+=`<div class="brow"><span class="bname">${FNAME[f]}</span><span class="btrack"><span class="bfill" style="width:${pc}%;background:${col}"></span></span><span class="bnum">${pc}%</span></div>`;
-  });
-}
+// shots
+const shl=document.getElementById('shotList');
+SHOTS.forEach(([t,sub,body],i)=>{
+  const el=document.createElement('div');el.className='shot';
+  el.innerHTML=`<div class="shotnum">${i+1}</div><div class="shotbody"><strong>${t} &mdash; ${sub}</strong><p>${body}</p></div>`;
+  shl.appendChild(el);
+});
 
-const tl=['5 series running','1 episode each per week','Sunday is a batch day','Episode number in the caption','Open mid-scene','The friends are the show','Named place, named price','Five shots, every day','Film first, judge later'];
+// ticker
+const tl=['One anchor, no cages','LARPing a CEO','The 5-to-9 vs the 9-to-5','Feeling hook, silly bump, real content','The pool owes you nothing','Five shots every day','Weight Trust right now','You are the niche'];
 document.getElementById('tick').innerHTML=[...tl,...tl].map(t=>`<span class="mono"><b>&#9679;</b> ${t}</span>`).join('');
 
+// tabs
 document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>{
   document.querySelectorAll('nav button').forEach(x=>x.setAttribute('aria-selected','false'));
   b.setAttribute('aria-selected','true');
