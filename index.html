@@ -100,6 +100,15 @@ section[role=tabpanel].on{display:block}
 .imeta{font-family:'DM Mono',monospace;font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-top:6px;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
 .fn{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.08em;text-transform:uppercase;padding:3px 7px;border-radius:2px;font-weight:500;color:#EDE7DC}
 .fn-top{background:#E4572E}.fn-mid{background:#1F4E5F}.fn-bot{background:#3F6B4E}
+.idea-x{cursor:pointer}
+.imore{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.06em;color:var(--signal);margin-left:2px}
+.ishots{display:none;margin-top:10px;padding:11px 13px;background:var(--paper-2);border-left:3px solid currentColor;border-radius:2px}
+.idea-x.open .ishots{display:block}
+.idea-x.open .imore{opacity:.4}
+.ishots-h{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.ishots ul{margin:0;padding-left:16px}
+.ishots li{font-size:14px;color:var(--ink);margin-bottom:5px}
+.ishots li::marker{color:var(--signal)}
 
 /* shots */
 .shot{display:flex;gap:16px;padding:18px 0;border-bottom:1px solid var(--line);align-items:flex-start}
@@ -133,7 +142,18 @@ footer{padding:34px 0 20px;border-top:2px solid var(--ink);margin-top:30px;color
 <section role="tabpanel" id="p-anchor" class="on">
   <div class="identity">
     <div class="k">The one line</div>
-    <p>You're a <b>lifestyle creator</b>. People come back for <b>you</b> and for one series they're invested in &mdash; then they stay for whatever else you post. Some won't care about the series at all and just want the random stuff. That's allowed. The series is the hook, not the cage.</p>
+    <p>You're a <b>lifestyle creator</b> &mdash; specifically, <b>the mate who's figured some stuff out</b>. Not the guru above you, not the flex. The friend a step ahead, showing you what he's working out as he works it out. People come back for <b>you</b> and one series they're invested in, then stay for the rest. The series is the hook, not the cage.</p>
+  </div>
+
+  <div class="card" style="border-color:var(--signal)">
+    <h3>How you're actually built (read this first)</h3>
+    <p>Four things about your content are now settled, and everything else hangs off them:</p>
+    <ul>
+      <li><b>Your engine is voiceover over fast-cut b-roll</b> &mdash; not talking-head. It performs better for you and it's schedule-proof: film footage loosely whenever, narrate it later at night. This is what survives coming home at 7pm in Dagenham.</li>
+      <li><b>The first five seconds are your signature.</b> Heat flash, shutter/click sound, motion. You already know this works &mdash; so it's a rule now, not a maybe. Every anchor video opens this way.</li>
+      <li><b>You're the mate, not the guru.</b> That forbids income flexes. Rough numbers, what you learned, what nearly went wrong &mdash; never "here's what I made that you didn't." The self-deprecating LARP tone is what keeps you in that seat.</li>
+      <li><b>Comments are where the mate lives.</b> Yours are quiet, and for your identity that's the real bottleneck &mdash; more than any idea in the pool. Every anchor and Trust video ends on a door left open.</li>
+    </ul>
   </div>
 
   <div class="anchor">
@@ -159,7 +179,7 @@ footer{padding:34px 0 20px;border-top:2px solid var(--ink);margin-top:30px;color
       <div class="beat"><div class="beatnum">04</div><div><b>The call I had to make</b><span>A decision, a rejection, a risk taken or dodged. Choices, not figures &mdash; this is the one that builds trust.</span></div></div>
 
       <h4>The shape of one episode</h4>
-      <div class="recipe"><p><b>Feeling cold-open</b> (2s, real, unedited) &rarr; <b>silly series bump</b> ("welcome back to&hellip;") &rarr; <b>the actual thing</b> (a format above, fast cuts, b-roll) &rarr; <b>a reason to come back</b> (the goal moved, or it didn't &mdash; either way, next episode exists).</p></div>
+      <div class="recipe"><p><b>Heat-flash cold open</b> (first 5s: flash, shutter sound, the feeling you're in) &rarr; <b>silly series bump</b> ("&hellip;welcome back to LARPing a CEO") &rarr; <b>the format</b> (voiceover over b-roll of the actual thing, fast cuts) &rarr; <b>a door left open</b> (a question they can answer &mdash; "would you have taken that deal?"). The door is not optional; it's how a viewer becomes a mate.</p></div>
 
       <h4>Name</h4>
       <p>"LARPing a CEO" is a working title &mdash; the joke gets more earned as the numbers get real, and flips from a bit to a fact the day the agency actually replaces your salary. Swap it the moment something feels more like you.</p>
@@ -184,6 +204,24 @@ footer{padding:34px 0 20px;border-top:2px solid var(--ink);margin-top:30px;color
   <div class="shead"><h2>The Idea Pool</h2><div class="rule"></div></div>
   <p class="lede">No obligations here. These are the old five series, demoted to what they always should have been: sources of video ideas you grab from freely. Post one, post none, post six &mdash; whatever the week gives you. Filter by mood or by funnel stage.</p>
 
+  <div class="card">
+    <h3>Tap any idea for its shot list</h3>
+    <p>Every idea now opens to a few <b>specific shots worth grabbing</b> for it. Since almost everything you make is voiceover over b-roll, the idea isn't really the work &mdash; the footage is. The shot list turns a title into a plan you can film without thinking.</p>
+  </div>
+
+  <div class="card" style="border-color:var(--signal)">
+    <h3>Your general b-roll library — film once, reuse forever</h3>
+    <p>Separate from any single idea, keep a running stash of yourself and your world that you can drop into anything. Refresh it every few weeks. These are the clips that make a same-night edit possible:</p>
+    <ul>
+      <li><b>You, various:</b> walking (front, back, side), sitting thinking, on your phone, laughing, getting ready, hand-on-chin reacting.</li>
+      <li><b>Your world:</b> the desk, the walk to the station, your area, the gym, a café you use, the drive.</li>
+      <li><b>Hands & detail:</b> typing, coffee, phone screen (blurred), signing, opening things — close-ups cut between everything.</li>
+      <li><b>Transitions:</b> whip-pans, standing up / sitting down, walking through a doorway, reaching toward the lens — the joins your heat-flash cuts land on.</li>
+      <li><b>Cold-open stock:</b> 3–4 punchy motion shots kept aside purely to open videos with in the first 5 seconds.</li>
+    </ul>
+    <p class="note">A deep b-roll library is what lets you narrate a video at 11pm and post it, with no new filming. It's the real unlock for posting through a full-time job.</p>
+  </div>
+
   <div id="poolList"></div>
 
   <div class="shead" style="margin-top:30px"><h2>Every idea</h2><div class="rule"></div></div>
@@ -191,6 +229,46 @@ footer{padding:34px 0 20px;border-top:2px solid var(--ink);margin-top:30px;color
   <div class="filters" id="filters2"></div>
   <div class="count" id="ideaCount"></div>
   <div id="ideaList"></div>
+</section>
+
+<section role="tabpanel" id="p-voice">
+  <div class="shead"><h2>Your Voice</h2><div class="rule"></div></div>
+  <p class="lede">The craft rules that are specifically yours &mdash; drawn from what already works on your page, not generic advice. This is the part that's hard to copy.</p>
+
+  <div class="card">
+    <h3>Voiceover is your engine — for nearly everything</h3>
+    <p>You can make almost all of it voiceover over b-roll, and you should. Even the "talking-head" ideas: film yourself saying it if you want the take, then strip the audio and lay it over footage. That collapses your whole workflow to one mode &mdash; <b>capture footage, capture voice, marry them later</b> &mdash; and the two halves can happen on different days in different states. For your schedule that's the whole game.</p>
+    <p><b>The one exception worth keeping:</b> every sixth or seventh video, actually show your face for the key moment &mdash; the confession, the big opinion, a comment reply looking straight down the lens. Not because voiceover is worse, but because "the mate" needs to be seen occasionally or the polish starts feeling like glass. Voiceover for reach and volume; the occasional real face so it stays a person, not a channel.</p>
+    <div class="recipe"><p><b>The short version:</b> voiceover by default, face on purpose.</p></div>
+  </div>
+
+  <div class="card">
+    <h3>The first five seconds</h3>
+    <p>Your best videos are won here and you already know the recipe: heat flash, shutter or click sound, motion, and the feeling you're in stated fast. This isn't a style choice to vary &mdash; it's the thing that's working, so it's fixed. If a video doesn't have a cold open that stops a thumb, it isn't finished.</p>
+    <p class="note">The "feeling hook" and the "heat flash" are the same move: what you say is the feeling, how it's cut is the flash. They land together.</p>
+  </div>
+
+  <div class="card">
+    <h3>Value = entertainment OR information OR your take</h3>
+    <p>Your own test, and it's a good one. Every video should clearly be at least one of the three. If it's none, it doesn't go up. Most of your strongest ideas are two at once &mdash; a deal breakdown that's informative AND has your opinion in it; a trip that entertains AND shows a real place.</p>
+  </div>
+
+  <div class="card">
+    <h3>Leave the door open (this is your biggest lever)</h3>
+    <p>Your comments are quiet, and for "the mate who figured some stuff out," that's the actual bottleneck &mdash; the whole identity is a back-and-forth, and right now it's a monologue. The fix is mechanical, not charisma:</p>
+    <ul>
+      <li><b>End on something answerable.</b> Not "follow for more." A question, a mild wrong opinion people want to correct, an unfinished thought, a "tell me I'm not the only one."</li>
+      <li><b>Reply properly, early.</b> The first hour of replies teaches people the comments are a place you actually are.</li>
+      <li><b>Film replies as videos.</b> A good comment answered on camera is the single clearest "this is a two-way thing" signal there is &mdash; and it's free content that needs no idea.</li>
+      <li><b>Pin the one that starts a conversation</b>, not the one that praises you.</li>
+    </ul>
+    <p class="note">You said you'll work them. Then this is probably worth more than any single video idea in the pool &mdash; it's what turns the views you're already getting into the follows you're not.</p>
+  </div>
+
+  <div class="card">
+    <h3>The money posture</h3>
+    <p>You're the mate, so the money content has a hard line: <b>what you learned, never what you have.</b> Rough numbers, the deal you turned down, the mistake that cost you, the two-income tension. The moment it becomes "how I made £X," you've left your own lane and joined everyone else's. The rough-numbers instinct you already had isn't a limitation &mdash; it's what keeps you likeable while talking about business.</p>
+  </div>
 </section>
 
 <!-- SHOTS -->
@@ -247,320 +325,297 @@ footer{padding:34px 0 20px;border-top:2px solid var(--ink);margin-top:30px;color
 <nav role="tablist">
   <button role="tab" aria-selected="true" data-p="p-anchor">Anchor</button>
   <button role="tab" aria-selected="false" data-p="p-pool">Pool</button>
+  <button role="tab" aria-selected="false" data-p="p-voice">Voice</button>
   <button role="tab" aria-selected="false" data-p="p-shots">Shots</button>
   <button role="tab" aria-selected="false" data-p="p-read">Read</button>
 </nav>
 
 <script>
 const IDEAS=[
- // ---- The Agency (54)
- ["agency","The email that got a creator signed in 24 hours","L","top"],
- ["agency","Setting rates: what a creator with 10k should actually charge","L","top"],
- ["agency","Reading the worst pitch email we've ever received","L","top"],
- ["agency","What I look for in a media kit in the first ten seconds","L","top"],
- ["agency","Telling a creator their rates are too low","L","top"],
- ["agency","Every tool the agency runs on and what it costs a month","M","top"],
- ["agency","What a brand asks for that never makes it into the brief","M","top"],
- ["agency","The best thing a creator has ever said to us","L","top"],
- ["agency","Hiring my friends was either the best or worst decision","M","top"],
- ["agency","Rating our own campaigns from worst to best","M","top"],
- ["agency","Explaining what I actually do to someone who doesn't get it","L","top"],
- ["agency","What a creator with 10k, 100k and 1m actually gets paid","L","top"],
- ["agency","Every brand deal we did this year, ranked by how much it paid","M","top"],
- ["agency","The going rate for a TikTok post in 2026","L","top"],
- ["agency","How much of a brand deal the creator actually keeps","L","top"],
- ["agency","Ranking the brands we've worked with, worst to best","M","top"],
- ["agency","Five things in a media kit that get you rejected instantly","L","top"],
- ["agency","What it costs to run an agency for a month","M","top"],
- ["agency","The brand deal we turned down, and the maths behind it","M","mid"],
- ["agency","What actually happens between a brand emailing and a creator getting paid","M","mid"],
- ["agency","Reviewing creator applications with the team, live","M","mid"],
- ["agency","Why we said no to a creator we all liked","L","mid"],
- ["agency","I run an agency and I'm about to start a full-time job — how that works","M","mid"],
- ["agency","Working out of a caf&eacute; with the team for a full day","M","mid"],
- ["agency","Pitching a brand we have no business pitching","M","mid"],
- ["agency","Reading a campaign brief out loud and reacting to it","L","mid"],
- ["agency","Hosting our first BluStu creator event","H","mid"],
- ["agency","A deal fell through today — the full timeline","L","mid"],
- ["agency","I built our internal system myself. Here's what it does","M","mid"],
- ["agency","Mistakes in the first year that cost us actual money","L","mid"],
- ["agency","The message I nearly sent during a negotiation","L","mid"],
- ["agency","A day that was just emails, start to finish","M","mid"],
- ["agency","Asking my team what they'd change about how I run things","M","mid"],
- ["agency","How we got our first client","L","mid"],
- ["agency","The creator we lost and why","L","mid"],
- ["agency","Running the agency from my phone on a full work day","M","mid"],
- ["agency","Interviewing someone to join the team","M","mid"],
- ["agency","The invoice nobody paid for two months","L","mid"],
- ["agency","We got ghosted by a brand — every email in order","L","mid"],
- ["agency","Registering a company at 21: everything nobody tells you","L","mid"],
- ["agency","One campaign, start to finish, in three minutes","H","mid"],
- ["agency","Writing a rejection I didn't want to send","L","mid"],
- ["agency","What I'd do differently if I started the agency today","L","mid"],
- ["agency","A brand asked for something we said no to","L","mid"],
- ["agency","The thing about this industry that annoys me most","L","mid"],
- ["agency","The deal I'm most proud of and nobody knows about","L","bot"],
- ["agency","What the agency looked like on day one vs now","M","bot"],
- ["agency","A year of the agency, honestly","H","bot"],
- ["agency","The email I got that made all of it worth it","L","bot"],
- ["agency","Where I want the agency to be in three years","L","bot"],
- ["agency","The deal that nearly broke us","M","bot"],
- ["agency","What I was doing this time last year","M","bot"],
- ["agency","Reading back my first ever pitch email","L","bot"],
- ["agency","The one decision I'd undo","L","bot"],
+ // ---- Building & Money (54)
+ ["agency","The email that got a creator signed in 24 hours","L","top",["overhead of the food / the cooking in progress","close-up: chopping, pouring, the plate coming together","the shop or fridge — wide, then the item in hand"]],
+ ["agency","Setting rates: what a creator with 10k should actually charge","L","top",["laptop/phone screen showing an email or message thread (blur sensitive bits)","you at your desk, over-shoulder, typing or reading","close-up: hand on trackpad, coffee next to laptop, the 'send' moment"]],
+ ["agency","Reading the worst pitch email we've ever received","L","top",["laptop/phone screen showing an email or message thread (blur sensitive bits)","you at your desk, over-shoulder, typing or reading","close-up: hand on trackpad, coffee next to laptop, the 'send' moment"]],
+ ["agency","What I look for in a media kit in the first ten seconds","L","top",["laptop/phone screen showing an email or message thread (blur sensitive bits)","you at your desk, over-shoulder, typing or reading","close-up: hand on trackpad, coffee next to laptop, the 'send' moment"]],
+ ["agency","Telling a creator their rates are too low","L","top",["laptop/phone screen showing an email or message thread (blur sensitive bits)","you at your desk, over-shoulder, typing or reading","close-up: hand on trackpad, coffee next to laptop, the 'send' moment"]],
+ ["agency","Every tool the agency runs on and what it costs a month","M","top",["close-up of a banking/notes app (blur real figures)","b-roll of the thing the money's about — the shop, the purchase, the receipt","you walking, thinking, hand in pocket — neutral motion to talk over"]],
+ ["agency","What a brand asks for that never makes it into the brief","M","top",["laptop/phone screen showing an email or message thread (blur sensitive bits)","you at your desk, over-shoulder, typing or reading","close-up: hand on trackpad, coffee next to laptop, the 'send' moment"]],
+ ["agency","The best thing a creator has ever said to us","L","top",["overhead of the food / the cooking in progress","close-up: chopping, pouring, the plate coming together","the shop or fridge — wide, then the item in hand"]],
+ ["agency","Hiring my friends was either the best or worst decision","M","top",["the group mid-conversation, candid, not posed","wide of the room/setting so it reads as 'somewhere'","close reaction shots — a laugh, a nod, a facepalm"]],
+ ["agency","Rating our own campaigns from worst to best","M","top",["laptop/phone screen showing an email or message thread (blur sensitive bits)","you at your desk, over-shoulder, typing or reading","close-up: hand on trackpad, coffee next to laptop, the 'send' moment"]],
+ ["agency","Explaining what I actually do to someone who doesn't get it","L","top",["screen recording of the actual thing","desk setup wide, then close on the gear","you reacting to the screen — the win or the facepalm"]],
+ ["agency","What a creator with 10k, 100k and 1m actually gets paid","L","top",["laptop/phone screen showing an email or message thread (blur sensitive bits)","you at your desk, over-shoulder, typing or reading","close-up: hand on trackpad, coffee next to laptop, the 'send' moment"]],
+ ["agency","Every brand deal we did this year, ranked by how much it paid","M","top",["laptop/phone screen showing an email or message thread (blur sensitive bits)","you at your desk, over-shoulder, typing or reading","close-up: hand on trackpad, coffee next to laptop, the 'send' moment"]],
+ ["agency","The going rate for a TikTok post in 2026","L","top",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["agency","How much of a brand deal the creator actually keeps","L","top",["laptop/phone screen showing an email or message thread (blur sensitive bits)","you at your desk, over-shoulder, typing or reading","close-up: hand on trackpad, coffee next to laptop, the 'send' moment"]],
+ ["agency","Ranking the brands we've worked with, worst to best","M","top",["laptop/phone screen showing an email or message thread (blur sensitive bits)","you at your desk, over-shoulder, typing or reading","close-up: hand on trackpad, coffee next to laptop, the 'send' moment"]],
+ ["agency","Five things in a media kit that get you rejected instantly","L","top",["laptop/phone screen showing an email or message thread (blur sensitive bits)","you at your desk, over-shoulder, typing or reading","close-up: hand on trackpad, coffee next to laptop, the 'send' moment"]],
+ ["agency","What it costs to run an agency for a month","M","top",["close-up of a banking/notes app (blur real figures)","b-roll of the thing the money's about — the shop, the purchase, the receipt","you walking, thinking, hand in pocket — neutral motion to talk over"]],
+ ["agency","The brand deal we turned down, and the maths behind it","M","mid",["laptop/phone screen showing an email or message thread (blur sensitive bits)","you at your desk, over-shoulder, typing or reading","close-up: hand on trackpad, coffee next to laptop, the 'send' moment"]],
+ ["agency","What actually happens between a brand emailing and a creator getting paid","M","mid",["laptop/phone screen showing an email or message thread (blur sensitive bits)","you at your desk, over-shoulder, typing or reading","close-up: hand on trackpad, coffee next to laptop, the 'send' moment"]],
+ ["agency","Reviewing creator applications with the team, live","M","mid",["overhead of the food / the cooking in progress","close-up: chopping, pouring, the plate coming together","the shop or fridge — wide, then the item in hand"]],
+ ["agency","Why we said no to a creator we all liked","L","mid",["overhead of the food / the cooking in progress","close-up: chopping, pouring, the plate coming together","the shop or fridge — wide, then the item in hand"]],
+ ["agency","I run an agency and I'm about to start a full-time job — how that works","M","mid",["getting ready / bag pack, close on the essentials","exterior of the workplace (discreet), you arriving","the walk home, decompressing — golden hour if you can"]],
+ ["agency","Working out of a caf&eacute; with the team for a full day","M","mid",["the drink/food landing on the table, close","wide of the café interior, you settling in","laptop-open working shot, ambient people in background"]],
+ ["agency","Pitching a brand we have no business pitching","M","mid",["laptop/phone screen showing an email or message thread (blur sensitive bits)","you at your desk, over-shoulder, typing or reading","close-up: hand on trackpad, coffee next to laptop, the 'send' moment"]],
+ ["agency","Reading a campaign brief out loud and reacting to it","L","mid",["laptop/phone screen showing an email or message thread (blur sensitive bits)","you at your desk, over-shoulder, typing or reading","close-up: hand on trackpad, coffee next to laptop, the 'send' moment"]],
+ ["agency","Hosting our first BluStu creator event","H","mid",["overhead of the food / the cooking in progress","close-up: chopping, pouring, the plate coming together","the shop or fridge — wide, then the item in hand"]],
+ ["agency","A deal fell through today — the full timeline","L","mid",["laptop/phone screen showing an email or message thread (blur sensitive bits)","you at your desk, over-shoulder, typing or reading","close-up: hand on trackpad, coffee next to laptop, the 'send' moment"]],
+ ["agency","I built our internal system myself. Here's what it does","M","mid",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["agency","Mistakes in the first year that cost us actual money","L","mid",["close-up of a banking/notes app (blur real figures)","b-roll of the thing the money's about — the shop, the purchase, the receipt","you walking, thinking, hand in pocket — neutral motion to talk over"]],
+ ["agency","The message I nearly sent during a negotiation","L","mid",["laptop/phone screen showing an email or message thread (blur sensitive bits)","you at your desk, over-shoulder, typing or reading","close-up: hand on trackpad, coffee next to laptop, the 'send' moment"]],
+ ["agency","A day that was just emails, start to finish","M","mid",["screen recording of the actual thing","desk setup wide, then close on the gear","you reacting to the screen — the win or the facepalm"]],
+ ["agency","Asking my team what they'd change about how I run things","M","mid",["the group mid-conversation, candid, not posed","wide of the room/setting so it reads as 'somewhere'","close reaction shots — a laugh, a nod, a facepalm"]],
+ ["agency","How we got our first client","L","mid",["laptop/phone screen showing an email or message thread (blur sensitive bits)","you at your desk, over-shoulder, typing or reading","close-up: hand on trackpad, coffee next to laptop, the 'send' moment"]],
+ ["agency","The creator we lost and why","L","mid",["overhead of the food / the cooking in progress","close-up: chopping, pouring, the plate coming together","the shop or fridge — wide, then the item in hand"]],
+ ["agency","Running the agency from my phone on a full work day","M","mid",["getting ready / bag pack, close on the essentials","exterior of the workplace (discreet), you arriving","the walk home, decompressing — golden hour if you can"]],
+ ["agency","Interviewing someone to join the team","M","mid",["the group mid-conversation, candid, not posed","wide of the room/setting so it reads as 'somewhere'","close reaction shots — a laugh, a nod, a facepalm"]],
+ ["agency","The invoice nobody paid for two months","L","mid",["laptop/phone screen showing an email or message thread (blur sensitive bits)","you at your desk, over-shoulder, typing or reading","close-up: hand on trackpad, coffee next to laptop, the 'send' moment"]],
+ ["agency","We got ghosted by a brand — every email in order","L","mid",["laptop/phone screen showing an email or message thread (blur sensitive bits)","you at your desk, over-shoulder, typing or reading","close-up: hand on trackpad, coffee next to laptop, the 'send' moment"]],
+ ["agency","Registering a company at 21: everything nobody tells you","L","mid",["YOU to camera for the key line — this is a face moment, use it","simple b-roll to cut away to: walking, window light, hands","a location that matches the mood — don't batch them all on one wall"]],
+ ["agency","One campaign, start to finish, in three minutes","H","mid",["laptop/phone screen showing an email or message thread (blur sensitive bits)","you at your desk, over-shoulder, typing or reading","close-up: hand on trackpad, coffee next to laptop, the 'send' moment"]],
+ ["agency","Writing a rejection I didn't want to send","L","mid",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["agency","What I'd do differently if I started the agency today","L","mid",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["agency","A brand asked for something we said no to","L","mid",["laptop/phone screen showing an email or message thread (blur sensitive bits)","you at your desk, over-shoulder, typing or reading","close-up: hand on trackpad, coffee next to laptop, the 'send' moment"]],
+ ["agency","The thing about this industry that annoys me most","L","mid",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["agency","The deal I'm most proud of and nobody knows about","L","bot",["laptop/phone screen showing an email or message thread (blur sensitive bits)","you at your desk, over-shoulder, typing or reading","close-up: hand on trackpad, coffee next to laptop, the 'send' moment"]],
+ ["agency","What the agency looked like on day one vs now","M","bot",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["agency","A year of the agency, honestly","H","bot",["YOU to camera for the key line — this is a face moment, use it","simple b-roll to cut away to: walking, window light, hands","a location that matches the mood — don't batch them all on one wall"]],
+ ["agency","The email I got that made all of it worth it","L","bot",["screen recording of the actual thing","desk setup wide, then close on the gear","you reacting to the screen — the win or the facepalm"]],
+ ["agency","Where I want the agency to be in three years","L","bot",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["agency","The deal that nearly broke us","M","bot",["laptop/phone screen showing an email or message thread (blur sensitive bits)","you at your desk, over-shoulder, typing or reading","close-up: hand on trackpad, coffee next to laptop, the 'send' moment"]],
+ ["agency","What I was doing this time last year","M","bot",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["agency","Reading back my first ever pitch email","L","bot",["laptop/phone screen showing an email or message thread (blur sensitive bits)","you at your desk, over-shoulder, typing or reading","close-up: hand on trackpad, coffee next to laptop, the 'send' moment"]],
+ ["agency","The one decision I'd undo","L","bot",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
  // ---- Twenties Notes (53)
- ["thoughts","Five things I'd tell anyone starting a business at 21","L","top"],
- ["thoughts","Three habits that actually changed my year","L","top"],
- ["thoughts","The four books that did something for me","L","top"],
- ["thoughts","Everything I got wrong about money at 20","L","top"],
- ["thoughts","Five things nobody tells you about your first year out of uni","L","top"],
- ["thoughts","The best advice I've been given, ranked","L","top"],
- ["thoughts","Three things I'd do differently if I started posting today","L","top"],
- ["thoughts","What I'd spend my first £1000 on now vs at 18","L","top"],
- ["thoughts","Five signs you're doing better than you think","L","top"],
- ["thoughts","The three questions I ask myself when I'm stuck","L","top"],
- ["thoughts","Nobody prepares you for being 22","L","mid"],
- ["thoughts","Why everyone should travel alone at least once","L","mid"],
- ["thoughts","I think we're all addicted to being busy","L","mid"],
- ["thoughts","Success looks nothing like I thought it would","L","mid"],
- ["thoughts","Why I stopped making advice content","L","mid"],
- ["thoughts","Friendships change in your twenties and nobody warns you","L","mid"],
- ["thoughts","The problem with doing everything at once","L","mid"],
- ["thoughts","I don't think you need to find your passion","L","mid"],
- ["thoughts","What running a business taught me that uni didn't","L","mid"],
- ["thoughts","Being ambitious is exhausting and nobody says it","L","mid"],
- ["thoughts","The most useful thing anyone's ever said to me","L","mid"],
- ["thoughts","I think comparison is the actual job hazard","L","mid"],
- ["thoughts","On doing two things properly instead of one","L","mid"],
- ["thoughts","What I'd tell myself at 18, without the clich&eacute;s","L","mid"],
- ["thoughts","Money changed less than I expected","L","mid"],
- ["thoughts","Why I don't think you should move to London for the vibes","L","mid"],
- ["thoughts","The bit of growing up nobody films","L","mid"],
- ["thoughts","I'm not sure I'd do a degree again","L","mid"],
- ["thoughts","Working with your friends — the honest version","L","mid"],
- ["thoughts","Nobody talks about how boring discipline is","L","mid"],
- ["thoughts","I think most people quit one month too early","L","mid"],
- ["thoughts","Why I don't romanticise the grind anymore","L","mid"],
- ["thoughts","The advice I got that turned out to be wrong","L","mid"],
- ["thoughts","On being the youngest person in the room","L","mid"],
- ["thoughts","Everyone's waiting to feel ready","L","mid"],
- ["thoughts","I think you can be behind and fine at the same time","L","mid"],
- ["thoughts","On saying no to things you'd enjoy","L","mid"],
- ["thoughts","Being liked vs being respected","L","mid"],
- ["thoughts","What two years of posting actually taught me","L","mid"],
- ["thoughts","Doing a degree and not using it the obvious way","L","mid"],
- ["thoughts","I think everyone should have something that isn't their job","L","mid"],
- ["thoughts","Why I don't tell people at work about the other thing","L","mid"],
- ["thoughts","On being early to something and having to wait","L","mid"],
- ["thoughts","The thing I was completely wrong about last year","L","bot"],
- ["thoughts","Why I nearly quit, twice","L","bot"],
- ["thoughts","What I think about when a video flops","L","bot"],
- ["thoughts","The version of my life I thought I'd have by now","L","bot"],
- ["thoughts","Why I still live where I live","L","bot"],
- ["thoughts","The thing I'd protect if I lost everything else","L","bot"],
- ["thoughts","The thing I'd go back and undo","L","bot"],
- ["thoughts","Answering the thing loads of you keep asking me","L","bot"],
- ["thoughts","Where my head's at right now","L","bot"],
- ["thoughts","Reading your comments and being honest about them","M","bot"],
+ ["thoughts","Five things I'd tell anyone starting a business at 21","L","top",["YOU to camera for the key line — this is a face moment, use it","simple b-roll to cut away to: walking, window light, hands","a location that matches the mood — don't batch them all on one wall"]],
+ ["thoughts","Three habits that actually changed my year","L","top",["YOU to camera for the key line — this is a face moment, use it","simple b-roll to cut away to: walking, window light, hands","a location that matches the mood — don't batch them all on one wall"]],
+ ["thoughts","The four books that did something for me","L","top",["YOU to camera for the key line — this is a face moment, use it","simple b-roll to cut away to: walking, window light, hands","a location that matches the mood — don't batch them all on one wall"]],
+ ["thoughts","Everything I got wrong about money at 20","L","top",["close-up of a banking/notes app (blur real figures)","b-roll of the thing the money's about — the shop, the purchase, the receipt","you walking, thinking, hand in pocket — neutral motion to talk over"]],
+ ["thoughts","Five things nobody tells you about your first year out of uni","L","top",["YOU to camera for the key line — this is a face moment, use it","simple b-roll to cut away to: walking, window light, hands","a location that matches the mood — don't batch them all on one wall"]],
+ ["thoughts","The best advice I've been given, ranked","L","top",["YOU to camera for the key line — this is a face moment, use it","simple b-roll to cut away to: walking, window light, hands","a location that matches the mood — don't batch them all on one wall"]],
+ ["thoughts","Three things I'd do differently if I started posting today","L","top",["YOU to camera for the key line — this is a face moment, use it","simple b-roll to cut away to: walking, window light, hands","a location that matches the mood — don't batch them all on one wall"]],
+ ["thoughts","What I'd spend my first £1000 on now vs at 18","L","top",["close-up of a banking/notes app (blur real figures)","b-roll of the thing the money's about — the shop, the purchase, the receipt","you walking, thinking, hand in pocket — neutral motion to talk over"]],
+ ["thoughts","Five signs you're doing better than you think","L","top",["YOU to camera for the key line — this is a face moment, use it","simple b-roll to cut away to: walking, window light, hands","a location that matches the mood — don't batch them all on one wall"]],
+ ["thoughts","The three questions I ask myself when I'm stuck","L","top",["YOU to camera for the key line — this is a face moment, use it","simple b-roll to cut away to: walking, window light, hands","a location that matches the mood — don't batch them all on one wall"]],
+ ["thoughts","Nobody prepares you for being 22","L","mid",["YOU to camera for the key line — this is a face moment, use it","simple b-roll to cut away to: walking, window light, hands","a location that matches the mood — don't batch them all on one wall"]],
+ ["thoughts","Why everyone should travel alone at least once","L","mid",["airport/car/train establishing shot — motion, departure energy","wide of the place that says where you are instantly","close-up of one detail: ticket, map, the local thing"]],
+ ["thoughts","I think we're all addicted to being busy","L","mid",["YOU to camera for the key line — this is a face moment, use it","simple b-roll to cut away to: walking, window light, hands","a location that matches the mood — don't batch them all on one wall"]],
+ ["thoughts","Success looks nothing like I thought it would","L","mid",["YOU to camera for the key line — this is a face moment, use it","simple b-roll to cut away to: walking, window light, hands","a location that matches the mood — don't batch them all on one wall"]],
+ ["thoughts","Why I stopped making advice content","L","mid",["YOU to camera for the key line — this is a face moment, use it","simple b-roll to cut away to: walking, window light, hands","a location that matches the mood — don't batch them all on one wall"]],
+ ["thoughts","Friendships change in your twenties and nobody warns you","L","mid",["the group mid-conversation, candid, not posed","wide of the room/setting so it reads as 'somewhere'","close reaction shots — a laugh, a nod, a facepalm"]],
+ ["thoughts","The problem with doing everything at once","L","mid",["YOU to camera for the key line — this is a face moment, use it","simple b-roll to cut away to: walking, window light, hands","a location that matches the mood — don't batch them all on one wall"]],
+ ["thoughts","I don't think you need to find your passion","L","mid",["YOU to camera for the key line — this is a face moment, use it","simple b-roll to cut away to: walking, window light, hands","a location that matches the mood — don't batch them all on one wall"]],
+ ["thoughts","What running a business taught me that uni didn't","L","mid",["YOU to camera for the key line — this is a face moment, use it","simple b-roll to cut away to: walking, window light, hands","a location that matches the mood — don't batch them all on one wall"]],
+ ["thoughts","Being ambitious is exhausting and nobody says it","L","mid",["YOU to camera for the key line — this is a face moment, use it","simple b-roll to cut away to: walking, window light, hands","a location that matches the mood — don't batch them all on one wall"]],
+ ["thoughts","The most useful thing anyone's ever said to me","L","mid",["screen recording of the actual thing","desk setup wide, then close on the gear","you reacting to the screen — the win or the facepalm"]],
+ ["thoughts","I think comparison is the actual job hazard","L","mid",["getting ready / bag pack, close on the essentials","exterior of the workplace (discreet), you arriving","the walk home, decompressing — golden hour if you can"]],
+ ["thoughts","On doing two things properly instead of one","L","mid",["YOU to camera for the key line — this is a face moment, use it","simple b-roll to cut away to: walking, window light, hands","a location that matches the mood — don't batch them all on one wall"]],
+ ["thoughts","What I'd tell myself at 18, without the clich&eacute;s","L","mid",["YOU to camera for the key line — this is a face moment, use it","simple b-roll to cut away to: walking, window light, hands","a location that matches the mood — don't batch them all on one wall"]],
+ ["thoughts","Money changed less than I expected","L","mid",["close-up of a banking/notes app (blur real figures)","b-roll of the thing the money's about — the shop, the purchase, the receipt","you walking, thinking, hand in pocket — neutral motion to talk over"]],
+ ["thoughts","Why I don't think you should move to London for the vibes","L","mid",["YOU to camera for the key line — this is a face moment, use it","simple b-roll to cut away to: walking, window light, hands","a location that matches the mood — don't batch them all on one wall"]],
+ ["thoughts","The bit of growing up nobody films","L","mid",["YOU to camera for the key line — this is a face moment, use it","simple b-roll to cut away to: walking, window light, hands","a location that matches the mood — don't batch them all on one wall"]],
+ ["thoughts","I'm not sure I'd do a degree again","L","mid",["screen recording of the actual thing","desk setup wide, then close on the gear","you reacting to the screen — the win or the facepalm"]],
+ ["thoughts","Working with your friends — the honest version","L","mid",["getting ready / bag pack, close on the essentials","exterior of the workplace (discreet), you arriving","the walk home, decompressing — golden hour if you can"]],
+ ["thoughts","Nobody talks about how boring discipline is","L","mid",["YOU to camera for the key line — this is a face moment, use it","simple b-roll to cut away to: walking, window light, hands","a location that matches the mood — don't batch them all on one wall"]],
+ ["thoughts","I think most people quit one month too early","L","mid",["YOU to camera for the key line — this is a face moment, use it","simple b-roll to cut away to: walking, window light, hands","a location that matches the mood — don't batch them all on one wall"]],
+ ["thoughts","Why I don't romanticise the grind anymore","L","mid",["YOU to camera for the key line — this is a face moment, use it","simple b-roll to cut away to: walking, window light, hands","a location that matches the mood — don't batch them all on one wall"]],
+ ["thoughts","The advice I got that turned out to be wrong","L","mid",["YOU to camera for the key line — this is a face moment, use it","simple b-roll to cut away to: walking, window light, hands","a location that matches the mood — don't batch them all on one wall"]],
+ ["thoughts","On being the youngest person in the room","L","mid",["YOU to camera for the key line — this is a face moment, use it","simple b-roll to cut away to: walking, window light, hands","a location that matches the mood — don't batch them all on one wall"]],
+ ["thoughts","Everyone's waiting to feel ready","L","mid",["screen recording of the actual thing","desk setup wide, then close on the gear","you reacting to the screen — the win or the facepalm"]],
+ ["thoughts","I think you can be behind and fine at the same time","L","mid",["YOU to camera for the key line — this is a face moment, use it","simple b-roll to cut away to: walking, window light, hands","a location that matches the mood — don't batch them all on one wall"]],
+ ["thoughts","On saying no to things you'd enjoy","L","mid",["YOU to camera for the key line — this is a face moment, use it","simple b-roll to cut away to: walking, window light, hands","a location that matches the mood — don't batch them all on one wall"]],
+ ["thoughts","Being liked vs being respected","L","mid",["YOU to camera for the key line — this is a face moment, use it","simple b-roll to cut away to: walking, window light, hands","a location that matches the mood — don't batch them all on one wall"]],
+ ["thoughts","What two years of posting actually taught me","L","mid",["YOU to camera for the key line — this is a face moment, use it","simple b-roll to cut away to: walking, window light, hands","a location that matches the mood — don't batch them all on one wall"]],
+ ["thoughts","Doing a degree and not using it the obvious way","L","mid",["YOU to camera for the key line — this is a face moment, use it","simple b-roll to cut away to: walking, window light, hands","a location that matches the mood — don't batch them all on one wall"]],
+ ["thoughts","I think everyone should have something that isn't their job","L","mid",["getting ready / bag pack, close on the essentials","exterior of the workplace (discreet), you arriving","the walk home, decompressing — golden hour if you can"]],
+ ["thoughts","Why I don't tell people at work about the other thing","L","mid",["getting ready / bag pack, close on the essentials","exterior of the workplace (discreet), you arriving","the walk home, decompressing — golden hour if you can"]],
+ ["thoughts","On being early to something and having to wait","L","mid",["screen recording of the actual thing","desk setup wide, then close on the gear","you reacting to the screen — the win or the facepalm"]],
+ ["thoughts","The thing I was completely wrong about last year","L","bot",["YOU to camera for the key line — this is a face moment, use it","simple b-roll to cut away to: walking, window light, hands","a location that matches the mood — don't batch them all on one wall"]],
+ ["thoughts","Why I nearly quit, twice","L","bot",["YOU to camera for the key line — this is a face moment, use it","simple b-roll to cut away to: walking, window light, hands","a location that matches the mood — don't batch them all on one wall"]],
+ ["thoughts","What I think about when a video flops","L","bot",["YOU to camera for the key line — this is a face moment, use it","simple b-roll to cut away to: walking, window light, hands","a location that matches the mood — don't batch them all on one wall"]],
+ ["thoughts","The version of my life I thought I'd have by now","L","bot",["YOU to camera for the key line — this is a face moment, use it","simple b-roll to cut away to: walking, window light, hands","a location that matches the mood — don't batch them all on one wall"]],
+ ["thoughts","Why I still live where I live","L","bot",["YOU to camera for the key line — this is a face moment, use it","simple b-roll to cut away to: walking, window light, hands","a location that matches the mood — don't batch them all on one wall"]],
+ ["thoughts","The thing I'd protect if I lost everything else","L","bot",["YOU to camera for the key line — this is a face moment, use it","simple b-roll to cut away to: walking, window light, hands","a location that matches the mood — don't batch them all on one wall"]],
+ ["thoughts","The thing I'd go back and undo","L","bot",["YOU to camera for the key line — this is a face moment, use it","simple b-roll to cut away to: walking, window light, hands","a location that matches the mood — don't batch them all on one wall"]],
+ ["thoughts","Answering the thing loads of you keep asking me","L","bot",["YOU to camera for the key line — this is a face moment, use it","simple b-roll to cut away to: walking, window light, hands","a location that matches the mood — don't batch them all on one wall"]],
+ ["thoughts","Where my head's at right now","L","bot",["YOU to camera for the key line — this is a face moment, use it","simple b-roll to cut away to: walking, window light, hands","a location that matches the mood — don't batch them all on one wall"]],
+ ["thoughts","Reading your comments and being honest about them","M","bot",["YOU to camera for the key line — this is a face moment, use it","simple b-roll to cut away to: walking, window light, hands","a location that matches the mood — don't batch them all on one wall"]],
  // ---- Side Quest (63)
- ["sidequest","Someone invited me to something and I didn't ask what it was","M","top"],
- ["sidequest","Drove [X] hours for one specific thing","H","top"],
- ["sidequest","24 hours in a city I've never been to","H","top"],
- ["sidequest","Spent all day finding London's best [thing]","M","top"],
- ["sidequest","Said yes to everything for 24 hours","M","top"],
- ["sidequest","&pound;50 in London, as much as I could physically do","M","top"],
- ["sidequest","&pound;0 in London, as much as I could physically do","M","top"],
- ["sidequest","The most expensive thing I've eaten, rated honestly","M","top"],
- ["sidequest","Took the team somewhere with no plan","H","top"],
- ["sidequest","Airport at 4am — the trip nobody knew about","H","top"],
- ["sidequest","Rating every caf&eacute; I worked from this week","M","top"],
- ["sidequest","A perfect Saturday, start to finish","M","top"],
- ["sidequest","Let the team plan my entire day","M","top"],
- ["sidequest","The place everyone recommends — is it actually worth it?","M","top"],
- ["sidequest","Travelling with the people I work with","H","top"],
- ["sidequest","Went somewhere purely for one photo","M","top"],
- ["sidequest","Two cities in one day","H","top"],
- ["sidequest","The trip that went completely wrong","H","top"],
- ["sidequest","Ordinary Tuesday that turned into something","L","top"],
- ["sidequest","Booked a flight the same day I flew","H","top"],
- ["sidequest","Whoever answers first picks where we go","M","top"],
- ["sidequest","Doing the most touristy thing in my own city","M","top"],
- ["sidequest","The cheapest trip I could physically book","H","top"],
- ["sidequest","Went back somewhere I loved and it wasn't the same","M","top"],
- ["sidequest","A whole day with no phone","M","top"],
- ["sidequest","The event I nearly didn't go to","M","top"],
- ["sidequest","Everything I said yes to this month","M","top"],
- ["sidequest","Followed a stranger's recommendation exactly","M","top"],
- ["sidequest","The last-minute plan that beat the planned one","M","top"],
- ["sidequest","Somewhere four hours away everyone swears is worth it","H","top"],
- ["sidequest","A full day out for under a tenner","M","top"],
- ["sidequest","What I said no to this month, and whether I regret it","L","top"],
- ["sidequest","The caf&eacute; I've worked from every week for a year","L","top"],
- ["sidequest","Best thing I ate this week, and the worst","L","top"],
- ["sidequest","This costs [&pound;] and I think about it constantly","L","top"],
- ["sidequest","Rating every takeaway on one road","M","top"],
- ["sidequest","The place near me that everyone walks straight past","L","top"],
- ["sidequest","Cheapest genuinely good meal in London","M","top"],
- ["sidequest","Overrated vs underrated within ten minutes of me","M","top"],
- ["sidequest","Somewhere that was worth the queue","M","top"],
- ["sidequest","Somewhere that absolutely was not worth the queue","M","top"],
- ["sidequest","One day in London for someone visiting","L","top"],
- ["sidequest","Worked from three different caf&eacute;s in one day","M","top"],
- ["sidequest","Late night food, ranked","M","top"],
- ["sidequest","The spot I take literally everyone to","L","top"],
- ["sidequest","London at 6am","M","top"],
- ["sidequest","One street, every single place on it","H","top"],
- ["sidequest","Asked the staff what they'd actually order","M","top"],
- ["sidequest","The place I stopped going to and why","L","top"],
- ["sidequest","Why I keep going back to the same place","L","mid"],
- ["sidequest","I planned this trip badly and here's what I learned","M","mid"],
- ["sidequest","The trip that made me realise something","M","mid"],
- ["sidequest","Travelling with people you work with is complicated","L","mid"],
- ["sidequest","What I got wrong about travelling in my twenties","L","mid"],
- ["sidequest","Why I stopped trying to see everything","L","mid"],
- ["sidequest","The place I built up in my head that let me down","M","mid"],
- ["sidequest","I don't actually enjoy this as much as I pretend to","L","mid"],
- ["sidequest","What a year of saying yes actually cost me","M","mid"],
- ["sidequest","Doing things alone vs doing them with everyone","L","mid"],
- ["sidequest","Did the thing I've been putting off for a year","M","bot"],
- ["sidequest","Every place I went this year","H","bot"],
- ["sidequest","The trip you all voted for","H","bot"],
- ["sidequest","Going back to the first place I filmed","M","bot"],
- // ---- Starting From Zero (53)
- ["fitness","My sleep is the worst part of all of this","L","top"],
- ["fitness","Five things I wish I'd known before my first gym session","L","top"],
- ["fitness","Everything a beginner actually needs, and what to skip","L","top"],
- ["fitness","What a month of the gym costs me","L","top"],
- ["fitness","Three meals I've learned to make that don't take long","M","top"],
- ["fitness","Ranking every protein thing I've tried","M","top"],
- ["fitness","The four exercises I actually do","M","top"],
- ["fitness","What I eat in a week on a normal budget","M","top"],
- ["fitness","Five beginner mistakes I made in month one","L","top"],
- ["fitness","Cheapest decent gym near me, compared","M","top"],
- ["fitness","First session in years and I had no idea what I was doing","M","mid"],
- ["fitness","Week one, filmed honestly, no highlight reel","M","mid"],
- ["fitness","I've been going a month and still avoid the free weights","M","mid"],
- ["fitness","Didn't go for two weeks — what actually happened","L","mid"],
- ["fitness","I've been doing this exercise wrong since I started","M","mid"],
- ["fitness","Gym after a full shift vs gym on my day off","M","mid"],
- ["fitness","Tried to cook something properly and it went badly","M","mid"],
- ["fitness","The one meal I've learned to make and now eat constantly","L","mid"],
- ["fitness","Six weeks in — what's changed and what hasn't","M","mid"],
- ["fitness","The exercise I still can't do","L","mid"],
- ["fitness","What's in my gym bag, embarrassingly","L","mid"],
- ["fitness","Went at 6am every day for a week to see if it's better","H","mid"],
- ["fitness","My whole routine, which is much simpler than you'd think","M","mid"],
- ["fitness","Tried a class on my own with nobody to hide behind","M","mid"],
- ["fitness","Did a proper food shop for the first time in my life","M","mid"],
- ["fitness","Meal prepped for the week and it was grim","M","mid"],
- ["fitness","The gym at 7am vs 7pm — completely different places","M","mid"],
- ["fitness","Everything I ate on a good day and on a bad day","M","mid"],
- ["fitness","What I thought the gym would be like vs what it is","L","mid"],
- ["fitness","Went with someone who actually knows what they're doing","M","mid"],
- ["fitness","Work destroyed my routine this week","M","mid"],
- ["fitness","30 days of turning up — the honest version","H","mid"],
- ["fitness","Why I quit the gym last time I tried this","L","mid"],
- ["fitness","Cooked the same thing three times until it was good","M","mid"],
- ["fitness","Walking in was the hardest part and here's what helped","L","mid"],
- ["fitness","Trying to find food I'll actually eat twice","M","mid"],
- ["fitness","Bought gym stuff I absolutely did not need","L","mid"],
- ["fitness","Walked everywhere instead of the tube for a week","M","mid"],
- ["fitness","The thing that finally made it stick","L","mid"],
- ["fitness","Doing this alongside a job and a business","M","mid"],
- ["fitness","Found the quietest hour at my gym and it changed everything","M","mid"],
- ["fitness","The advice I ignored and shouldn't have","L","mid"],
- ["fitness","Got a form check and it was humbling","M","mid"],
- ["fitness","Everything I got wrong in my first month","L","mid"],
- ["fitness","Tried the gym my friend goes to and hated it","M","mid"],
- ["fitness","One week of eating like I mean it","M","mid"],
- ["fitness","The bit nobody films: turning up when you don't want to","L","mid"],
- ["fitness","Three months of turning up — what it looks like","M","bot"],
- ["fitness","Still a beginner six months in, and that's fine","L","bot"],
- ["fitness","Six months of this, the honest version","M","bot"],
- ["fitness","Watching my week one video back","M","bot"],
- ["fitness","The promise I made at the start and whether I kept it","L","bot"],
- ["fitness","A year from zero","H","bot"],
- // ---- Grown Up Things (56)
- ["grown","What I actually do all day","M","top"],
- ["grown","How much free time I actually have, counted","M","top"],
- ["grown","The food shop, and how much it's gone up","M","top"],
- ["grown","What I thought adult life would cost vs what it costs","M","top"],
- ["grown","Everything my first month of adult life cost","M","top"],
- ["grown","Five bits of admin nobody teaches you","L","top"],
- ["grown","What a full-time job actually pays after everything","M","top"],
- ["grown","Five things I bought that were genuinely worth it","M","top"],
- ["grown","My whole week, hour by hour, in numbers","H","top"],
- ["grown","What a food shop costs now vs a year ago","M","top"],
- ["grown","The thing about working full time nobody warned me about","L","mid"],
- ["grown","I'm not sure I'm doing this right","L","mid"],
- ["grown","Why I still live at home and I'm fine with it","L","mid"],
- ["grown","The bit of adult life I'm worst at","L","mid"],
- ["grown","Getting something wrong at work and what it taught me","L","mid"],
- ["grown","I thought I'd feel different by now","L","mid"],
- ["grown","Balancing two things and doing neither perfectly","L","mid"],
- ["grown","What I actually worry about","L","mid"],
- ["grown","Money is stranger than I expected","L","mid"],
- ["grown","Why I'm not in a rush anymore","L","mid"],
- ["grown","First week and I already got something wrong","M","bot"],
- ["grown","What's in my work bag","L","bot"],
- ["grown","My commute, honestly","L","bot"],
- ["grown","First payslip and where all of it went","M","bot"],
- ["grown","A full week of a job and a business, hour by hour","H","bot"],
- ["grown","Things nobody tells you about working properly","L","bot"],
- ["grown","My lunch break","L","bot"],
- ["grown","First thing I bought that I'd never have bought before","M","bot"],
- ["grown","A full weekday, 6am to midnight","H","bot"],
- ["grown","Why I'm not quitting the job for content","L","bot"],
- ["grown","Adult admin nobody warns you about","L","bot"],
- ["grown","The week I took on too much","M","bot"],
- ["grown","Sunday before a full week","M","bot"],
- ["grown","Explaining my second job to someone at work","L","bot"],
- ["grown","Six months in — what's different","M","bot"],
- ["grown","The part of the job I didn't expect to like","L","bot"],
- ["grown","What I'd tell myself in final year","L","bot"],
- ["grown","Everything I spent this month","M","bot"],
- ["grown","The first time work followed me home","L","bot"],
- ["grown","My week before the job vs my week now","M","bot"],
- ["grown","Saving for something specific","L","bot"],
- ["grown","First holiday I've paid for entirely myself","H","bot"],
- ["grown","Got something wrong at work and had to own it","L","bot"],
- ["grown","A day where nothing went right","M","bot"],
- ["grown","Being qualified vs feeling qualified","L","bot"],
- ["grown","Fixed something myself instead of calling someone","M","bot"],
- ["grown","Jobs around the house nobody asked me to do","M","bot"],
- ["grown","A day of errands for my mum","M","bot"],
- ["grown","Sorted something boring I'd avoided for months","L","bot"],
- ["grown","Working out what all my bills actually are","L","bot"],
- ["grown","Cleaned the whole place properly for once","M","bot"],
- ["grown","One year of working — the honest recap","H","bot"],
- ["grown","Cooking for the family for once","M","bot"],
- ["grown","The Sunday that's just admin and washing","L","bot"],
- ["grown","Doing something my parents always did for me","M","bot"],
- ["grown","The most boring day I've filmed and why I'm posting it","L","bot"]
-];
-
-const MONTHS=[
- ["Aug","2026",true,"Launch all five",
-  "The transition month. Travel content ends mid-month; the five series take over. Expect it to feel rough — you're learning the job and the filming rhythm at the same time. Don't judge the numbers this month, just get all five series posting at least once.",
-  "First real episode of each series live by end of month. Side Quest keeps carrying reach while the others find their feet."],
- ["Sep","2026",false,"Find the rhythm",
-  "First full month of the real system. This is where you learn whether Tuesday-shoot / weekend-batch actually holds against the job. Adjust the week here if it doesn't — better to fix it now than fight it for three months.",
-  "Five a week, consistently. Start weighting Trust episodes — the follower conversion is the current gap."],
- ["Oct","2026",false,"Push reach + convert",
-  "By now you've got a month of data on what travels. Lean into whatever series is pulling strangers and make sure those videos end on a reason to follow. First short trips likely start landing around here.",
-  "A signature episode format emerging — the one people start to recognise. Follower line moving faster than views for once."],
- ["Nov","2026",false,"Double down",
-  "Steady month, no excuses in the schedule. Whatever's working from Oct, do more of it. Agency tends to pick up toward end of year with brands spending Q4 budgets — that's strong reach content.",
-  "Best-performing series identified and getting extra episodes. Backlog deep enough that a bad week doesn't hurt."],
- ["Dec","2026",false,"Recap + reset",
-  "Year-end is a gift for content: everyone's reflecting, and your bank is full of Loyalty and recap episodes made for exactly this. Also the month to look back at what the slate actually did since August.",
-  "A year-in-review across all five series. Enter 2026 with a proven format and a real backlog."]
-];
-
-const FLOATS=[
- ["Short trips & the Wowcher £99 mystery holiday","Side Quest","Whenever they land. The mystery holiday with a mate is a perfect Side Quest arc — the not-knowing where you're going IS the hook. Film the reveal, the booking, the airport, the place. One trip is five episodes, not one."],
- ["Car hunt","New mini-series","Distant, not dated. When you're actually viewing cars, this becomes its own short series — the search, the test drives, the decision, the money. High-reach: prices and 'should I buy this' are exactly what strangers stop for. Starts when it starts."],
- ["The car itself — mods & ownership","New mini-series","After the hunt ends. Light touch, not a car channel — the first drive, small mods, what it's actually like to own. Folds into Grown Up Things as much as its own thing. Keep it occasional so it stays a thread, not the whole page."]
+ ["sidequest","Someone invited me to something and I didn't ask what it was","M","top",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["sidequest","Drove [X] hours for one specific thing","H","top",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["sidequest","24 hours in a city I've never been to","H","top",["airport/car/train establishing shot — motion, departure energy","wide of the place that says where you are instantly","close-up of one detail: ticket, map, the local thing"]],
+ ["sidequest","Spent all day finding London's best [thing]","M","top",["close-up of a banking/notes app (blur real figures)","b-roll of the thing the money's about — the shop, the purchase, the receipt","you walking, thinking, hand in pocket — neutral motion to talk over"]],
+ ["sidequest","Said yes to everything for 24 hours","M","top",["screen recording of the actual thing","desk setup wide, then close on the gear","you reacting to the screen — the win or the facepalm"]],
+ ["sidequest","&pound;50 in London, as much as I could physically do","M","top",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["sidequest","&pound;0 in London, as much as I could physically do","M","top",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["sidequest","The most expensive thing I've eaten, rated honestly","M","top",["overhead of the food / the cooking in progress","close-up: chopping, pouring, the plate coming together","the shop or fridge — wide, then the item in hand"]],
+ ["sidequest","Took the team somewhere with no plan","H","top",["the group mid-conversation, candid, not posed","wide of the room/setting so it reads as 'somewhere'","close reaction shots — a laugh, a nod, a facepalm"]],
+ ["sidequest","Airport at 4am — the trip nobody knew about","H","top",["airport/car/train establishing shot — motion, departure energy","wide of the place that says where you are instantly","close-up of one detail: ticket, map, the local thing"]],
+ ["sidequest","Rating every caf&eacute; I worked from this week","M","top",["the drink/food landing on the table, close","wide of the café interior, you settling in","laptop-open working shot, ambient people in background"]],
+ ["sidequest","A perfect Saturday, start to finish","M","top",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["sidequest","Let the team plan my entire day","M","top",["the group mid-conversation, candid, not posed","wide of the room/setting so it reads as 'somewhere'","close reaction shots — a laugh, a nod, a facepalm"]],
+ ["sidequest","The place everyone recommends — is it actually worth it?","M","top",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["sidequest","Travelling with the people I work with","H","top",["airport/car/train establishing shot — motion, departure energy","wide of the place that says where you are instantly","close-up of one detail: ticket, map, the local thing"]],
+ ["sidequest","Went somewhere purely for one photo","M","top",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["sidequest","Two cities in one day","H","top",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["sidequest","The trip that went completely wrong","H","top",["airport/car/train establishing shot — motion, departure energy","wide of the place that says where you are instantly","close-up of one detail: ticket, map, the local thing"]],
+ ["sidequest","Ordinary Tuesday that turned into something","L","top",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["sidequest","Booked a flight the same day I flew","H","top",["airport/car/train establishing shot — motion, departure energy","wide of the place that says where you are instantly","close-up of one detail: ticket, map, the local thing"]],
+ ["sidequest","Whoever answers first picks where we go","M","top",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["sidequest","Doing the most touristy thing in my own city","M","top",["airport/car/train establishing shot — motion, departure energy","wide of the place that says where you are instantly","close-up of one detail: ticket, map, the local thing"]],
+ ["sidequest","The cheapest trip I could physically book","H","top",["airport/car/train establishing shot — motion, departure energy","wide of the place that says where you are instantly","close-up of one detail: ticket, map, the local thing"]],
+ ["sidequest","Went back somewhere I loved and it wasn't the same","M","top",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["sidequest","A whole day with no phone","M","top",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["sidequest","The event I nearly didn't go to","M","top",["the group mid-conversation, candid, not posed","wide of the room/setting so it reads as 'somewhere'","close reaction shots — a laugh, a nod, a facepalm"]],
+ ["sidequest","Everything I said yes to this month","M","top",["screen recording of the actual thing","desk setup wide, then close on the gear","you reacting to the screen — the win or the facepalm"]],
+ ["sidequest","Followed a stranger's recommendation exactly","M","top",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["sidequest","The last-minute plan that beat the planned one","M","top",["overhead of the food / the cooking in progress","close-up: chopping, pouring, the plate coming together","the shop or fridge — wide, then the item in hand"]],
+ ["sidequest","Somewhere four hours away everyone swears is worth it","H","top",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["sidequest","A full day out for under a tenner","M","top",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["sidequest","What I said no to this month, and whether I regret it","L","top",["screen recording of the actual thing","desk setup wide, then close on the gear","you reacting to the screen — the win or the facepalm"]],
+ ["sidequest","The caf&eacute; I've worked from every week for a year","L","top",["the drink/food landing on the table, close","wide of the café interior, you settling in","laptop-open working shot, ambient people in background"]],
+ ["sidequest","Best thing I ate this week, and the worst","L","top",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["sidequest","This costs [&pound;] and I think about it constantly","L","top",["close-up of a banking/notes app (blur real figures)","b-roll of the thing the money's about — the shop, the purchase, the receipt","you walking, thinking, hand in pocket — neutral motion to talk over"]],
+ ["sidequest","Rating every takeaway on one road","M","top",["overhead of the food / the cooking in progress","close-up: chopping, pouring, the plate coming together","the shop or fridge — wide, then the item in hand"]],
+ ["sidequest","The place near me that everyone walks straight past","L","top",["POV walking — feet, pavement, the station approach","wide of the platform/street, time of day clear","you from behind, bag on, moving through it"]],
+ ["sidequest","Cheapest genuinely good meal in London","M","top",["overhead of the food / the cooking in progress","close-up: chopping, pouring, the plate coming together","the shop or fridge — wide, then the item in hand"]],
+ ["sidequest","Overrated vs underrated within ten minutes of me","M","top",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["sidequest","Somewhere that was worth the queue","M","top",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["sidequest","Somewhere that absolutely was not worth the queue","M","top",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["sidequest","One day in London for someone visiting","L","top",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["sidequest","Worked from three different caf&eacute;s in one day","M","top",["the drink/food landing on the table, close","wide of the café interior, you settling in","laptop-open working shot, ambient people in background"]],
+ ["sidequest","Late night food, ranked","M","top",["overhead of the food / the cooking in progress","close-up: chopping, pouring, the plate coming together","the shop or fridge — wide, then the item in hand"]],
+ ["sidequest","The spot I take literally everyone to","L","top",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["sidequest","London at 6am","M","top",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["sidequest","One street, every single place on it","H","top",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["sidequest","Asked the staff what they'd actually order","M","top",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["sidequest","The place I stopped going to and why","L","top",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["sidequest","Why I keep going back to the same place","L","mid",["YOU to camera for the key line — this is a face moment, use it","simple b-roll to cut away to: walking, window light, hands","a location that matches the mood — don't batch them all on one wall"]],
+ ["sidequest","I planned this trip badly and here's what I learned","M","mid",["close-up of a banking/notes app (blur real figures)","b-roll of the thing the money's about — the shop, the purchase, the receipt","you walking, thinking, hand in pocket — neutral motion to talk over"]],
+ ["sidequest","The trip that made me realise something","M","mid",["airport/car/train establishing shot — motion, departure energy","wide of the place that says where you are instantly","close-up of one detail: ticket, map, the local thing"]],
+ ["sidequest","Travelling with people you work with is complicated","L","mid",["airport/car/train establishing shot — motion, departure energy","wide of the place that says where you are instantly","close-up of one detail: ticket, map, the local thing"]],
+ ["sidequest","What I got wrong about travelling in my twenties","L","mid",["airport/car/train establishing shot — motion, departure energy","wide of the place that says where you are instantly","close-up of one detail: ticket, map, the local thing"]],
+ ["sidequest","Why I stopped trying to see everything","L","mid",["YOU to camera for the key line — this is a face moment, use it","simple b-roll to cut away to: walking, window light, hands","a location that matches the mood — don't batch them all on one wall"]],
+ ["sidequest","The place I built up in my head that let me down","M","mid",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["sidequest","I don't actually enjoy this as much as I pretend to","L","mid",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["sidequest","What a year of saying yes actually cost me","M","mid",["close-up of a banking/notes app (blur real figures)","b-roll of the thing the money's about — the shop, the purchase, the receipt","you walking, thinking, hand in pocket — neutral motion to talk over"]],
+ ["sidequest","Doing things alone vs doing them with everyone","L","mid",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["sidequest","Did the thing I've been putting off for a year","M","bot",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["sidequest","Every place I went this year","H","bot",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["sidequest","The trip you all voted for","H","bot",["airport/car/train establishing shot — motion, departure energy","wide of the place that says where you are instantly","close-up of one detail: ticket, map, the local thing"]],
+ ["sidequest","Going back to the first place I filmed","M","bot",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ // ---- Gym & Food (53)
+ ["fitness","My sleep is the worst part of all of this","L","top",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["fitness","Five things I wish I'd known before my first gym session","L","top",["wide of the gym floor, you walking in","close-up: hands chalking/gripping, water bottle, the machine","mid-set from the side, unglamorous and real"]],
+ ["fitness","Everything a beginner actually needs, and what to skip","L","top",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["fitness","What a month of the gym costs me","L","top",["close-up of a banking/notes app (blur real figures)","b-roll of the thing the money's about — the shop, the purchase, the receipt","you walking, thinking, hand in pocket — neutral motion to talk over"]],
+ ["fitness","Three meals I've learned to make that don't take long","M","top",["close-up of a banking/notes app (blur real figures)","b-roll of the thing the money's about — the shop, the purchase, the receipt","you walking, thinking, hand in pocket — neutral motion to talk over"]],
+ ["fitness","Ranking every protein thing I've tried","M","top",["overhead of the food / the cooking in progress","close-up: chopping, pouring, the plate coming together","the shop or fridge — wide, then the item in hand"]],
+ ["fitness","The four exercises I actually do","M","top",["wide of the gym floor, you walking in","close-up: hands chalking/gripping, water bottle, the machine","mid-set from the side, unglamorous and real"]],
+ ["fitness","What I eat in a week on a normal budget","M","top",["close-up of a banking/notes app (blur real figures)","b-roll of the thing the money's about — the shop, the purchase, the receipt","you walking, thinking, hand in pocket — neutral motion to talk over"]],
+ ["fitness","Five beginner mistakes I made in month one","L","top",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["fitness","Cheapest decent gym near me, compared","M","top",["wide of the gym floor, you walking in","close-up: hands chalking/gripping, water bottle, the machine","mid-set from the side, unglamorous and real"]],
+ ["fitness","First session in years and I had no idea what I was doing","M","mid",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["fitness","Week one, filmed honestly, no highlight reel","M","mid",["YOU to camera for the key line — this is a face moment, use it","simple b-roll to cut away to: walking, window light, hands","a location that matches the mood — don't batch them all on one wall"]],
+ ["fitness","I've been going a month and still avoid the free weights","M","mid",["wide of the gym floor, you walking in","close-up: hands chalking/gripping, water bottle, the machine","mid-set from the side, unglamorous and real"]],
+ ["fitness","Didn't go for two weeks — what actually happened","L","mid",["screen recording of the actual thing","desk setup wide, then close on the gear","you reacting to the screen — the win or the facepalm"]],
+ ["fitness","I've been doing this exercise wrong since I started","M","mid",["wide of the gym floor, you walking in","close-up: hands chalking/gripping, water bottle, the machine","mid-set from the side, unglamorous and real"]],
+ ["fitness","Gym after a full shift vs gym on my day off","M","mid",["wide of the gym floor, you walking in","close-up: hands chalking/gripping, water bottle, the machine","mid-set from the side, unglamorous and real"]],
+ ["fitness","Tried to cook something properly and it went badly","M","mid",["overhead of the food / the cooking in progress","close-up: chopping, pouring, the plate coming together","the shop or fridge — wide, then the item in hand"]],
+ ["fitness","The one meal I've learned to make and now eat constantly","L","mid",["close-up of a banking/notes app (blur real figures)","b-roll of the thing the money's about — the shop, the purchase, the receipt","you walking, thinking, hand in pocket — neutral motion to talk over"]],
+ ["fitness","Six weeks in — what's changed and what hasn't","M","mid",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["fitness","The exercise I still can't do","L","mid",["wide of the gym floor, you walking in","close-up: hands chalking/gripping, water bottle, the machine","mid-set from the side, unglamorous and real"]],
+ ["fitness","What's in my gym bag, embarrassingly","L","mid",["wide of the gym floor, you walking in","close-up: hands chalking/gripping, water bottle, the machine","mid-set from the side, unglamorous and real"]],
+ ["fitness","Went at 6am every day for a week to see if it's better","H","mid",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["fitness","My whole routine, which is much simpler than you'd think","M","mid",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["fitness","Tried a class on my own with nobody to hide behind","M","mid",["wide of the gym floor, you walking in","close-up: hands chalking/gripping, water bottle, the machine","mid-set from the side, unglamorous and real"]],
+ ["fitness","Did a proper food shop for the first time in my life","M","mid",["overhead of the food / the cooking in progress","close-up: chopping, pouring, the plate coming together","the shop or fridge — wide, then the item in hand"]],
+ ["fitness","Meal prepped for the week and it was grim","M","mid",["overhead of the food / the cooking in progress","close-up: chopping, pouring, the plate coming together","the shop or fridge — wide, then the item in hand"]],
+ ["fitness","The gym at 7am vs 7pm — completely different places","M","mid",["wide of the gym floor, you walking in","close-up: hands chalking/gripping, water bottle, the machine","mid-set from the side, unglamorous and real"]],
+ ["fitness","Everything I ate on a good day and on a bad day","M","mid",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["fitness","What I thought the gym would be like vs what it is","L","mid",["wide of the gym floor, you walking in","close-up: hands chalking/gripping, water bottle, the machine","mid-set from the side, unglamorous and real"]],
+ ["fitness","Went with someone who actually knows what they're doing","M","mid",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["fitness","Work destroyed my routine this week","M","mid",["getting ready / bag pack, close on the essentials","exterior of the workplace (discreet), you arriving","the walk home, decompressing — golden hour if you can"]],
+ ["fitness","30 days of turning up — the honest version","H","mid",["YOU to camera for the key line — this is a face moment, use it","simple b-roll to cut away to: walking, window light, hands","a location that matches the mood — don't batch them all on one wall"]],
+ ["fitness","Why I quit the gym last time I tried this","L","mid",["wide of the gym floor, you walking in","close-up: hands chalking/gripping, water bottle, the machine","mid-set from the side, unglamorous and real"]],
+ ["fitness","Cooked the same thing three times until it was good","M","mid",["overhead of the food / the cooking in progress","close-up: chopping, pouring, the plate coming together","the shop or fridge — wide, then the item in hand"]],
+ ["fitness","Walking in was the hardest part and here's what helped","L","mid",["POV walking — feet, pavement, the station approach","wide of the platform/street, time of day clear","you from behind, bag on, moving through it"]],
+ ["fitness","Trying to find food I'll actually eat twice","M","mid",["overhead of the food / the cooking in progress","close-up: chopping, pouring, the plate coming together","the shop or fridge — wide, then the item in hand"]],
+ ["fitness","Bought gym stuff I absolutely did not need","L","mid",["wide of the gym floor, you walking in","close-up: hands chalking/gripping, water bottle, the machine","mid-set from the side, unglamorous and real"]],
+ ["fitness","Walked everywhere instead of the tube for a week","M","mid",["POV walking — feet, pavement, the station approach","wide of the platform/street, time of day clear","you from behind, bag on, moving through it"]],
+ ["fitness","The thing that finally made it stick","L","mid",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["fitness","Doing this alongside a job and a business","M","mid",["getting ready / bag pack, close on the essentials","exterior of the workplace (discreet), you arriving","the walk home, decompressing — golden hour if you can"]],
+ ["fitness","Found the quietest hour at my gym and it changed everything","M","mid",["wide of the gym floor, you walking in","close-up: hands chalking/gripping, water bottle, the machine","mid-set from the side, unglamorous and real"]],
+ ["fitness","The advice I ignored and shouldn't have","L","mid",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["fitness","Got a form check and it was humbling","M","mid",["wide of the gym floor, you walking in","close-up: hands chalking/gripping, water bottle, the machine","mid-set from the side, unglamorous and real"]],
+ ["fitness","Everything I got wrong in my first month","L","mid",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["fitness","Tried the gym my friend goes to and hated it","M","mid",["wide of the gym floor, you walking in","close-up: hands chalking/gripping, water bottle, the machine","mid-set from the side, unglamorous and real"]],
+ ["fitness","One week of eating like I mean it","M","mid",["overhead of the food / the cooking in progress","close-up: chopping, pouring, the plate coming together","the shop or fridge — wide, then the item in hand"]],
+ ["fitness","The bit nobody films: turning up when you don't want to","L","mid",["YOU to camera for the key line — this is a face moment, use it","simple b-roll to cut away to: walking, window light, hands","a location that matches the mood — don't batch them all on one wall"]],
+ ["fitness","Three months of turning up — what it looks like","M","bot",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["fitness","Still a beginner six months in, and that's fine","L","bot",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["fitness","Six months of this, the honest version","M","bot",["YOU to camera for the key line — this is a face moment, use it","simple b-roll to cut away to: walking, window light, hands","a location that matches the mood — don't batch them all on one wall"]],
+ ["fitness","Watching my week one video back","M","bot",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["fitness","The promise I made at the start and whether I kept it","L","bot",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["fitness","A year from zero","H","bot",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ // ---- Adult Life (56)
+ ["grown","What I actually do all day","M","top",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["grown","How much free time I actually have, counted","M","top",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["grown","The food shop, and how much it's gone up","M","top",["overhead of the food / the cooking in progress","close-up: chopping, pouring, the plate coming together","the shop or fridge — wide, then the item in hand"]],
+ ["grown","What I thought adult life would cost vs what it costs","M","top",["close-up of a banking/notes app (blur real figures)","b-roll of the thing the money's about — the shop, the purchase, the receipt","you walking, thinking, hand in pocket — neutral motion to talk over"]],
+ ["grown","Everything my first month of adult life cost","M","top",["close-up of a banking/notes app (blur real figures)","b-roll of the thing the money's about — the shop, the purchase, the receipt","you walking, thinking, hand in pocket — neutral motion to talk over"]],
+ ["grown","Five bits of admin nobody teaches you","L","top",["YOU to camera for the key line — this is a face moment, use it","simple b-roll to cut away to: walking, window light, hands","a location that matches the mood — don't batch them all on one wall"]],
+ ["grown","What a full-time job actually pays after everything","M","top",["getting ready / bag pack, close on the essentials","exterior of the workplace (discreet), you arriving","the walk home, decompressing — golden hour if you can"]],
+ ["grown","Five things I bought that were genuinely worth it","M","top",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["grown","My whole week, hour by hour, in numbers","H","top",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["grown","What a food shop costs now vs a year ago","M","top",["close-up of a banking/notes app (blur real figures)","b-roll of the thing the money's about — the shop, the purchase, the receipt","you walking, thinking, hand in pocket — neutral motion to talk over"]],
+ ["grown","The thing about working full time nobody warned me about","L","mid",["getting ready / bag pack, close on the essentials","exterior of the workplace (discreet), you arriving","the walk home, decompressing — golden hour if you can"]],
+ ["grown","I'm not sure I'm doing this right","L","mid",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["grown","Why I still live at home and I'm fine with it","L","mid",["YOU to camera for the key line — this is a face moment, use it","simple b-roll to cut away to: walking, window light, hands","a location that matches the mood — don't batch them all on one wall"]],
+ ["grown","The bit of adult life I'm worst at","L","mid",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["grown","Getting something wrong at work and what it taught me","L","mid",["getting ready / bag pack, close on the essentials","exterior of the workplace (discreet), you arriving","the walk home, decompressing — golden hour if you can"]],
+ ["grown","I thought I'd feel different by now","L","mid",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["grown","Balancing two things and doing neither perfectly","L","mid",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["grown","What I actually worry about","L","mid",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["grown","Money is stranger than I expected","L","mid",["close-up of a banking/notes app (blur real figures)","b-roll of the thing the money's about — the shop, the purchase, the receipt","you walking, thinking, hand in pocket — neutral motion to talk over"]],
+ ["grown","Why I'm not in a rush anymore","L","mid",["YOU to camera for the key line — this is a face moment, use it","simple b-roll to cut away to: walking, window light, hands","a location that matches the mood — don't batch them all on one wall"]],
+ ["grown","First week and I already got something wrong","M","bot",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["grown","What's in my work bag","L","bot",["getting ready / bag pack, close on the essentials","exterior of the workplace (discreet), you arriving","the walk home, decompressing — golden hour if you can"]],
+ ["grown","My commute, honestly","L","bot",["POV walking — feet, pavement, the station approach","wide of the platform/street, time of day clear","you from behind, bag on, moving through it"]],
+ ["grown","First payslip and where all of it went","M","bot",["close-up of a banking/notes app (blur real figures)","b-roll of the thing the money's about — the shop, the purchase, the receipt","you walking, thinking, hand in pocket — neutral motion to talk over"]],
+ ["grown","A full week of a job and a business, hour by hour","H","bot",["getting ready / bag pack, close on the essentials","exterior of the workplace (discreet), you arriving","the walk home, decompressing — golden hour if you can"]],
+ ["grown","Things nobody tells you about working properly","L","bot",["getting ready / bag pack, close on the essentials","exterior of the workplace (discreet), you arriving","the walk home, decompressing — golden hour if you can"]],
+ ["grown","My lunch break","L","bot",["getting ready / bag pack, close on the essentials","exterior of the workplace (discreet), you arriving","the walk home, decompressing — golden hour if you can"]],
+ ["grown","First thing I bought that I'd never have bought before","M","bot",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["grown","A full weekday, 6am to midnight","H","bot",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["grown","Why I'm not quitting the job for content","L","bot",["getting ready / bag pack, close on the essentials","exterior of the workplace (discreet), you arriving","the walk home, decompressing — golden hour if you can"]],
+ ["grown","Adult admin nobody warns you about","L","bot",["YOU to camera for the key line — this is a face moment, use it","simple b-roll to cut away to: walking, window light, hands","a location that matches the mood — don't batch them all on one wall"]],
+ ["grown","The week I took on too much","M","bot",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["grown","Sunday before a full week","M","bot",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["grown","Explaining my second job to someone at work","L","bot",["getting ready / bag pack, close on the essentials","exterior of the workplace (discreet), you arriving","the walk home, decompressing — golden hour if you can"]],
+ ["grown","Six months in — what's different","M","bot",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["grown","The part of the job I didn't expect to like","L","bot",["getting ready / bag pack, close on the essentials","exterior of the workplace (discreet), you arriving","the walk home, decompressing — golden hour if you can"]],
+ ["grown","What I'd tell myself in final year","L","bot",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["grown","Everything I spent this month","M","bot",["close-up of a banking/notes app (blur real figures)","b-roll of the thing the money's about — the shop, the purchase, the receipt","you walking, thinking, hand in pocket — neutral motion to talk over"]],
+ ["grown","The first time work followed me home","L","bot",["getting ready / bag pack, close on the essentials","exterior of the workplace (discreet), you arriving","the walk home, decompressing — golden hour if you can"]],
+ ["grown","My week before the job vs my week now","M","bot",["getting ready / bag pack, close on the essentials","exterior of the workplace (discreet), you arriving","the walk home, decompressing — golden hour if you can"]],
+ ["grown","Saving for something specific","L","bot",["close-up of a banking/notes app (blur real figures)","b-roll of the thing the money's about — the shop, the purchase, the receipt","you walking, thinking, hand in pocket — neutral motion to talk over"]],
+ ["grown","First holiday I've paid for entirely myself","H","bot",["laptop/phone screen showing an email or message thread (blur sensitive bits)","you at your desk, over-shoulder, typing or reading","close-up: hand on trackpad, coffee next to laptop, the 'send' moment"]],
+ ["grown","Got something wrong at work and had to own it","L","bot",["getting ready / bag pack, close on the essentials","exterior of the workplace (discreet), you arriving","the walk home, decompressing — golden hour if you can"]],
+ ["grown","A day where nothing went right","M","bot",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["grown","Being qualified vs feeling qualified","L","bot",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["grown","Fixed something myself instead of calling someone","M","bot",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["grown","Jobs around the house nobody asked me to do","M","bot",["getting ready / bag pack, close on the essentials","exterior of the workplace (discreet), you arriving","the walk home, decompressing — golden hour if you can"]],
+ ["grown","A day of errands for my mum","M","bot",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["grown","Sorted something boring I'd avoided for months","L","bot",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["grown","Working out what all my bills actually are","L","bot",["close-up of a banking/notes app (blur real figures)","b-roll of the thing the money's about — the shop, the purchase, the receipt","you walking, thinking, hand in pocket — neutral motion to talk over"]],
+ ["grown","Cleaned the whole place properly for once","M","bot",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["grown","One year of working — the honest recap","H","bot",["getting ready / bag pack, close on the essentials","exterior of the workplace (discreet), you arriving","the walk home, decompressing — golden hour if you can"]],
+ ["grown","Cooking for the family for once","M","bot",["overhead of the food / the cooking in progress","close-up: chopping, pouring, the plate coming together","the shop or fridge — wide, then the item in hand"]],
+ ["grown","The Sunday that's just admin and washing","L","bot",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["grown","Doing something my parents always did for me","M","bot",["a clean cold-open shot with motion for the first 5 seconds","one 'moment' clip — the unplanned bit you'd tell a mate about","a wide establishing shot so the video feels like somewhere"]],
+ ["grown","The most boring day I've filmed and why I'm posting it","L","bot",["YOU to camera for the key line — this is a face moment, use it","simple b-roll to cut away to: walking, window light, hands","a location that matches the mood — don't batch them all on one wall"]]
 ];
 
 const POOLS={
@@ -613,10 +668,12 @@ const EFF={L:'Low effort',M:'Medium effort',H:'High effort'};
 function render(){
   const list=IDEAS.filter(i=>(active==='all'||i[0]===active)&&(activeF==='all'||i[3]===activeF));
   ic.textContent=`${list.length} idea${list.length===1?'':'s'} \u2014 grab any, owe nothing`;
-  il.innerHTML=list.map(([k,text,e,f])=>{
+  il.innerHTML=list.map(([k,text,e,f,shots])=>{
     const p=POOLS[k];
-    return `<div class="idea" style="color:${p.colour}"><div class="idot"></div><div class="itext" style="color:var(--ink)">${text}<div class="imeta"><span class="fn fn-${f}">${FNAME[f]}</span>${p.name} &middot; ${EFF[e]}</div></div></div>`;
+    const sh=(shots&&shots.length)?`<div class="ishots"><div class="ishots-h">Shots to grab</div><ul>${shots.map(x=>`<li>${x}</li>`).join('')}</ul></div>`:'';
+    return `<div class="idea idea-x" style="color:${p.colour}"><div class="idot"></div><div class="itext" style="color:var(--ink)">${text}<div class="imeta"><span class="fn fn-${f}">${FNAME[f]}</span>${p.name} &middot; ${EFF[e]}<span class="imore">shots &rsaquo;</span></div>${sh}</div></div>`;
   }).join('');
+  document.querySelectorAll('.idea-x').forEach(el=>el.addEventListener('click',()=>el.classList.toggle('open')));
 }
 render();
 
@@ -629,7 +686,7 @@ SHOTS.forEach(([t,sub,body],i)=>{
 });
 
 // ticker
-const tl=['One anchor, no cages','LARPing a CEO','The 5-to-9 vs the 9-to-5','Feeling hook, silly bump, real content','The pool owes you nothing','Five shots every day','Weight Trust right now','You are the niche'];
+const tl=['One anchor, no cages','LARPing a CEO','The 5-to-9 vs the 9-to-5','Feeling hook, silly bump, real content','The pool owes you nothing','Five shots every day','Weight Trust right now','Voiceover to get found, face to get followed','First 5 seconds: flash + shutter','Leave a door open every time','The mate, never the guru'];
 document.getElementById('tick').innerHTML=[...tl,...tl].map(t=>`<span class="mono"><b>&#9679;</b> ${t}</span>`).join('');
 
 // tabs
