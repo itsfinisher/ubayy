@@ -101,6 +101,21 @@ section[role=tabpanel].on{display:block}
 .fn{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.08em;text-transform:uppercase;padding:3px 7px;border-radius:2px;font-weight:500;color:#EDE7DC}
 .fn-top{background:#E4572E}.fn-mid{background:#1F4E5F}.fn-bot{background:#3F6B4E}
 .idea-x{cursor:pointer}
+.mrow{border-top:1px solid var(--line);padding:15px 0;display:flex;gap:12px;align-items:flex-start}
+.mrow:first-child{border-top:1px solid var(--ink)}
+.mrow:last-child{border-bottom:1px solid var(--ink)}
+.mstar{font-family:'DM Mono',monospace;font-size:13px;min-width:16px;padding-top:3px}
+.mstar.p{color:var(--signal)}
+.mstar.warn{color:#C9A227}
+.mbody{flex:1;min-width:0}
+.mtitle{font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:16.5px;line-height:1.3}
+.mmeta{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-top:7px;display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.mfmt{border:1px solid var(--line);padding:3px 7px;border-radius:2px}
+.mnote{font-size:14px;color:var(--muted);margin-top:8px;line-height:1.45}
+.mnote.warn{color:#8a6d0f}
+.mrow-x .ishots{display:none;margin-top:10px}
+.mrow-x.open .ishots{display:block}
+.mrow-x.open .imore{opacity:.4}
 .imore{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.06em;color:var(--signal);margin-left:2px}
 .ishots{display:none;margin-top:10px;padding:11px 13px;background:var(--paper-2);border-left:3px solid currentColor;border-radius:2px}
 .idea-x.open .ishots{display:block}
@@ -231,6 +246,23 @@ footer{padding:34px 0 20px;border-top:2px solid var(--ink);margin-top:30px;color
   <div id="ideaList"></div>
 </section>
 
+<section role="tabpanel" id="p-mine">
+  <div class="shead"><h2>My Own Ideas</h2><div class="rule"></div></div>
+  <p class="lede">Captured 16 Aug 2026 &mdash; ideas that came from your own head, kept separate from the seeded pool because these are the ones you actually thought of. Each tagged with its funnel job and best format. Priority-starred and one flagged for care.</p>
+  <div class="filters" id="mineFilters"></div>
+  <div id="mineList"></div>
+
+  <div class="shead" style="margin-top:30px"><h2>Floating series</h2><div class="rule"></div></div>
+  <p class="lede">Not dated — they start when they happen, then become a run of episodes. Tap for the shot list.</p>
+  <div id="floatSeriesList"></div>
+
+  <div class="card" style="margin-top:22px">
+    <h3>What this set tells you</h3>
+    <p>Notice the cluster: half of these are creator/brand knowledge — how to work with brands, what creators get wrong, profile optimisation, UGC money. That's your single most defensible content, because you're the rare person giving it who actually runs an agency. If you filmed nothing else this week, film those four. They're pure Trust, and Trust is your gap.</p>
+    <p class="note">The starred ones are priorities. The flagged AI-holiday one is your highest-ceiling idea and your one real risk — read its note before filming.</p>
+  </div>
+</section>
+
 <section role="tabpanel" id="p-voice">
   <div class="shead"><h2>Your Voice</h2><div class="rule"></div></div>
   <p class="lede">The craft rules that are specifically yours &mdash; drawn from what already works on your page, not generic advice. This is the part that's hard to copy.</p>
@@ -325,6 +357,7 @@ footer{padding:34px 0 20px;border-top:2px solid var(--ink);margin-top:30px;color
 <nav role="tablist">
   <button role="tab" aria-selected="true" data-p="p-anchor">Anchor</button>
   <button role="tab" aria-selected="false" data-p="p-pool">Pool</button>
+  <button role="tab" aria-selected="false" data-p="p-mine">Mine</button>
   <button role="tab" aria-selected="false" data-p="p-voice">Voice</button>
   <button role="tab" aria-selected="false" data-p="p-shots">Shots</button>
   <button role="tab" aria-selected="false" data-p="p-read">Read</button>
@@ -618,6 +651,35 @@ const IDEAS=[
  ["grown","The most boring day I've filmed and why I'm posting it","L","bot",["YOU to camera for the key line — this is a face moment, use it","simple b-roll to cut away to: walking, window light, hands","a location that matches the mood — don't batch them all on one wall"]]
 ];
 
+const MINE=[
+ ["How to work for top-tier brands — as someone who literally manages creators","mid","both","Your most defensible video. Open talking-head for the credential ('I run an agency, here's what actually gets you picked'), then cut to VO+b-roll for the how. End on 'what brand would you want?' to open comments.","*",["you talking to camera for the opening credential line","screen-record of a real brand email or DM (blur names)","over-shoulder at your desk, agency dashboard/inbox on screen","close-up: typing a reply, coffee, phone lighting up"]],
+ ["The biggest mistake creators make trying to work with brands","mid","face","Face-led — the authority is you saying it. Keep it to ONE mistake, punchy. High save-rate. End on 'are you doing this?'","*",["you to camera, tight framing, good light","one cutaway b-roll of a phone/DMs to break it up","a 'wince' reaction shot to punctuate the mistake"]],
+ ["How to optimise your profile for brands","top","vo","VO over screen recordings — the footage IS the lesson. Show real profiles (yours + anonymised others), point at what works. Listicle framing travels.","*",["screen recording scrolling a profile (yours)","screen recording of a strong vs weak bio side by side","close-up finger tapping the parts that matter","you nodding/approving to camera for one beat"]],
+ ["Starting a UGC side hustle — how much can I realistically make?","top","both","On-trend + realistic-money framing. Talking-head to set the question, VO+b-roll for the breakdown. Mate posture: what you're figuring out, NOT a flex. Ballpark numbers.","*",["you to camera asking the question honestly","b-roll of you filming a mock UGC clip (product in hand)","screen-record of a rate/rough maths in notes app (blur specifics)","phone on a tripod filming a product — meta shot"]],
+ ["LA cost breakdown","top","vo","Pure VO over your LA footage — you already have the b-roll. Numbers + place = strong reach. Ballpark, blur anything sensitive.","",["your existing LA b-roll (skyline, streets, food)","close-up of receipts/app totals (blur real numbers)","you in LA (reuse trip footage) for presence","a punchy cold-open shot of LA for the first 5s"]],
+ ["How I got a car rental in LA as a 'young driver'","top","vo","VO over the actual car + rental footage. Specific problem+solution = high saves, people search this exact thing.","",["the rental car walk-around (reuse trip footage)","you driving POV in LA","close-up of the rental paperwork/app (blur details)","establishing shot of the rental lot or car park"]],
+ ["My honest opinions of LA","mid","face","Face it and mean it — opinion is the value, they need to see you say it. Cut away to LA b-roll between points.","",["you to camera, relaxed, giving the takes","LA b-roll cutaways matching each opinion","a split-second 'controversial take' pause for effect"]],
+ ["UK insurance is BS — here's why","mid","face","A rant with a point. Face-led, keep it tight and funny. Relatable + opinion. One clear example carries it.","",["you to camera, a bit animated","screen-record of an actual quote (blur personal info)","a deadpan reaction shot for the punchline"]],
+ ["American hustle culture vs the UK","mid","both","Your personal story (young you doing Insta stuff) is the hook — open on that, face. Then VO over b-roll for the wider point. Trust piece: vulnerable + opinion.","",["you to camera opening the personal story","old screenshots/throwback content if you have any","b-roll contrast: UK street vs your US footage","you walking, thinking, to narrate over"]],
+ ["Top 3 pharmacy essentials for uni (results day was 2 days ago)","top","vo","FILM NOW — timely, results day was 14 Aug. VO over the items. Pharmacist angle already proven to travel.","*",["flat-lay / close-up of the 3 essentials","you holding each one, quick","b-roll of your uni/work bag being packed","a clean cold-open of the items dropping onto a desk"]],
+ ["My biggest tips for pharmacy students (from a pre-reg)","mid","both","Bundle with the essentials video while results week is hot. Talking-head for authority, VO for any demo. Space them out across the week.","",["you to camera for the tips","b-roll of you in a work/pharmacy setting (discreet)","close-up of notes/study setup"]],
+ ["Day in the life: day off as a pre-reg pharmacist","bot","vlog","This one's an actual vlog — follow your day, light VO to guide it. Loyalty + pharmacist hook. Don't over-produce, let it breathe.","",["morning: getting up, coffee, the slow start","out and about on your day off — wherever you go","a couple of talking-to-camera check-ins through the day","wind-down shot to close"]],
+ ["Starting my gym series","mid","vlog","Vlog-style, VO layered on. The 'week one, no idea what I'm doing' beginner angle — film the awkward, NOT results. Honest, not aspirational.","",["walking into the gym, POV","you fumbling with a machine (keep the awkward)","mid-set from the side, unglamorous","close-up: water bottle, chalk, phone timer"]],
+ ["I tricked my followers with AI holiday photos","top","vo","HIGH ceiling, HIGH risk. VO reveal over the fake AI images. ONLY works if the reveal is the point — 'look how fake travel content is, don't trust it.' Frame as commentary, never a real gotcha, or it dents your honesty.","!",["the AI images themselves (Dubai, car, etc.)","screen-record of you generating/selecting them","you to camera for the reveal — the honest turn","a real unglamorous shot of where you ACTUALLY were, for contrast"]],
+ ["Reminder: the guy you dislike is posting while you watch him","mid","face","Motivational beat, face-led — it's about delivery. You said you'll word it better; nail the line, it IS the video. One take, direct.","",["you to camera, direct, eye contact","maybe one cutaway of scrolling a feed","hold on your face for the last line"]],
+ ["Want a new laptop — what should I get?","mid","face","Pure comment-bait, and that's the POINT — your quiet-comments fix in one video. Genuinely ask, then reply to everyone who answers.","*",["you to camera asking genuinely","b-roll of your current laptop/setup","close-up of the old laptop's problems (slow, worn)"]],
+ ["Car shopping series — the hunt","top","vlog","Floating mini-series, starts when you actually view cars. Vlog the viewings, VO the breakdowns. Prices + 'should I buy this' = reach. One viewing = several videos.","",["arriving at the dealership/viewing","walk-around of each car, detail on badge/wheels/interior","you in the driver's seat reacting","VO-friendly b-roll of you weighing it up","close-up of the price/spec sheet (blur if needed)"]],
+ ["The friend whose place you can't visit — they just fall asleep","bot","face","Charming filler, face-led. Loyalty not reach. Great for personality between heavier videos. Keep it short and funny.","",["you to camera telling it like a story","a re-enactment b-roll if a mate's up for it","a comedic 'asleep' cutaway"]],
+ ["Editors should get paid properly — good edits beat trailers now","bot","face","Inside-baseball but a real take. Niche (creators/editors). Throwaway, not a priority — film it fast if the mood hits.","",["you to camera with the take","a clip of a genuinely good edit as example (yours)","screen-record of an editing timeline"]],
+ ["The worst thing after 5k on TikTok: losing profile views","bot","face","Creator inside-baseball. Relatable to peers, invisible to strangers. Low-effort filler.","",["you to camera, mock-outraged","screen-record of the TikTok analytics screen","a shrug/facepalm reaction"]],
+ ["Stretched-res Fortnite was so goated","bot","both","Gamer nostalgia, very niche but pure personality. Post when you feel like it, expect it to land small. VO over old gameplay if you have it.","",["old Fortnite gameplay clips if you have them","you to camera reminiscing","a nostalgic 'those were the days' beat"]]
+];
+
+const FLOATSERIES=[
+ ["The Wowcher £99 mystery holiday (with a mate)","top","vlog","A whole Side Quest arc, not one video. The not-knowing IS the hook. Milk it: the booking, the reveal, the packing, the airport, the place, the verdict. Film everything, cut 4–5 episodes from one trip. Post AFTER you're back (safety).","*",["the moment you book it / spin the mystery","reaction to the destination reveal","packing with no idea what to pack for the weather","airport departure energy — 4am, bleary","establishing wide of wherever you land","you + the mate reacting to the place","a 'was it worth £99?' verdict piece to camera"]],
+ ["The car series — owning & modding","bot","vlog","Starts AFTER the hunt ends and you have the car. Light touch, NOT a car channel — first drive, small mods, what ownership's actually like. Folds into Adult Life too. Keep it occasional so it stays a thread, not the whole page.","",["the handover / first time getting in","first drive POV, hands on wheel","close-up detail of the car you're proud of","a small mod going on — before/after","you to camera on what it's actually like to own"]]
+];
+
 const POOLS={
  agency:{name:"Building & Money",colour:"var(--s1)",desc:"Agency, deals, income, the business. Most of this feeds the anchor \u2014 but as loose ideas, grab what fits."},
  thoughts:{name:"Twenties Notes",colour:"var(--s2)",desc:"Talking to camera, observations, being 22. Films against any wall, any time \u2014 your bad-schedule insurance."},
@@ -646,6 +708,51 @@ Object.entries(POOLS).forEach(([k,p])=>{
   d.querySelector('.jump').addEventListener('click',(e)=>{e.stopPropagation();active=k;syncFilters();render();document.getElementById('ideaList').scrollIntoView({behavior:'smooth'});});
   pl.appendChild(d);
 });
+
+
+// my own ideas
+const FMT={vo:'VO + b-roll',face:'Talking head',both:'Head + VO',vlog:'Vlog',either:'Either'};
+let mineF='all';
+const mfw=document.getElementById('mineFilters'),mlst=document.getElementById('mineList');
+[['all','Everything'],['*','Priorities'],['top','Reach'],['mid','Trust'],['bot','Loyalty']].forEach(([k,label])=>{
+  const b=document.createElement('button');b.textContent=label;b.dataset.m=k;b.setAttribute('aria-pressed',k===mineF);
+  if(k==='top')b.classList.add('fbtn-top');if(k==='mid')b.classList.add('fbtn-mid');if(k==='bot')b.classList.add('fbtn-bot');
+  b.onclick=()=>{mineF=k;[...mfw.children].forEach(x=>x.setAttribute('aria-pressed',x.dataset.m===mineF));renderMine()};
+  mfw.appendChild(b);
+});
+function renderMine(){
+  const list=MINE.filter(([t,fn,fmt,note,flag])=> mineF==='all' || (mineF==='*'&&flag==='*') || fn===mineF );
+  mlst.innerHTML=list.map(([t,fn,fmt,note,flag,shots])=>{
+    const star = flag==='*' ? '<span class="mstar p" title="priority">\u2605</span>' : (flag==='!' ? '<span class="mstar warn" title="handle with care">\u26A0</span>' : '<span class="mstar"></span>');
+    const warn = flag==='!';
+    const sh=(shots&&shots.length)?`<div class="ishots"><div class="ishots-h">Shots to grab</div><ul>${shots.map(x=>`<li>${x}</li>`).join('')}</ul></div>`:'';
+    return `<div class="mrow mrow-x">${star}<div class="mbody"><div class="mtitle">${t}</div>`+
+      `<div class="mmeta"><span class="fn fn-${fn}">${FNAME[fn]}</span><span class="mfmt">${FMT[fmt]}</span><span class="imore">details \u203a</span></div>`+
+      `<div class="mnote${warn?' warn':''}">${note}</div>${sh}</div></div>`;
+  }).join('');
+  document.querySelectorAll('.mrow-x').forEach(el=>{
+    const meta=el.querySelector('.imore');
+    if(meta) meta.parentElement.style.cursor='pointer';
+    el.querySelector('.mtitle').addEventListener('click',()=>el.classList.toggle('open'));
+    if(meta) meta.addEventListener('click',()=>el.classList.toggle('open'));
+  });
+}
+renderMine();
+
+// floating series (Wowcher + car)
+const flr=document.getElementById('floatSeriesList');
+if(flr){FLOATSERIES.forEach(([t,fn,fmt,note,flag,shots])=>{
+  const el=document.createElement('div');el.className='mrow mrow-x';
+  const star = flag==='*' ? '<span class="mstar p">\u2605</span>':'<span class="mstar"></span>';
+  const sh=`<div class="ishots"><div class="ishots-h">Shots to grab</div><ul>${shots.map(x=>`<li>${x}</li>`).join('')}</ul></div>`;
+  el.innerHTML=`${star}<div class="mbody"><div class="mtitle">${t}</div>`+
+    `<div class="mmeta"><span class="fn fn-${fn}">${FNAME[fn]}</span><span class="mfmt">${FMT[fmt]}</span><span class="imore">details \u203a</span></div>`+
+    `<div class="mnote">${note}</div>${sh}</div>`;
+  el.querySelector('.mtitle').addEventListener('click',()=>el.classList.toggle('open'));
+  el.querySelector('.imore').addEventListener('click',()=>el.classList.toggle('open'));
+  flr.appendChild(el);
+});}
+renderMine();
 
 // filters
 let active='all',activeF='all';
