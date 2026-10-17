@@ -29,7 +29,7 @@ header.mast{padding:34px 0 20px;border-bottom:2px solid var(--ink)}
 .mast p{margin:14px 0 0;max-width:48ch;color:var(--muted);font-size:16px}
 
 nav{position:fixed;bottom:0;left:0;right:0;background:var(--ink);display:flex;z-index:50;padding-bottom:env(safe-area-inset-bottom)}
-nav button{flex:1;background:none;border:0;color:rgba(237,231,220,.5);padding:14px 4px 15px;cursor:pointer;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;border-top:3px solid transparent;transition:color .2s}
+nav button{flex:1;background:none;border:0;color:rgba(237,231,220,.55);padding:15px 4px 16px;cursor:pointer;font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;border-top:3px solid transparent;transition:color .2s}
 nav button[aria-selected="true"]{color:var(--paper);border-top-color:var(--signal)}
 nav button:focus-visible{outline:2px solid var(--signal);outline-offset:-4px}
 
@@ -101,6 +101,22 @@ section[role=tabpanel].on{display:block}
 .fn{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.08em;text-transform:uppercase;padding:3px 7px;border-radius:2px;font-weight:500;color:#EDE7DC}
 .fn-top{background:#E4572E}.fn-mid{background:#1F4E5F}.fn-bot{background:#3F6B4E}
 .idea-x{cursor:pointer}
+
+
+.sheet{position:fixed;inset:0;z-index:60;display:flex;align-items:flex-end;justify-content:center}
+.sheet[hidden]{display:none}
+.sheet::before{content:"";position:absolute;inset:0;background:rgba(18,16,14,.55);animation:fade .2s ease}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.sheet-panel{position:relative;width:100%;max-width:760px;background:var(--paper);border-top-left-radius:16px;border-top-right-radius:16px;padding:10px 16px calc(20px + env(safe-area-inset-bottom));box-shadow:0 -8px 30px rgba(0,0,0,.25);animation:slideup .22s cubic-bezier(.2,.7,.3,1)}
+@keyframes slideup{from{transform:translateY(100%)}to{transform:translateY(0)}}
+.sheet-grab{width:38px;height:4px;border-radius:2px;background:var(--line);margin:4px auto 12px}
+.sheet-title{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:15px;letter-spacing:-.01em;margin:0 4px 8px;color:var(--muted);text-transform:uppercase}
+.sheet-item{display:flex;flex-direction:column;align-items:flex-start;gap:1px;width:100%;text-align:left;background:none;border:0;border-top:1px solid var(--line);padding:14px 4px;cursor:pointer;color:var(--ink)}
+.sheet-item b{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:17px}
+.sheet-item span{font-size:13px;color:var(--muted)}
+.sheet-close{width:100%;margin-top:12px;padding:14px;border:1px solid var(--ink);background:var(--ink);color:var(--paper);border-radius:8px;font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}
+#moreBtn[aria-expanded="true"]{color:var(--paper);border-top-color:var(--signal)}
+#moreBtn.active{color:var(--paper);border-top-color:var(--signal)}
 
 .hero{border:2px solid var(--ink);background:var(--ink);color:var(--paper);padding:20px;margin-bottom:18px;border-radius:4px}
 .hero .k{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--signal);margin-bottom:10px}
@@ -533,16 +549,25 @@ footer{padding:34px 0 20px;border-top:2px solid var(--ink);margin-top:30px;color
 
 <nav role="tablist">
   <button role="tab" aria-selected="true" data-p="p-week">Week</button>
-  <button role="tab" aria-selected="false" data-p="p-now">Backlog</button>
-  <button role="tab" aria-selected="false" data-p="p-anchor">Anchor</button>
-  <button role="tab" aria-selected="false" data-p="p-pool">Pool</button>
-  <button role="tab" aria-selected="false" data-p="p-k">1000</button>
+  <button role="tab" aria-selected="false" data-p="p-k">Ideas</button>
   <button role="tab" aria-selected="false" data-p="p-spots">Spots</button>
-  <button role="tab" aria-selected="false" data-p="p-mine">Mine</button>
-  <button role="tab" aria-selected="false" data-p="p-voice">Voice</button>
-  <button role="tab" aria-selected="false" data-p="p-shots">Shots</button>
-  <button role="tab" aria-selected="false" data-p="p-read">Read</button>
+  <button role="tab" aria-selected="false" data-p="p-now">Backlog</button>
+  <button type="button" id="moreBtn" aria-haspopup="true" aria-expanded="false">More</button>
 </nav>
+
+<div class="sheet" id="moreSheet" role="dialog" aria-modal="true" aria-label="More sections" hidden>
+  <div class="sheet-panel">
+    <div class="sheet-grab"></div>
+    <div class="sheet-title">More</div>
+    <button class="sheet-item" data-p="p-anchor"><b>Anchor</b><span>who you are &amp; the plan</span></button>
+    <button class="sheet-item" data-p="p-pool"><b>Pool</b><span>idea pool by pillar</span></button>
+    <button class="sheet-item" data-p="p-mine"><b>Mine</b><span>your own captured ideas</span></button>
+    <button class="sheet-item" data-p="p-voice"><b>Voice</b><span>your style &amp; craft rules</span></button>
+    <button class="sheet-item" data-p="p-shots"><b>Shots</b><span>the 5-shot capture rule</span></button>
+    <button class="sheet-item" data-p="p-read"><b>Read</b><span>your stats &amp; what they mean</span></button>
+    <button class="sheet-close" id="sheetClose">Close</button>
+  </div>
+</div>
 
 <script>
 const IDEAS=[
@@ -1093,10 +1118,25 @@ const tl=['One anchor, no cages','LARPing a CEO','The 5-to-9 vs the 9-to-5','Fee
 document.getElementById('tick').innerHTML=[...tl,...tl].map(t=>`<span class="mono"><b>&#9679;</b> ${t}</span>`).join('');
 
 // tabs
-document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>{
-  document.querySelectorAll('nav button').forEach(x=>x.setAttribute('aria-selected','false'));
-  b.setAttribute('aria-selected','true');
-  document.querySelectorAll('section[role=tabpanel]').forEach(s=>s.classList.toggle('on',s.id===b.dataset.p));
-  window.scrollTo(0,0);
-});
+(function(){
+  const navBtns=[...document.querySelectorAll('nav button[data-p]')];
+  const sheet=document.getElementById('moreSheet');
+  const moreBtn=document.getElementById('moreBtn');
+  function openSheet(){sheet.hidden=false;moreBtn.setAttribute('aria-expanded','true');}
+  function closeSheet(){sheet.hidden=true;moreBtn.setAttribute('aria-expanded','false');}
+  function activate(pid){
+    document.querySelectorAll('section[role=tabpanel]').forEach(s=>s.classList.toggle('on',s.id===pid));
+    // highlight nav tab if it's one of the primary ones, else highlight More
+    const primary=navBtns.find(b=>b.dataset.p===pid);
+    navBtns.forEach(x=>x.setAttribute('aria-selected','false'));
+    if(primary){primary.setAttribute('aria-selected','true');moreBtn.classList.remove('active');moreBtn.setAttribute('aria-expanded','false');}
+    else{moreBtn.classList.add('active');}
+    window.scrollTo(0,0);
+  }
+  navBtns.forEach(b=>b.onclick=()=>{closeSheet();activate(b.dataset.p);});
+  moreBtn.onclick=()=>{ sheet.hidden ? openSheet() : closeSheet(); };
+  document.getElementById('sheetClose').onclick=closeSheet;
+  sheet.addEventListener('click',e=>{ if(e.target===sheet) closeSheet(); });
+  document.querySelectorAll('.sheet-item').forEach(b=>b.onclick=()=>{closeSheet();activate(b.dataset.p);});
+})();
 </script>
