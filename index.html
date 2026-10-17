@@ -101,6 +101,47 @@ section[role=tabpanel].on{display:block}
 .fn{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.08em;text-transform:uppercase;padding:3px 7px;border-radius:2px;font-weight:500;color:#EDE7DC}
 .fn-top{background:#E4572E}.fn-mid{background:#1F4E5F}.fn-bot{background:#3F6B4E}
 .idea-x{cursor:pointer}
+
+.hero{border:2px solid var(--ink);background:var(--ink);color:var(--paper);padding:20px;margin-bottom:18px;border-radius:4px}
+.hero .k{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--signal);margin-bottom:10px}
+.hero h2{color:var(--paper);font-size:clamp(20px,5.5vw,26px);line-height:1.15;margin-bottom:10px}
+.hero p{margin:0;font-size:14.5px;color:rgba(237,231,220,.82)}
+.hero .goal{margin-top:12px;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.04em;color:var(--paper)}
+.hero .goal b{color:var(--signal)}
+.daycard{border:1px solid var(--ink);border-radius:4px;margin-bottom:12px;overflow:hidden}
+.dayhdr{display:flex;align-items:center;gap:10px;padding:12px 14px;background:var(--paper-2);cursor:pointer}
+.dayname{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:16px;min-width:88px}
+.daywork{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.04em;color:var(--muted);flex:1}
+.daypost{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.06em;text-transform:uppercase;padding:3px 7px;border-radius:2px;color:#EDE7DC;white-space:nowrap}
+.dp-film{background:#E4572E}.dp-rest{background:#7A7266}.dp-batch{background:#1F4E5F}
+.daycaret{font-family:'DM Mono',monospace;color:var(--muted);transition:transform .25s}
+.daycard.open .daycaret{transform:rotate(90deg)}
+.daybody{display:none;padding:14px}
+.daycard.open .daybody{display:block}
+.timeline{list-style:none;margin:0 0 12px;padding:0}
+.timeline li{display:flex;gap:10px;font-size:14px;padding:4px 0;color:var(--ink)}
+.timeline .t{font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);min-width:56px;flex:none;padding-top:2px}
+.vidbox{background:var(--paper-2);border-left:3px solid var(--signal);border-radius:2px;padding:12px 14px;margin-top:4px}
+.vidbox .vh{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--signal);margin-bottom:5px}
+.vidbox .vt{font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:15.5px;margin-bottom:6px}
+.vidbox .vhook{font-size:14px;font-style:italic;color:var(--muted);margin-bottom:8px}
+.vidbox ul{margin:0;padding-left:16px}
+.vidbox li{font-size:13.5px;margin-bottom:3px}
+.vidbox li::marker{color:var(--signal)}
+.restnote{font-size:14px;color:var(--muted);font-style:italic}
+.wkrules{border:1px dashed var(--muted);border-radius:4px;padding:14px;margin-top:4px}
+.wkrules h4{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:15px;margin:0 0 8px}
+.wkrules li{font-size:14px;margin-bottom:6px}
+.spotgroup{margin-bottom:8px}
+.spotgroup h3{font-size:17px;margin:20px 0 4px}
+.spotgroup .sd{font-size:13.5px;color:var(--muted);margin:0 0 10px}
+.spotrow{display:flex;gap:10px;padding:11px 0;border-bottom:1px solid var(--line);align-items:flex-start}
+.spotrow:first-of-type{border-top:1px solid var(--ink)}
+.sdot{width:7px;height:7px;border-radius:50%;background:var(--signal);margin-top:7px;flex:none}
+.sbody{flex:1;min-width:0}
+.sname{font-weight:600;font-size:15px}
+.smeta{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.03em;color:var(--muted);margin-top:3px}
+
 .fmtser{border-top:1px solid var(--line);padding:14px 0}
 .fmtser:first-of-type{border-top:1px solid var(--ink)}
 .fmtser b{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:16px;display:block;margin-bottom:3px}
@@ -217,8 +258,39 @@ footer{padding:34px 0 20px;border-top:2px solid var(--ink);margin-top:30px;color
   <button class="kmore" id="kMore">Show more</button>
 </section>
 
+<!-- WEEK -->
+<section role="tabpanel" id="p-week" class="on">
+  <div class="hero">
+    <div class="k">The Ubayy OS &middot; w/c Mon 20 Oct 2026</div>
+    <h2>Chill guy, busy life, making the most of it &mdash; documenting the climb to 100k.</h2>
+    <p>The job, BluStu and pharmacy are the backdrop. You're the show. Post the things you'd do anyway, with good energy and your take on it &mdash; that's the whole formula.</p>
+    <div class="goal">NOW <b>8.3k</b> &nbsp;&rarr;&nbsp; GOAL <b>100k + full-time off brand deals</b></div>
+  </div>
+
+  <div class="wkrules" style="margin-bottom:18px">
+    <h4>How this week works</h4>
+    <ul>
+      <li><b>Floor: 3 posts. Good week: 4+.</b> Three beats seven-then-zero every time.</li>
+      <li><b>The gym gets you off the sofa Mon&ndash;Thu.</b> Content attaches to the trip &mdash; food/dessert/detour after &mdash; it's not all gym.</li>
+      <li><b>Decide the video before you leave, not when you're tired.</b> It's already picked below. Just film it.</li>
+      <li><b>One weekend day out, one protected rest &mdash; you pick which.</b></li>
+      <li><b>Post to TikTok, then cross-post to IG + YouTube.</b> Three shots at reach, free.</li>
+      <li><b>End videos on something people can reply to.</b> Light touch, builds the comments.</li>
+    </ul>
+  </div>
+
+  <div id="weekDays"></div>
+
+  <div class="wkrules" style="margin-top:6px">
+    <h4>This week's one-time job</h4>
+    <ul>
+      <li><b>Get the room film-ready.</b> It's quietly gatekeeping GRWM, fit checks &amp; talking-to-camera. Sort a clean corner + the lighting &mdash; could be a video itself ("setting up my content corner").</li>
+    </ul>
+  </div>
+</section>
+
 <!-- NOW -->
-<section role="tabpanel" id="p-now" class="on">
+<section role="tabpanel" id="p-now">
   <div class="nowhead">
     <div class="k">6 Oct 2026 &middot; the only page that matters this week</div>
     <p><b>You're not behind on ideas — you're behind on edits.</b> You've got real footage sitting unedited and that's the whole blocker. This page is just: what to cut next, and what's easy to film on a dead evening. Ignore the other tabs until this list is empty.</p>
@@ -343,6 +415,14 @@ footer{padding:34px 0 20px;border-top:2px solid var(--ink);margin-top:30px;color
   <div id="ideaList"></div>
 </section>
 
+<!-- SPOTS -->
+<section role="tabpanel" id="p-spots">
+  <div class="shead"><h2>Spots</h2><div class="rule"></div></div>
+  <p class="lede">Real places, ready to go. Your outing hit-list &mdash; halal, drive-anywhere, mix of free and paid. When a weekend's open, pick one and it's a video.</p>
+  <div id="spotList"></div>
+  <p class="note" style="margin-top:16px">Ratings from Google at time of research (Oct 2026) &mdash; check opening times before you drive. I keep adding to this; ask me for more in any area.</p>
+</section>
+
 <section role="tabpanel" id="p-mine">
   <div class="shead"><h2>My Own Ideas</h2><div class="rule"></div></div>
   <p class="lede">Captured 16 Aug 2026 &mdash; ideas that came from your own head, kept separate from the seeded pool because these are the ones you actually thought of. Each tagged with its funnel job and best format. Priority-starred and one flagged for care.</p>
@@ -452,10 +532,12 @@ footer{padding:34px 0 20px;border-top:2px solid var(--ink);margin-top:30px;color
 </div>
 
 <nav role="tablist">
-  <button role="tab" aria-selected="true" data-p="p-now">Now</button>
+  <button role="tab" aria-selected="true" data-p="p-week">Week</button>
+  <button role="tab" aria-selected="false" data-p="p-now">Backlog</button>
   <button role="tab" aria-selected="false" data-p="p-anchor">Anchor</button>
   <button role="tab" aria-selected="false" data-p="p-pool">Pool</button>
   <button role="tab" aria-selected="false" data-p="p-k">1000</button>
+  <button role="tab" aria-selected="false" data-p="p-spots">Spots</button>
   <button role="tab" aria-selected="false" data-p="p-mine">Mine</button>
   <button role="tab" aria-selected="false" data-p="p-voice">Voice</button>
   <button role="tab" aria-selected="false" data-p="p-shots">Shots</button>
@@ -882,6 +964,33 @@ const KIDEAS=[["First time at Frameless — worth it?", "Days out", "vlog", "e2"
  sb.addEventListener('input',e=>{kq=e.target.value;shown=40;render()});
  more.onclick=()=>{shown+=60;render()};
  catBtns();fmtBtns();render();
+})();
+
+const WEEKDATA=[{"day": "Monday", "date": "20 Oct", "work": "Work 9–5 · gym 7pm w/ Rayyan", "post": "Film", "pc": "dp-film", "timeline": ["5:10pm — home, quick reset", "7:00pm — gym with Rayyan", "8:30pm — food after (the content)", "10pm — cut it in CapCut, post"], "vid": {"h": "Pillar: Gym / the journey", "t": "Day 1 of the gym with the boys", "hook": "\"me and my mate who both fell off, back at it day 1…\"", "shots": ["walking into the gym together", "both of you clueless on a machine (keep it funny)", "the post-gym food — what you earned", "one line to camera: why you're starting"]}}, {"day": "Tuesday", "date": "21 Oct", "work": "Work 9–2 · flexible gym — YOUR BEST DAY", "post": "Film", "pc": "dp-film", "timeline": ["2:20pm — home, big afternoon free", "afternoon — the week's real outing / experience", "evening — gym when it suits", "night — cut + post"], "vid": {"h": "Pillar: Doing stuff (the big one)", "t": "The week's experience — pick a Spot", "hook": "\"had the afternoon free so I went and…\"", "shots": ["the drive there (car's a character)", "arriving — wide establishing shot", "the thing itself + your honest reaction", "\"was it worth it\" verdict to camera"]}}, {"day": "Wednesday", "date": "22 Oct", "work": "Work 11–7 · gym 9pm (tight day)", "post": "Low-effort", "pc": "dp-film", "timeline": ["7pm — done work", "9pm — late gym", "after — one quick clip, nothing ambitious"], "vid": {"h": "Pillar: Thoughts / POV (easy)", "t": "A chill take over b-roll", "hook": "\"people think you need a perfect routine to…\"", "shots": ["simple b-roll: the drive, the walk, the gym", "voiceover your take — record it at home after", "keep it one idea, 20 seconds"]}}, {"day": "Thursday", "date": "23 Oct", "work": "Work 11–7 · gym 9pm (tight day)", "post": "Rest / buffer", "pc": "dp-rest", "timeline": ["7pm — done work", "9pm — gym", "optional — post a batched one if you have it"], "vid": null, "rest": "No pressure to film. If you're flowing, post something from the backlog or a batched thought. Otherwise this is a breather — the plan survives a quiet Thursday."}, {"day": "Friday", "date": "24 Oct", "work": "Out with the boys at night", "post": "Film", "pc": "dp-film", "timeline": ["evening — out with the boys (you're doing this anyway)", "film bits naturally — don't force it", "weekend — cut when you're free"], "vid": {"h": "Pillar: Doing stuff + bants", "t": "A night out with the boys", "hook": "\"POV: the group chat actually pulled through for once…\"", "shots": ["the pre-game / getting ready / fits", "the funniest moment of the night (this carries it)", "wherever you end up — food, spot, drive", "keep Rayyan + the boys in — recurring faces"]}}, {"day": "Saturday", "date": "25 Oct", "work": "Free — outing OR rest (you pick)", "post": "Outing or rest", "pc": "dp-batch", "timeline": ["your call: planned outing from Spots, OR protected rest", "if outing — it's your big weekend video", "if resting — maybe batch 2 thoughts for next week"], "vid": {"h": "Pillar: Doing stuff / Muslim-social lane", "t": "Weekend outing — your choice of Spot", "hook": "\"everyone does bars, here's the version for us…\"", "shots": ["dress nice — this is a fit-check opportunity too", "the spot: shisha lounge / dessert bar / rooftop", "the vibe + who you're with", "rate it honestly at the end"]}}, {"day": "Sunday", "date": "26 Oct", "work": "Free — rest + plan next week", "post": "Batch / plan", "pc": "dp-batch", "timeline": ["+1hr — pre-reg portfolio (ring-fenced)", "batch any thoughts/fits for next week", "come to me — we build next week's plan"], "vid": null, "rest": "Recovery + setup day. Protect your pre-reg hour. Batch a couple of easy ones if you've got energy, then come plan next week with me so Monday's already decided."}];
+const SPOTS_V18=[{"group": "Muslim-social / shisha lounges", "desc": "The lane nobody owns — dress nice, alcohol-free social spots. Your signature vein.", "items": [["Nine Lounge", "Greenwich SE10 · 4.6★ · halal, rooftop views, dessert + shisha"], ["COCO Canary Wharf", "E14 · 4.6★ · halal, stylish, mocktails, open late"], ["Brera Lounge", "Canary Wharf E14 · 4.5★ · vibey, open til 4am"], ["No5 Dining & Lounge", "Hornsey N8 · 4.7★ · fine-dining lounge, very film-friendly decor"], ["Bocca Lounge", "South Kensington SW7 · 4.5★ · halal, dessert, open til 1am"]]}, {"group": "Dessert & matcha bars", "desc": "Aesthetic, cheap, great close-up b-roll. Perfect low-cost outing or after-gym stop.", "items": [["Katsute 100", "Islington N1 · 4.4★ · authentic matcha, garden, Japanese vibe"], ["Konveni Matcha", "Hammersmith W6 · 4.8★ · best-rated, worth the drive"], ["TSUJIRI", "Chinatown WC2 · 4.4★ · matcha soft serve, open til 10–11pm"], ["How Matcha", "Marylebone W1 · 4.4★ · chocolate matcha, central"], ["The Urban Chocolatier", "Ilford IG1 · local, very visual plates"]]}, {"group": "Halal food worth filming", "desc": "Named place, honest rating = your easiest reach. Format it (ranking, first-time, worth-it).", "items": [["Royal Nawaab", "Ilford · 4.8★ · huge buffet — \"how much for £X\"", "15 min"], ["Shah's Halal", "Gants Hill · 4.6★ · NY street-food style", "15 min"], ["Asli Butt Karahi", "790 Green Ln — literally your road", "2 min"], ["Smoke & Pepper", "Barking · 4.7★ · trendy hidden gem", "10 min"], ["Taste of Lahore", "Edgware Rd · famous late-night — \"driving across London for food\"", "45 min"]]}, {"group": "Activities (first-time content)", "desc": "The 'first time trying X' format — your real reaction is the whole video. Great with Rayyan.", "items": [["TeamSport Karting", "Basildon · race the boys, competitive = comments", "30 min"], ["Ninja Warrior UK", "Chelmsford · 4.8★ · you'll fail = funny", "40 min"], ["Flip Out / Oxygen", "Lakeside · trampoline, high-energy", "20 min"], ["Immersive Gamebox", "Lakeside · 4.9★ · team challenge, very visual", "20 min"], ["Namco Funscape", "Romford · arcade + bowling, close & easy", "15 min"]]}, {"group": "Free views & resets", "desc": "Zero cost, strong reach ('London's best view is free'). Good for a calm POV piece.", "items": [["Sky Garden", "City · free, book ahead · top-of-London view", "35 min"], ["The Garden at 120", "City · free, no booking rooftop", "35 min"], ["The Lookout, 8 Bishopsgate", "City · free, level 50", "35 min"], ["Primrose Hill", "NW · free · best golden-hour skyline", "45 min"], ["Eastbrookend Country Park", "Romford · free · on your doorstep", "10 min"]]}];
+
+// --- WEEK render ---
+(function(){
+ const wd=document.getElementById('weekDays');
+ if(wd){WEEKDATA.forEach((d,i)=>{
+   const el=document.createElement('div');el.className='daycard'+(i===0?' open':'');
+   let vid='';
+   if(d.vid){
+     vid='<div class="vidbox"><div class="vh">'+d.vid.h+'</div><div class="vt">'+d.vid.t+'</div><div class="vhook">'+d.vid.hook+'</div><ul>'+d.vid.shots.map(x=>'<li>'+x+'</li>').join('')+'</ul></div>';
+   } else if(d.rest){ vid='<div class="restnote">'+d.rest+'</div>'; }
+   el.innerHTML='<div class="dayhdr"><span class="dayname">'+d.day+'</span><span class="daywork">'+d.work+'</span><span class="daypost '+d.pc+'">'+d.post+'</span><span class="daycaret">&rsaquo;</span></div>'+
+     '<div class="daybody"><ul class="timeline">'+d.timeline.map(t=>{const p=t.split(' — ');return '<li><span class="t">'+(p.length>1?p[0]:'')+'</span><span>'+(p.length>1?p.slice(1).join(' — '):t)+'</span></li>';}).join('')+'</ul>'+vid+'</div>';
+   el.querySelector('.dayhdr').addEventListener('click',()=>el.classList.toggle('open'));
+   wd.appendChild(el);
+ });}
+ // SPOTS
+ const sl=document.getElementById('spotList');
+ if(sl){SPOTS_V18.forEach(g=>{
+   const grp=document.createElement('div');grp.className='spotgroup';
+   grp.innerHTML='<h3>'+g.group+'</h3><p class="sd">'+g.desc+'</p>'+
+     g.items.map(it=>'<div class="spotrow"><div class="sdot"></div><div class="sbody"><div class="sname">'+it[0]+(it[2]?' <span class="smeta">'+it[2]+' drive</span>':'')+'</div><div class="smeta">'+it[1]+'</div></div></div>').join('');
+   sl.appendChild(grp);
+ });}
 })();
 
 // pools
