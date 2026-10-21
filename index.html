@@ -103,6 +103,17 @@ section[role=tabpanel].on{display:block}
 .idea-x{cursor:pointer}
 
 
+
+.subtabs{display:flex;gap:6px;margin:0 0 18px;background:var(--paper-2);padding:4px;border-radius:8px}
+.subtab{flex:1;background:none;border:0;padding:10px 6px;border-radius:6px;cursor:pointer;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+.subtab.on{background:var(--ink);color:var(--paper)}
+.subpanel[hidden]{display:none}
+.mi{display:flex;gap:10px;padding:13px 0;border-bottom:1px solid var(--line);align-items:flex-start}
+.mi:first-child{border-top:1px solid var(--ink)}
+.midot{width:7px;height:7px;border-radius:50%;background:var(--signal);margin-top:7px;flex:none}
+.mitext{flex:1;font-size:15.5px;line-height:1.35;color:var(--ink)}
+.mitag{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin-top:5px}
+
 .sheet{position:fixed;inset:0;z-index:60;display:flex;align-items:flex-end;justify-content:center}
 .sheet[hidden]{display:none}
 .sheet::before{content:"";position:absolute;inset:0;background:rgba(18,16,14,.55);animation:fade .2s ease}
@@ -250,8 +261,27 @@ footer{padding:34px 0 20px;border-top:2px solid var(--ink);margin-top:30px;color
 
 <!-- 1000 -->
 <section role="tabpanel" id="p-k">
-  <div class="shead"><h2>1000 Ideas</h2><div class="rule"></div></div>
-  <p class="lede">Every idea built from your real life — your car, your area, halal spots near you, real London places, the agency. Search or filter, grab one, film it. You're meant to dip in, not read it all.</p>
+  <div class="shead"><h2>Ideas</h2><div class="rule"></div></div>
+  <div class="subtabs" id="ideaSubtabs">
+    <button class="subtab on" data-sub="sub-mine">Mine</button>
+    <button class="subtab" data-sub="sub-claude">Claude's</button>
+    <button class="subtab" data-sub="sub-foryou">For You</button>
+  </div>
+
+  <div class="subpanel" id="sub-mine">
+    <p class="lede">The ideas you brainstormed yourself — your gut, your voice. These are usually your best because they came from you.</p>
+    <div id="mineNewList"></div>
+  </div>
+
+  <div class="subpanel" id="sub-foryou" hidden>
+    <p class="lede">100 ideas I built <em>from yours</em> — same veins, extended. If you liked one of your own, there are 9 more like it here. Filter by type.</p>
+    <div class="filters" id="fyFilters"></div>
+    <div class="count" id="fyCount"></div>
+    <div id="fyList"></div>
+  </div>
+
+  <div class="subpanel" id="sub-claude" hidden>
+    <p class="lede">The big bank — 1000 ideas built from your real life (car, area, halal spots, London places). Search or filter, grab one, film it. Dip in, don't read it all.</p>
   <div class="nowsub" style="margin-top:0">Series ideas — repeatable formats</div>
   <p class="nowsub-d">Formats, not commitments. Drop any real outing into one so you never start from a blank page. Run whichever you feel like, whenever.</p>
   <div style="margin-bottom:26px">
@@ -272,6 +302,7 @@ footer{padding:34px 0 20px;border-top:2px solid var(--ink);margin-top:30px;color
   <div class="kcount" id="kCount"></div>
   <div id="kList"></div>
   <button class="kmore" id="kMore">Show more</button>
+  </div>
 </section>
 
 <!-- WEEK -->
@@ -991,6 +1022,8 @@ const KIDEAS=[["First time at Frameless — worth it?", "Days out", "vlog", "e2"
  catBtns();fmtBtns();render();
 })();
 
+const MINE_NEW=[["In my first year of the agency we landed a FIFA World Cup deal — exactly how our creator did it (and how you could)", "Agency breakdown"], ["Marketing analysis: the Kylie Jenner $50m Victoria's Secret bra moment", "Marketing analysis"], ["Day in the life of a pre-reg pharmacist — student to work life", "Pharmacy"], ["Realistic unfiltered day running a talent agency & repping rising creators (the desk reality + networking)", "Agency life"], ["My first time at [a rooftop bar I pick on the day]", "First time"], ["A series of the best weekend spots to go — especially if you don't drink", "No-drink spots"], ["Advice for pharmacy students, from a pre-reg pharmacist", "Pharmacy"], ["From a talent manager repping creators: here's why you're not getting brand deals", "Creator advice"], ["Is UGC worth it? Here's what it actually is", "UGC"], ["Charity UGC month — all the UGC I do this month goes to charity", "UGC"], ["Gym routine/vlog by someone who's spent most of his life behind a screen", "Gym"], ["The new Bershka Spider-Man collab is insane — let's go check it out", "Fashion drop"], ["5 things I think are genuinely goated", "Lists & culture"], ["Ranking different spice huts on an S–C tier scale with a big group", "Lists & culture"], ["Skit: what it's like running a talent agency with all the staff in the office (WeWork)", "Lists & culture"], ["Top TV shows I've watched recently (Homeland)", "Lists & culture"]];
+const FORYOU=[["How our creator landed a deal with FIFA for the World Cup — the exact steps", "Agency breakdown"], ["The pitch email that got a rising creator signed to a global brand", "Agency breakdown"], ["How a 15k creator out-earned a 500k creator on one campaign", "Agency breakdown"], ["The deal we almost lost and the one line that saved it", "Agency breakdown"], ["Breaking down a real brand deal: what the creator got vs what the brand paid", "Agency breakdown"], ["How we got a creator their first 5-figure deal", "Agency breakdown"], ["The negotiation move that doubled a creator's rate", "Agency breakdown"], ["A brand ghosted us for 3 months — how the deal still closed", "Agency breakdown"], ["How we landed a deal with no media kit and 8k followers", "Agency breakdown"], ["The timeline of a brand deal from DM to payment", "Agency breakdown"], ["The marketing genius behind Kylie's $50m Victoria's Secret moment", "Marketing analysis"], ["Why Labubu became a billion-dollar obsession — marketing breakdown", "Marketing analysis"], ["How Prime went from zero to sold-out in months", "Marketing analysis"], ["The psychology behind why Erewhon smoothies cost £20", "Marketing analysis"], ["Why every brand suddenly has a matcha drink — the trend breakdown", "Marketing analysis"], ["How Jacquemus turns tiny bags into viral marketing", "Marketing analysis"], ["The marketing behind Dubai chocolate going global", "Marketing analysis"], ["Why Stanley cups beat every competitor — the real reason", "Marketing analysis"], ["How a UK takeaway brand went viral with one TikTok format", "Marketing analysis"], ["The marketing play behind every 'sold out' drop", "Marketing analysis"], ["Day in the life of a pre-reg pharmacist — student to work life", "Pharmacy"], ["Honest advice for pharmacy students from a pre-reg", "Pharmacy"], ["Things I wish I knew before starting my pre-reg year", "Pharmacy"], ["What a pharmacist actually earns — the honest breakdown", "Pharmacy"], ["A realistic morning routine before a pharmacy shift", "Pharmacy"], ["Balancing a pharmacy career with a business and content", "Pharmacy"], ["The hardest part of the pre-reg transition nobody warns you about", "Pharmacy"], ["Why I'm doing pharmacy AND chasing content — the plan", "Pharmacy"], ["Pharmacy student vs pre-reg: what actually changes", "Pharmacy"], ["A week of pre-reg life, condensed", "Pharmacy"], ["Unfiltered day running a talent agency — it's mostly a desk", "Agency life"], ["A real networking day as a 22-year-old agency owner", "Agency life"], ["What running an agency actually looks like vs what people think", "Agency life"], ["The unglamorous admin behind representing creators", "Agency life"], ["A day of back-to-back brand calls", "Agency life"], ["Running the agency on my lunch break from my 9-5", "Agency life"], ["Behind the scenes of onboarding a new creator", "Agency life"], ["The busiest day I've had running the agency", "Agency life"], ["A week of the agency in 60 seconds", "Agency life"], ["What my actual to-do list looks like running two things at once", "Agency life"], ["My first time at a rooftop with the best view in London", "First time"], ["First time at the spot everyone's been posting", "First time"], ["First time at London's most hyped dessert place", "First time"], ["First time trying a supercar experience", "First time"], ["First time at a members-only style lounge", "First time"], ["First time at the restaurant with a 3-month waitlist", "First time"], ["First time at an F1 simulator place", "First time"], ["First time at the viewpoint locals gatekeep", "First time"], ["First time at a proper shisha lounge done right", "First time"], ["First time somewhere I'd never normally go", "First time"], ["Weekend spots if you don't drink — ep 1", "No-drink spots"], ["Best alcohol-free social spots in London for a night out", "No-drink spots"], ["Where to take a date if neither of you drinks", "No-drink spots"], ["The Muslim guide to a proper night out in London", "No-drink spots"], ["Shisha lounges that actually have good food too", "No-drink spots"], ["Late-night dessert runs that beat any bar", "No-drink spots"], ["Chill weekend spots for the group chat", "No-drink spots"], ["Rooftop vibes, zero alcohol — where to go", "No-drink spots"], ["A full no-drink night out, start to finish", "No-drink spots"], ["The best non-alcoholic social scene in east London", "No-drink spots"], ["Why you're not getting brand deals — from a talent manager", "Creator advice"], ["The media kit mistake killing your brand deals", "Creator advice"], ["What brands actually look for before they pay you", "Creator advice"], ["Why your rate is wrong (too high AND too low)", "Creator advice"], ["The DM that makes brands ignore you", "Creator advice"], ["How to price yourself as a small creator", "Creator advice"], ["3 things on your profile scaring brands off", "Creator advice"], ["Why follower count matters less than you think to brands", "Creator advice"], ["The one thing that got our creators their deals", "Creator advice"], ["How to pitch a brand without sounding desperate", "Creator advice"], ["Is UGC worth it? Here's what it actually is", "UGC"], ["How much you can realistically make from UGC", "UGC"], ["UGC vs influencing — the honest difference", "UGC"], ["My charity UGC month: every job I do goes to charity", "UGC"], ["How to land your first UGC client", "UGC"], ["What a good UGC video actually looks like", "UGC"], ["The UGC rates nobody tells you", "UGC"], ["Breaking down a UGC brief live", "UGC"], ["Common UGC mistakes that lose you repeat clients", "UGC"], ["A day of filming UGC content", "UGC"], ["Gym vlog by someone who's spent his whole life behind a screen", "Gym"], ["Week 1 of the gym when you're clueless", "Gym"], ["The desk-guy's guide to actually starting the gym", "Gym"], ["What the gym did to my mindset after a month", "Gym"], ["Gym after a full work day — the real struggle", "Gym"], ["Me and my mate, two beginners, figuring out the gym", "Gym"], ["Fixing my posture after years at a screen", "Gym"], ["What I eat to actually have energy after work", "Gym"], ["The gym excuses I had to kill", "Gym"], ["3 months in — what's actually changed", "Gym"], ["The new Bershka Spider-Man collab is insane — let's check it out", "Fashion drop"], ["Going to cop the drop everyone's talking about", "Fashion drop"], ["Styling one hyped piece 3 ways", "Fashion drop"], ["Is this collab actually worth it? honest review", "Fashion drop"], ["Thrifting a designer look for under £50", "Fashion drop"], ["Rating my mates' fits out of 10", "Fashion drop"], ["One outfit, dressed up vs dressed down", "Fashion drop"], ["The high-street piece that looks designer", "Fashion drop"], ["GRWM for a night out, no drink needed", "Fashion drop"], ["My most worn pieces this year", "Fashion drop"]];
 const WEEKDATA=[{"day": "Monday", "date": "20 Oct", "work": "Work 9–5 · gym 7pm w/ Rayyan", "post": "Film", "pc": "dp-film", "timeline": ["5:10pm — home, quick reset", "7:00pm — gym with Rayyan", "8:30pm — food after (the content)", "10pm — cut it in CapCut, post"], "vid": {"h": "Pillar: Gym / the journey", "t": "Day 1 of the gym with the boys", "hook": "\"me and my mate who both fell off, back at it day 1…\"", "shots": ["walking into the gym together", "both of you clueless on a machine (keep it funny)", "the post-gym food — what you earned", "one line to camera: why you're starting"]}}, {"day": "Tuesday", "date": "21 Oct", "work": "Work 9–2 · flexible gym — YOUR BEST DAY", "post": "Film", "pc": "dp-film", "timeline": ["2:20pm — home, big afternoon free", "afternoon — the week's real outing / experience", "evening — gym when it suits", "night — cut + post"], "vid": {"h": "Pillar: Doing stuff (the big one)", "t": "The week's experience — pick a Spot", "hook": "\"had the afternoon free so I went and…\"", "shots": ["the drive there (car's a character)", "arriving — wide establishing shot", "the thing itself + your honest reaction", "\"was it worth it\" verdict to camera"]}}, {"day": "Wednesday", "date": "22 Oct", "work": "Work 11–7 · gym 9pm (tight day)", "post": "Low-effort", "pc": "dp-film", "timeline": ["7pm — done work", "9pm — late gym", "after — one quick clip, nothing ambitious"], "vid": {"h": "Pillar: Thoughts / POV (easy)", "t": "A chill take over b-roll", "hook": "\"people think you need a perfect routine to…\"", "shots": ["simple b-roll: the drive, the walk, the gym", "voiceover your take — record it at home after", "keep it one idea, 20 seconds"]}}, {"day": "Thursday", "date": "23 Oct", "work": "Work 11–7 · gym 9pm (tight day)", "post": "Rest / buffer", "pc": "dp-rest", "timeline": ["7pm — done work", "9pm — gym", "optional — post a batched one if you have it"], "vid": null, "rest": "No pressure to film. If you're flowing, post something from the backlog or a batched thought. Otherwise this is a breather — the plan survives a quiet Thursday."}, {"day": "Friday", "date": "24 Oct", "work": "Out with the boys at night", "post": "Film", "pc": "dp-film", "timeline": ["evening — out with the boys (you're doing this anyway)", "film bits naturally — don't force it", "weekend — cut when you're free"], "vid": {"h": "Pillar: Doing stuff + bants", "t": "A night out with the boys", "hook": "\"POV: the group chat actually pulled through for once…\"", "shots": ["the pre-game / getting ready / fits", "the funniest moment of the night (this carries it)", "wherever you end up — food, spot, drive", "keep Rayyan + the boys in — recurring faces"]}}, {"day": "Saturday", "date": "25 Oct", "work": "Free — outing OR rest (you pick)", "post": "Outing or rest", "pc": "dp-batch", "timeline": ["your call: planned outing from Spots, OR protected rest", "if outing — it's your big weekend video", "if resting — maybe batch 2 thoughts for next week"], "vid": {"h": "Pillar: Doing stuff / Muslim-social lane", "t": "Weekend outing — your choice of Spot", "hook": "\"everyone does bars, here's the version for us…\"", "shots": ["dress nice — this is a fit-check opportunity too", "the spot: shisha lounge / dessert bar / rooftop", "the vibe + who you're with", "rate it honestly at the end"]}}, {"day": "Sunday", "date": "26 Oct", "work": "Free — rest + plan next week", "post": "Batch / plan", "pc": "dp-batch", "timeline": ["+1hr — pre-reg portfolio (ring-fenced)", "batch any thoughts/fits for next week", "come to me — we build next week's plan"], "vid": null, "rest": "Recovery + setup day. Protect your pre-reg hour. Batch a couple of easy ones if you've got energy, then come plan next week with me so Monday's already decided."}];
 const SPOTS_V18=[{"group": "Muslim-social / shisha lounges", "desc": "The lane nobody owns — dress nice, alcohol-free social spots. Your signature vein.", "items": [["Nine Lounge", "Greenwich SE10 · 4.6★ · halal, rooftop views, dessert + shisha"], ["COCO Canary Wharf", "E14 · 4.6★ · halal, stylish, mocktails, open late"], ["Brera Lounge", "Canary Wharf E14 · 4.5★ · vibey, open til 4am"], ["No5 Dining & Lounge", "Hornsey N8 · 4.7★ · fine-dining lounge, very film-friendly decor"], ["Bocca Lounge", "South Kensington SW7 · 4.5★ · halal, dessert, open til 1am"]]}, {"group": "Dessert & matcha bars", "desc": "Aesthetic, cheap, great close-up b-roll. Perfect low-cost outing or after-gym stop.", "items": [["Katsute 100", "Islington N1 · 4.4★ · authentic matcha, garden, Japanese vibe"], ["Konveni Matcha", "Hammersmith W6 · 4.8★ · best-rated, worth the drive"], ["TSUJIRI", "Chinatown WC2 · 4.4★ · matcha soft serve, open til 10–11pm"], ["How Matcha", "Marylebone W1 · 4.4★ · chocolate matcha, central"], ["The Urban Chocolatier", "Ilford IG1 · local, very visual plates"]]}, {"group": "Halal food worth filming", "desc": "Named place, honest rating = your easiest reach. Format it (ranking, first-time, worth-it).", "items": [["Royal Nawaab", "Ilford · 4.8★ · huge buffet — \"how much for £X\"", "15 min"], ["Shah's Halal", "Gants Hill · 4.6★ · NY street-food style", "15 min"], ["Asli Butt Karahi", "790 Green Ln — literally your road", "2 min"], ["Smoke & Pepper", "Barking · 4.7★ · trendy hidden gem", "10 min"], ["Taste of Lahore", "Edgware Rd · famous late-night — \"driving across London for food\"", "45 min"]]}, {"group": "Activities (first-time content)", "desc": "The 'first time trying X' format — your real reaction is the whole video. Great with Rayyan.", "items": [["TeamSport Karting", "Basildon · race the boys, competitive = comments", "30 min"], ["Ninja Warrior UK", "Chelmsford · 4.8★ · you'll fail = funny", "40 min"], ["Flip Out / Oxygen", "Lakeside · trampoline, high-energy", "20 min"], ["Immersive Gamebox", "Lakeside · 4.9★ · team challenge, very visual", "20 min"], ["Namco Funscape", "Romford · arcade + bowling, close & easy", "15 min"]]}, {"group": "Free views & resets", "desc": "Zero cost, strong reach ('London's best view is free'). Good for a calm POV piece.", "items": [["Sky Garden", "City · free, book ahead · top-of-London view", "35 min"], ["The Garden at 120", "City · free, no booking rooftop", "35 min"], ["The Lookout, 8 Bishopsgate", "City · free, level 50", "35 min"], ["Primrose Hill", "NW · free · best golden-hour skyline", "45 min"], ["Eastbrookend Country Park", "Romford · free · on your doorstep", "10 min"]]}];
 
@@ -1016,6 +1049,39 @@ const SPOTS_V18=[{"group": "Muslim-social / shisha lounges", "desc": "The lane n
      g.items.map(it=>'<div class="spotrow"><div class="sdot"></div><div class="sbody"><div class="sname">'+it[0]+(it[2]?' <span class="smeta">'+it[2]+' drive</span>':'')+'</div><div class="smeta">'+it[1]+'</div></div></div>').join('');
    sl.appendChild(grp);
  });}
+})();
+
+
+// --- Ideas sub-tabs: Mine / Claude's / For You ---
+(function(){
+ const subtabs=[...document.querySelectorAll('#ideaSubtabs .subtab')];
+ if(!subtabs.length) return;
+ subtabs.forEach(b=>b.onclick=()=>{
+   subtabs.forEach(x=>x.classList.toggle('on',x===b));
+   document.querySelectorAll('#p-k .subpanel').forEach(p=>p.hidden = (p.id!==b.dataset.sub));
+ });
+ // Mine render
+ const ml=document.getElementById('mineNewList');
+ if(ml&&typeof MINE_NEW!=='undefined'){
+   ml.innerHTML=MINE_NEW.map(([t,tag])=>'<div class="mi"><div class="midot"></div><div class="mitext">'+t+'<div class="mitag">'+tag+'</div></div></div>').join('');
+ }
+ // For You render + filter
+ if(typeof FORYOU!=='undefined'){
+   const cats=[...new Set(FORYOU.map(x=>x[1]))];
+   let fcat='all';
+   const ff=document.getElementById('fyFilters'),fl=document.getElementById('fyList'),fc=document.getElementById('fyCount');
+   [['all','All']].concat(cats.map(c=>[c,c])).forEach(([k,label])=>{
+     const b=document.createElement('button');b.textContent=label;b.setAttribute('aria-pressed',k===fcat);
+     b.onclick=()=>{fcat=k;[...ff.children].forEach(x=>x.setAttribute('aria-pressed','false'));b.setAttribute('aria-pressed','true');fyRender();};
+     ff.appendChild(b);
+   });
+   function fyRender(){
+     const list=FORYOU.filter(x=>fcat==='all'||x[1]===fcat);
+     fc.textContent=list.length+' idea'+(list.length===1?'':'s')+' from your veins';
+     fl.innerHTML=list.map(([t,tag])=>'<div class="mi"><div class="midot"></div><div class="mitext">'+t+'<div class="mitag">'+tag+'</div></div></div>').join('');
+   }
+   fyRender();
+ }
 })();
 
 // pools
